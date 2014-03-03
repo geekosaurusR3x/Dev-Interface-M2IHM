@@ -1,0 +1,1328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1055</width>
+    <height>635</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Shape Collage</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="MesRessources.qrc">
+    <normaloff>:/Images/Icone</normaloff>:/Images/Icone</iconset>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>100</horstretch>
+     <verstretch>100</verstretch>
+    </sizepolicy>
+   </property>
+   <widget class="QGroupBox" name="GroupeBoxPhotos">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>0</y>
+      <width>261</width>
+      <height>561</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Photos</string>
+    </property>
+    <widget class="QPushButton" name="BoutonAjouterImage">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>530</y>
+       <width>21</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="statusTip">
+      <string>Ajouter des photos</string>
+     </property>
+     <property name="text">
+      <string>+</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="BoutonRetirerImage">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>530</y>
+       <width>21</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="statusTip">
+      <string>Retirer des photos de la liste</string>
+     </property>
+     <property name="text">
+      <string>-</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="BoutonEffacerListe">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>530</y>
+       <width>81</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="statusTip">
+      <string>Retirer toutes les photos de la liste</string>
+     </property>
+     <property name="text">
+      <string>Effacer la liste</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="LabelNombrePhotosAffichees">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>530</y>
+       <width>61</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;0 Photos&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="verticalLayoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>241</width>
+       <height>501</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="VerticalLayoutPhotos"/>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="GroupeBoxEtat">
+    <property name="geometry">
+     <rect>
+      <x>285</x>
+      <y>0</y>
+      <width>401</width>
+      <height>501</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="title">
+     <string>Etat</string>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+    <widget class="QProgressBar" name="ProgressBarJauge">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>450</y>
+       <width>311</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="value">
+      <number>0</number>
+     </property>
+     <property name="textVisible">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="LabelDimension">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>61</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Dimensions:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="LabelEtat">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>50</y>
+       <width>381</width>
+       <height>391</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Box</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Sunken</enum>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt; font-weight:600; color:#d3ccc9;&quot;&gt;Ajouter les photos et&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt; font-weight:600; color:#d3ccc9;&quot;&gt;cliquer sur &amp;quot;créer&amp;quot;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>473</y>
+       <width>81</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Terminer</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="GroupeBoxForme_taille">
+    <property name="geometry">
+     <rect>
+      <x>692</x>
+      <y>0</y>
+      <width>356</width>
+      <height>551</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Forme et Taille</string>
+    </property>
+    <widget class="QGroupBox" name="GroupeBoxForme">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>23</y>
+       <width>341</width>
+       <height>113</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Forme</string>
+     </property>
+     <widget class="QRadioButton" name="RadioBoutonRectangle">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>71</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="statusTip">
+       <string>Collage en forme de rectangle</string>
+      </property>
+      <property name="text">
+       <string>Rectangle</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="RadioBoutonCercle">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>80</y>
+        <width>53</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="statusTip">
+       <string>Collage en forme de cercle</string>
+      </property>
+      <property name="text">
+       <string>Cercle</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="RadioBoutonExtra">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>50</y>
+        <width>49</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="statusTip">
+       <string>Dessiner votre propre forme</string>
+      </property>
+      <property name="text">
+       <string>Extra</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="verticalLayoutWidget_4">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>20</y>
+        <width>141</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="LayoutFormeExtra"/>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="GroupeBoxArrierePlan">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>410</y>
+       <width>341</width>
+       <height>131</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Arrière-plan</string>
+     </property>
+     <widget class="QRadioButton" name="RadioBoutonArrierePlanColorie">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>16</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="statusTip">
+       <string>Couleur d'arrière-plan</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="RadioBoutonArrierePlanTransparent">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>100</y>
+        <width>82</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="statusTip">
+       <string>Utiliser un Arrière-plan transparent</string>
+      </property>
+      <property name="text">
+       <string>Transparent</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="RadioBoutonArrierePlanPhoto">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>60</y>
+        <width>51</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="statusTip">
+       <string>Utiliser une photo pour l'arrière-plan</string>
+      </property>
+      <property name="text">
+       <string>Photo</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="verticalLayoutWidget_2">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>20</y>
+        <width>61</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="LayoutCouleurArrirePlan"/>
+     </widget>
+     <widget class="QWidget" name="verticalLayoutWidget_3">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>19</y>
+        <width>141</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="LayoutPhotoArrierePlan"/>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="GroupeBoxTaille">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>140</y>
+       <width>341</width>
+       <height>271</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Taille</string>
+     </property>
+     <widget class="QLabel" name="LabelTailleCollage">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>81</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="statusTip">
+       <string>Taille de collage</string>
+      </property>
+      <property name="text">
+       <string>Taille du collage:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="LabelLargeur">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>20</y>
+        <width>41</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="statusTip">
+       <string>Largeur du collage</string>
+      </property>
+      <property name="text">
+       <string>Largeur</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="LabelHauteur">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>20</y>
+        <width>41</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="statusTip">
+       <string>Hauteur du collage</string>
+      </property>
+      <property name="text">
+       <string>Hauteur</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="ComboBoxTailleCollage">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>40</y>
+        <width>61</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="statusTip">
+       <string>Unité de mesure de la taille du collage</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>pixels</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>pouces</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>cm</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLineEdit" name="LineEditLargeur">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>40</y>
+        <width>51</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="statusTip">
+       <string>Largeur du collage</string>
+      </property>
+      <property name="text">
+       <string>1366</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="LineEditHauteur">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>40</y>
+        <width>51</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="statusTip">
+       <string>Hauteur du collage</string>
+      </property>
+      <property name="text">
+       <string>768</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="LabelX">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>40</y>
+        <width>21</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>X</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="Line" name="LineFinTailleCollage">
+      <property name="geometry">
+       <rect>
+        <x>17</x>
+        <y>60</y>
+        <width>291</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="LabelTaillePhoto">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>80</y>
+        <width>91</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="statusTip">
+       <string>Taille de la photo</string>
+      </property>
+      <property name="text">
+       <string>Taille de la photo:</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="BoutonTaillePhoto">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>100</y>
+        <width>51</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string/>
+      </property>
+      <property name="statusTip">
+       <string>Cliquez pour ajuster automatiquement la taille de la photo</string>
+      </property>
+      <property name="text">
+       <string>Manuel</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="ComboBoxTaillePhoto">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>100</y>
+        <width>61</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="statusTip">
+       <string>Unité de mesure de la taille de la photo</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>pixels</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>pouces</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>cm</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="Line" name="LineFinTaillePhoto">
+      <property name="geometry">
+       <rect>
+        <x>17</x>
+        <y>120</y>
+        <width>291</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="LabelNombrePhotos">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>140</y>
+        <width>91</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="statusTip">
+       <string>Nombre de photos</string>
+      </property>
+      <property name="text">
+       <string>Nombre de photos:</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="BoutonNombrePhotos">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>160</y>
+        <width>51</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="statusTip">
+       <string>Cliquez pour ajuster automatiquement le nombre de photos du collage</string>
+      </property>
+      <property name="text">
+       <string>Manuel</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="RadioBoutonTout">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>150</y>
+        <width>51</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="statusTip">
+       <string>Utiliser toutes les photos de la liste pour créer le collage</string>
+      </property>
+      <property name="text">
+       <string>Tout</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="RadioBoutonPhotos">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>170</y>
+        <width>16</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="statusTip">
+       <string>Créer le collage avec ce nombre exact de photos. certaines photos seront inutilisées ou dupliquées si nécessaire</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="LineEditNombrePhoto">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>170</y>
+        <width>41</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="statusTip">
+       <string>Créer le collage avec ce nombre exact de photos. certaines photos seront inutilisées ou dupliquées si nécessaire</string>
+      </property>
+      <property name="text">
+       <string>150</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="LabelPhotos">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>170</y>
+        <width>41</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="statusTip">
+       <string>Créer le collage avec ce nombre exact de photos. certaines photos seront inutilisées ou dupliquées si nécessaire</string>
+      </property>
+      <property name="text">
+       <string>Photos</string>
+      </property>
+     </widget>
+     <widget class="Line" name="LineFinNombrePhotos">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>200</y>
+        <width>291</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="LabelDistancePhotos">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>220</y>
+        <width>131</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="statusTip">
+       <string>Distance entre les photos</string>
+      </property>
+      <property name="text">
+       <string>Distance entre les photos:</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="BoutonDistancePhotos">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>240</y>
+        <width>51</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="statusTip">
+       <string>Cliquez pour ajuster automatiquement l' espacement des photos du collage</string>
+      </property>
+      <property name="text">
+       <string>Manuel</string>
+      </property>
+     </widget>
+     <widget class="QSlider" name="SliderDistancePhotos">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>149</x>
+        <y>240</y>
+        <width>121</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="statusTip">
+       <string>Distance moyenne entre les photos dans le collage</string>
+      </property>
+      <property name="maximum">
+       <number>208</number>
+      </property>
+      <property name="value">
+       <number>67</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="SpinBoxDistancePhotos">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>240</y>
+        <width>42</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="statusTip">
+       <string>Distance moyenne entre les photos dans le collage</string>
+      </property>
+      <property name="minimum">
+       <number>0</number>
+      </property>
+      <property name="maximum">
+       <number>10000</number>
+      </property>
+      <property name="value">
+       <number>67</number>
+      </property>
+     </widget>
+     <widget class="QLabel" name="LabelPourcentage">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>240</y>
+        <width>16</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="statusTip">
+       <string>Distance moyenne entre les photos dans le collage</string>
+      </property>
+      <property name="text">
+       <string>%</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="BoutonTailleCollage">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>40</y>
+        <width>51</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="statusTip">
+       <string>Cliquez pour regler manuellement la taille du collage</string>
+      </property>
+      <property name="text">
+       <string>Auto</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="LineEditTaillePhoto">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>100</y>
+        <width>51</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="statusTip">
+       <string>Taille maximale des photos</string>
+      </property>
+      <property name="text">
+       <string>200</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="BoutonRestaurerValeurs">
+    <property name="geometry">
+     <rect>
+      <x>800</x>
+      <y>560</y>
+      <width>181</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="statusTip">
+     <string>Restaurer les options &quot;par défaut&quot;</string>
+    </property>
+    <property name="text">
+     <string>Restaurer les valeurs par défaut</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="CheckBoxActiverAnimation">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>540</y>
+      <width>201</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="statusTip">
+     <string>Regarder la mise en page pendant la prévisualisation ou la création du collage</string>
+    </property>
+    <property name="text">
+     <string>Activer l'animation de la mise en page </string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="BoutonApercu">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>510</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="statusTip">
+     <string>Prévisualiser la mise en page des photos dans le collage</string>
+    </property>
+    <property name="text">
+     <string>Aperçu</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="BoutonCreer">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>510</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="statusTip">
+     <string>Créer le collage!</string>
+    </property>
+    <property name="text">
+     <string>Créer</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="BarreMenu">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1055</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="MenuFichier">
+    <property name="title">
+     <string>Fichier</string>
+    </property>
+    <addaction name="MenuNouveau_projet"/>
+    <addaction name="MenuAjouter_photos"/>
+    <addaction name="MenuCreer_collage"/>
+    <addaction name="MenuQuitter"/>
+   </widget>
+   <widget class="QMenu" name="MenuAide">
+    <property name="title">
+     <string>Aide</string>
+    </property>
+    <addaction name="MenuA_propos"/>
+    <addaction name="MenuAide_creation"/>
+   </widget>
+   <addaction name="MenuFichier"/>
+   <addaction name="MenuAide"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="MenuNouveau_projet">
+   <property name="text">
+    <string>Nouveau projet</string>
+   </property>
+   <property name="statusTip">
+    <string>Réinitialiser la fenêtre pour créer un nouveau collage</string>
+   </property>
+  </action>
+  <action name="MenuAjouter_photos">
+   <property name="text">
+    <string>Ajouter des photos</string>
+   </property>
+   <property name="statusTip">
+    <string>Ajouter des photo à la liste</string>
+   </property>
+  </action>
+  <action name="MenuCreer_collage">
+   <property name="text">
+    <string>Créer un collage</string>
+   </property>
+   <property name="statusTip">
+    <string>Créer un collage!</string>
+   </property>
+  </action>
+  <action name="MenuQuitter">
+   <property name="text">
+    <string>Quitter</string>
+   </property>
+   <property name="statusTip">
+    <string>Quitter l'application</string>
+   </property>
+  </action>
+  <action name="MenuA_propos">
+   <property name="text">
+    <string>A propos</string>
+   </property>
+   <property name="statusTip">
+    <string>A propos de Shape collage</string>
+   </property>
+  </action>
+  <action name="MenuAide_creation">
+   <property name="text">
+    <string>Aide à la création</string>
+   </property>
+   <property name="statusTip">
+    <string>Créer un collage étape par étape à l'aide d'un assistant</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="MesRessources.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>MenuQuitter</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>OnActionQuitter()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>5</x>
+     <y>84</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>MenuA_propos</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>OnActionAPropos()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>3</x>
+     <y>27</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>BoutonAjouterImage</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>OnAjouterImage()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>27</x>
+     <y>562</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>32</x>
+     <y>605</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ComboBoxTailleCollage</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>MAJLargeurHauteur(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>991</x>
+     <y>212</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>670</x>
+     <y>512</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ComboBoxTaillePhoto</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>MAJTaillePhoto(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>918</x>
+     <y>273</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>621</x>
+     <y>537</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SpinBoxDistancePhotos</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>SliderDistancePhotos</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1016</x>
+     <y>413</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>933</x>
+     <y>412</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SliderDistancePhotos</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>SpinBoxDistancePhotos</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>946</x>
+     <y>402</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>994</x>
+     <y>404</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>BoutonTailleCollage</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>SetEnabledTailleCollage()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>767</x>
+     <y>215</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>492</x>
+     <y>513</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>BoutonTaillePhoto</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>SetEnabledTaillePhoto()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>754</x>
+     <y>271</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>468</x>
+     <y>528</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>BoutonNombrePhotos</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>SetEnabledNombrePhoto()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>784</x>
+     <y>331</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>657</x>
+     <y>552</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>BoutonDistancePhotos</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>SetEnabledDistancePhoto()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>748</x>
+     <y>414</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>558</x>
+     <y>592</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>BoutonRestaurerValeurs</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>RestaurerValParDefaut()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>853</x>
+     <y>595</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>725</x>
+     <y>593</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>BoutonEffacerListe</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>EffacerListePhoto()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>136</x>
+     <y>562</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>196</x>
+     <y>604</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>RadioBoutonArrierePlanPhoto</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>ClicArrierePlanPhoto()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>844</x>
+     <y>497</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>329</x>
+     <y>562</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>BoutonRetirerImage</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>OnRetirerImage()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>59</x>
+     <y>563</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>341</x>
+     <y>596</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>MenuAjouter_photos</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>OnAjouterImage()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>527</x>
+     <y>317</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>MenuAide_creation</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>OnActionAideCreation()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>527</x>
+     <y>317</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>RadioBoutonExtra</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>DessinerPolygoneSivide()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>847</x>
+     <y>104</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>690</x>
+     <y>28</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>MenuNouveau_projet</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>OnActionNouveauProjet()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>527</x>
+     <y>317</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>OnActionQuitter()</slot>
+  <slot>OnActionAPropos()</slot>
+  <slot>OnAjouterImage()</slot>
+  <slot>MAJLargeurHauteur(int)</slot>
+  <slot>MAJTaillePhoto(int)</slot>
+  <slot>SetEnabledTailleCollage()</slot>
+  <slot>SetEnabledTaillePhoto()</slot>
+  <slot>SetEnabledNombrePhoto()</slot>
+  <slot>SetEnabledDistancePhoto()</slot>
+  <slot>RestaurerValParDefaut()</slot>
+  <slot>ChargerPhotoArrierePlan()</slot>
+  <slot>EffacerListePhoto()</slot>
+  <slot>ClicArrierePlanPhoto()</slot>
+  <slot>OnRetirerImage()</slot>
+  <slot>OnActionAideCreation()</slot>
+  <slot>DessinerPolygone()</slot>
+  <slot>OnActionNouveauProjet()</slot>
+  <slot>DessinerPolygoneSivide()</slot>
+ </slots>
+</ui>
