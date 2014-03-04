@@ -13,6 +13,7 @@ public:
     void raise() const { throw *this; }
     ExceptionAttention *clone() const { return new ExceptionAttention(*this); }
     void Afficher(QWidget* parent);
+    virtual ~ExceptionAttention() throw() {}
 private:
     QString message;
 };

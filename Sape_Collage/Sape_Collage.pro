@@ -23,7 +23,6 @@ SOURCES += main.cpp\
     formecercle.cpp \
     formeextra.cpp \
     dialogapropos.cpp \
-    arriereplancolorie.cpp \
     grillephotos.cpp \
     convertisseur.cpp \
     windowslave.cpp \

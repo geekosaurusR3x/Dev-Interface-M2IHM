@@ -112,7 +112,7 @@ void WindowSlave::EffacerListePhoto(GrillePhotos *g, QPushButton *moins, QPushBu
     }
 }
 
-void WindowSlave::SetTextBouton(bool value, QPushButton *bouton,QString& section)
+void WindowSlave::SetTextBouton(bool value, QPushButton *bouton, const QString& section)
 {
     if(value)
     {
@@ -126,7 +126,7 @@ void WindowSlave::SetTextBouton(bool value, QPushButton *bouton,QString& section
     }
 }
 
-void WindowSlave::GriseOuDegriseGroupe(bool &mode, QPushButton *boutonMode, QString& section, QWidget **groupe, int nb)
+void WindowSlave::GriseOuDegriseGroupe(bool &mode, QPushButton *boutonMode, const QString& section, QWidget **groupe, int nb)
 {
     mode = !mode;
     SetTextBouton(mode,boutonMode,section);

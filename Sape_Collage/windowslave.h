@@ -25,8 +25,8 @@ public:
     static void RetirerImage(GrillePhotos* g, QPushButton* moins, QPushButton *clear, QLabel* l);
     static void ViderGrillePhoto(GrillePhotos *g, QPushButton *moins, QPushButton *clear, QLabel* l);
     static void EffacerListePhoto(GrillePhotos *g, QPushButton *moins, QPushButton *clear, QLabel *l);
-    static void SetTextBouton(bool value, QPushButton *bouton, QString &section);
-    static void GriseOuDegriseGroupe(bool &mode, QPushButton *boutonMode, QString &section, QWidget * *groupe, int nb);
+    static void SetTextBouton(bool value, QPushButton *bouton, const QString &section);
+    static void GriseOuDegriseGroupe(bool &mode, QPushButton *boutonMode, const QString &section, QWidget * *groupe, int nb);
     static void ChangerCouleurArrierePlan(LabelClicable* label);
     static void ChargerPhotoArrierePlan(LabelClicable* label,QString& lienPhoto);
     static void DessinerForme();
