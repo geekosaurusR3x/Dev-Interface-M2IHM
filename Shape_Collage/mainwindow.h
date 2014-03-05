@@ -28,7 +28,7 @@
 #include "exceptionattention.h"
 #include "exceptionerreure.h"
 #include "parameters.h"
-#include <iostream>
+#include "davinci.h"
 
 namespace Ui {
 class MainWindow;
@@ -66,6 +66,8 @@ private:
     void GriseOuDegriseTaillePhoto();
     void GriseOuDegriseNombrePhoto();
     void GriseOuDegriseDistancePhoto();
+
+    DaVinci* mDaVinci;
 
 private slots:
     void OnActionQuitter();

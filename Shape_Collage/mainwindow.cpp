@@ -26,6 +26,8 @@ MainWindow::MainWindow(QWidget *parent) :
     LabelCouleurArrierePlan->setStatusTip("Couleur d'arrière-plan");
     LabelPhotoArrierePlan->setStatusTip("Utiliser une photo pour l'arrière-plan");
 
+    mDaVinci = new DaVinci(ui->LabelEtat);
+
     connect(grillePhotos,SIGNAL(clicked()),this,SLOT(DegriseRetirerImage()));
     connect(grillePhotos,SIGNAL(clacked()),this,SLOT(GriserBoutonRetirerImage()));
     connect(LabelCouleurArrierePlan, SIGNAL( clicked() ), this, SLOT( ChangerCouleurArrierePlan()));
@@ -350,21 +352,49 @@ void MainWindow::on_BoutonNombrePhotos_clicked() {
 
 void MainWindow::on_BoutonApercu_clicked()
 {
-    // TODO conversion
-    QSize imageSize = QSize(ui->LineEditLargeur->text().toInt(), ui->LineEditHauteur->text().toInt());
-    int collageSize = ui->LineEditTaillePhoto->text().toInt();
-    int nbPhotos;
-    if (this->ModeNombrePhoto) {
-        // FIXME
-        nbPhotos = this->grillePhotos->getListePhoto().size();
-    } else {
-        nbPhotos = ui->LineEditNombrePhoto->text().toInt();
-    }
-    int distanceBetweenPhotos = ui->SpinBoxDistancePhotos->value();
+    // TODO Check if photo list is empty
+
+    QSize collageSize; // NULL ?
+    int imageSize = -1;
+    int nbPhotos = -1;
+    int distanceBetweenPhotos = -1;
     QImage background = QImage(this->LienPhotoArrierePlan);
     CollageForm form;
 
-    if (ui->RadioBoutonExtra->isChecked()){
+    if (this->ModeTailleCollage) {
+            float height = ui->LineEditHauteur->text().toInt();
+            float width = ui->LineEditLargeur->text().toInt();
+            switch (this->UMTailleCollage) {
+                case 1: // Current: inch (pouces)
+                    height = Convertisseur::Convertisseur::PouceToPixels(height);
+                    width = Convertisseur::Convertisseur::PouceToPixels(width);
+                    break;
+                case 2: // Current: cm
+                    height = Convertisseur::Convertisseur::CmToPixel(height);
+                    width = Convertisseur::Convertisseur::CmToPixel(width);
+                    break;
+            }
+            // TODO Multiply by 100 to get rid float
+            collageSize = QSize(width, height);
+    }
+
+    if (this->ModeTaillePhoto) {
+        imageSize = ui->LineEditTaillePhoto->text().toInt();
+    }
+
+    if (this->ModeNombrePhoto) {
+        if (ui->RadioBoutonPhotos->isChecked()) {
+            nbPhotos = ui->LineEditNombrePhoto->text().toInt();
+        } else {
+            nbPhotos = this->grillePhotos->getListePhoto().size();
+        }
+    }
+
+    if (this->ModeDistanceEntrePhotos) {
+        distanceBetweenPhotos = ui->SpinBoxDistancePhotos->value();
+    }
+
+    if (ui->RadioBoutonExtra->isChecked()) {
         form = FREEHAND;
     } else if (ui->RadioBoutonCercle->isChecked()) {
         form = CIRCLE;
@@ -372,8 +402,10 @@ void MainWindow::on_BoutonApercu_clicked()
         form = RECTANGLE;
     }
 
-    Parameters params = Parameters(imageSize, collageSize, nbPhotos, distanceBetweenPhotos, background, form, this->grillePhotos->getListePhoto());
-    std::cout << params;
+    Parameters params = Parameters(collageSize, imageSize, nbPhotos, distanceBetweenPhotos, background, form, this->grillePhotos->getListePhoto());
+    qDebug() << params;
+    mDaVinci->draw(params);
+
 }
 
 void MainWindow::on_BoutonCreer_clicked()

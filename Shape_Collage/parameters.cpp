@@ -85,13 +85,13 @@ void Parameters::setPhotoList(const QStringList &value)
     photoList = value;
 }
 
-
-std::ostream& operator <<(std::ostream& out, const Parameters& obj) {
-    out << "CollageSize: " << obj.getCollageSize().rheight() << "x" << obj.getCollageSize().rwidth() ;
-    out << "PhotoSize: " << obj.getPhotoSize();
-    out << "Nb Photos: " << obj.getNbPhotos();
-    // out << "Background: " << obj.getBackground();
-    out << "form: " << obj.getForm();
-    out << "PhotoList"; //<< obj.getPhotoList();
-    return out;
+QDebug operator <<(QDebug dbg, const Parameters& obj) {
+    dbg.nospace() << "CollageSize: " << obj.getCollageSize().rheight() << "x" << obj.getCollageSize().rwidth();
+    dbg.space() << "PhotoSize: " << obj.getPhotoSize();
+    dbg.space() << "Nb Photos: " << obj.getNbPhotos();
+    dbg.space() << "Distance: " << obj.getDistanceBetweenPhotos();
+    // dbg << "Background: " << obj.getBackground();
+    dbg.space() << "form: " << obj.getForm();
+    dbg.space() << "PhotoList"; //<< obj.getPhotoList();
+    return dbg.space();
 }

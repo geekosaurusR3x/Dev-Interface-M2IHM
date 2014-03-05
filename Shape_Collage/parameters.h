@@ -6,6 +6,7 @@
 #include <QImage>
 #include <QSize>
 #include <QStringList>
+#include <QDebug>
 
 enum CollageForm {
     CIRCLE = 0,
@@ -16,8 +17,8 @@ enum CollageForm {
 class Parameters : public QObject
 {
     Q_OBJECT
-    friend std::ostream& operator <<(std::ostream& out, const Parameters& obj);
-public:
+    friend QDebug operator <<(QDebug dbg, const Parameters& obj);
+    public:
     Parameters(QSize&, int&, int&, int&, QImage&, CollageForm, QStringList, QObject *parent = 0);
     Parameters(const Parameters&);
     QSize getCollageSize() const;

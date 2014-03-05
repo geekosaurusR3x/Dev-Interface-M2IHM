@@ -39,7 +39,8 @@ SOURCES += main.cpp\
     exceptionattention.cpp \
     exceptionerreure.cpp \
     wizardcollage.cpp \
-    parameters.cpp
+    parameters.cpp \
+    davinci.cpp
 
 HEADERS  += mainwindow.h \
     forme.h \
@@ -67,7 +68,8 @@ HEADERS  += mainwindow.h \
     exceptionattention.h \
     exceptionerreure.h \
     wizardcollage.h \
-    parameters.h
+    parameters.h \
+    davinci.h
 
 FORMS    += mainwindow.ui \
     dialogapropos.ui \
