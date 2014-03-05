@@ -346,13 +346,9 @@ void MainWindow::GriserBoutonRetirerImage()
     }
 }*/
 
-void MainWindow::on_BoutonNombrePhotos_clicked() {
+Parameters MainWindow::getParameters() {
 
-}
-
-void MainWindow::on_BoutonApercu_clicked()
-{
-    // TODO Check if photo list is empty
+// TODO Check if photo list is empty
 
     QSize collageSize; // NULL ?
     int imageSize = -1;
@@ -404,14 +400,40 @@ void MainWindow::on_BoutonApercu_clicked()
 
     Parameters params = Parameters(collageSize, imageSize, nbPhotos, distanceBetweenPhotos, background, form, this->grillePhotos->getListePhoto());
     qDebug() << params;
-    mDaVinci->draw(params);
+    return params;
+}
 
+void MainWindow::on_BoutonNombrePhotos_clicked() {
+
+}
+
+void MainWindow::on_BoutonApercu_clicked()
+{
+        mDaVinci->draw(getParameters());
+
+}
+
+void MainWindow::showSuccessDialog() {
+    QMessageBox msgBox;
+    msgBox.setText("Votre image a bien été enregistrée!");
+    msgBox.exec();
+}
+
+void MainWindow::showFailureDialog()  {
+    QMessageBox msgBox;
+    msgBox.setText("Erreur!");
+    msgBox.exec();
 }
 
 void MainWindow::on_BoutonCreer_clicked()
 {
-    QMessageBox msgBox;
-    msgBox.setText("TODO - Preview");
-    msgBox.setWindowTitle("Nothing here yet");
-    msgBox.exec();
+    Parameters params = getParameters();
+    if (! mDaVinci->getAlreadyGenerated()) {
+        mDaVinci->draw(params);
+    }
+    if (mDaVinci->exportImage(params)) {
+        showSuccessDialog();
+    } else {
+        showFailureDialog();
+    }
 }

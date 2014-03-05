@@ -12,9 +12,8 @@ public:
     DaVinci(QObject *parent = 0);
     DaVinci(QLabel*&, QObject *parent = 0);
     DaVinci(const DaVinci&);
-    void draw(Parameters&);
-    void exportImage(Parameters&);
-
+    bool draw(Parameters);
+    bool exportImage(Parameters);
     bool getAlreadyGenerated() const;
 
 private:

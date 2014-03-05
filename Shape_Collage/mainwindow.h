@@ -67,7 +67,10 @@ private:
     void GriseOuDegriseNombrePhoto();
     void GriseOuDegriseDistancePhoto();
 
+    Parameters getParameters();
     DaVinci* mDaVinci;
+    void showSuccessDialog();
+    void showFailureDialog();
 
 private slots:
     void OnActionQuitter();

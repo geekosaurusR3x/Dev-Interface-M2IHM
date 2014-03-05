@@ -16,15 +16,17 @@ DaVinci::DaVinci(QLabel*& label, QObject *parent) :
     mAlreadyGenerated = false;
 }
 
-void DaVinci::draw(Parameters& params)
+bool DaVinci::draw(Parameters params)
 {
     // TODO
     this->mCanvas->setText("TEST");
     mAlreadyGenerated = true;
+    return true;
 }
 
-void DaVinci::exportImage(Parameters& params) {
+bool DaVinci::exportImage(Parameters params) {
     // TODO
+    return true;
 }
 
 bool DaVinci::getAlreadyGenerated() const
