@@ -1,8 +1,4 @@
 #include "mainwindow.h"
-#include "ui_mainwindow.h"
-#include"wizard.h"
-#include"exceptionattention.h"
-#include"exceptionerreure.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -32,7 +28,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     connect(grillePhotos,SIGNAL(clicked()),this,SLOT(DegriseRetirerImage()));
     connect(grillePhotos,SIGNAL(clacked()),this,SLOT(GriserBoutonRetirerImage()));
-    connect( LabelCouleurArrierePlan, SIGNAL( clicked() ), this, SLOT( ChangerCouleurArrierePlan()));
+    connect(LabelCouleurArrierePlan, SIGNAL( clicked() ), this, SLOT( ChangerCouleurArrierePlan()));
     connect(LabelPhotoArrierePlan, SIGNAL(clicked()), this, SLOT(ChargerPhotoArrierePlan()));
     connect(LabelFormeExtra, SIGNAL(clicked()), this, SLOT(DessinerPolygone()));
 
@@ -348,3 +344,42 @@ void MainWindow::GriserBoutonRetirerImage()
     }
 }*/
 
+void MainWindow::on_BoutonNombrePhotos_clicked() {
+
+}
+
+void MainWindow::on_BoutonApercu_clicked()
+{
+    // TODO conversion
+    QSize imageSize = QSize(ui->LineEditLargeur->text().toInt(), ui->LineEditHauteur->text().toInt());
+    int collageSize = ui->LineEditTaillePhoto->text().toInt();
+    int nbPhotos;
+    if (this->ModeNombrePhoto) {
+        // FIXME
+        nbPhotos = this->grillePhotos->getListePhoto().size();
+    } else {
+        nbPhotos = ui->LineEditNombrePhoto->text().toInt();
+    }
+    int distanceBetweenPhotos = ui->SpinBoxDistancePhotos->value();
+    QImage background = QImage(this->LienPhotoArrierePlan);
+    CollageForm form;
+
+    if (ui->RadioBoutonExtra->isChecked()){
+        form = FREEHAND;
+    } else if (ui->RadioBoutonCercle->isChecked()) {
+        form = CIRCLE;
+    } else {
+        form = RECTANGLE;
+    }
+
+    Parameters params = Parameters(imageSize, collageSize, nbPhotos, distanceBetweenPhotos, background, form, this->grillePhotos->getListePhoto());
+    std::cout << params;
+}
+
+void MainWindow::on_BoutonCreer_clicked()
+{
+    QMessageBox msgBox;
+    msgBox.setText("TODO - Preview");
+    msgBox.setWindowTitle("Nothing here yet");
+    msgBox.exec();
+}

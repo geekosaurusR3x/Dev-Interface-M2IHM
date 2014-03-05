@@ -3,25 +3,32 @@
 
 #include <QMainWindow>
 #include "dialogapropos.h"
-#include<QPixmap>
-#include<QPainter>
-#include<QVBoxLayout>
-#include<QPoint>
-#include<QIcon>
-#include"convertisseur.h"
-#include<QMessageBox>
-#include<QDebug>
-#include<QStringList>
-#include<QColorDialog>
-#include<QChar>
-#include<QRegExp>
-#include<QFileDialog>
-#include"labelclicable.h"
-#include<QPushButton>
-#include<QString>
-#include"dialogdessinformeextra.h"
+#include <QPixmap>
+#include <QPainter>
+#include <QVBoxLayout>
+#include <QPoint>
+#include <QIcon>
+#include "convertisseur.h"
+#include <QMessageBox>
+#include <QDebug>
+#include <QStringList>
+#include <QColorDialog>
+#include <QChar>
+#include <QRegExp>
+#include <QFileDialog>
+#include "labelclicable.h"
+#include <QPushButton>
+#include <QString>
+#include "dialogdessinformeextra.h"
 #include "grillephotos.h"
 #include "windowslave.h"
+#include "mainwindow.h"
+#include "ui_mainwindow.h"
+#include "wizard.h"
+#include "exceptionattention.h"
+#include "exceptionerreure.h"
+#include "parameters.h"
+#include <iostream>
 
 namespace Ui {
 class MainWindow;
@@ -88,6 +95,11 @@ private slots:
     void DessinerPolygoneSivide();
     void EffacerListePhoto();
 
+    void on_BoutonApercu_clicked();
+    void on_BoutonCreer_clicked();
+    void on_BoutonNombrePhotos_clicked();
 };
 
 #endif // MAINWINDOW_H
+
+

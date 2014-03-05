@@ -38,7 +38,8 @@ SOURCES += main.cpp\
     dialogdessinformeextra.cpp \
     exceptionattention.cpp \
     exceptionerreure.cpp \
-    wizardcollage.cpp
+    wizardcollage.cpp \
+    parameters.cpp
 
 HEADERS  += mainwindow.h \
     forme.h \
@@ -65,7 +66,8 @@ HEADERS  += mainwindow.h \
     dialogdessinformeextra.h \
     exceptionattention.h \
     exceptionerreure.h \
-    wizardcollage.h
+    wizardcollage.h \
+    parameters.h
 
 FORMS    += mainwindow.ui \
     dialogapropos.ui \
