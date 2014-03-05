@@ -136,13 +136,14 @@ void WindowSlave::GriseOuDegriseGroupe(bool &mode, QPushButton *boutonMode, cons
     }
 }
 
-void WindowSlave::ChangerCouleurArrierePlan(LabelClicable *label)
+QColor WindowSlave::ChangerCouleurArrierePlan(LabelClicable *label)
 {
     QColor couleur=QColorDialog::getColor(Qt::white,label,"Choisissez la couleur de l'arrière plan");
     if(couleur.isValid())
     {
         label->ChangeCouleur(couleur);
     }
+    return couleur;
 }
 
 void WindowSlave::ChargerPhotoArrierePlan(LabelClicable *label, QString &lienPhoto)

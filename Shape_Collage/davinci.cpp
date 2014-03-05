@@ -22,9 +22,12 @@ bool DaVinci::draw(Parameters params)
     int photoSize;
     int distanceBetweenPhotos;
 
+    // Clear
+    mCanvas->clear();
+
     // Check parameters
     if (params.getCollageSize().rheight() < 0) {
-        collageSize = QSize(200, 200);
+        collageSize = QSize(1600, 900);
     } else {
        collageSize = params.getCollageSize();
     }
@@ -42,8 +45,14 @@ bool DaVinci::draw(Parameters params)
     }
 
     mPixmap = new QPixmap(collageSize);
+    // mPixmap->setMask(mPixmap->createHeuristicMask(true));
     QPixmap picture;
     QPainter painter(mPixmap);
+    //painter.setCompositionMode(QPainter::CompositionMode_Clear);
+    // Background image
+    //mPixmap->fill(params.getBackground());
+    // painter.background(params.getBackground());
+    painter.drawImage(QRect(0, 0 , collageSize.rwidth(), collageSize.rheight()), params.getBackground());
 
     foreach (QString imgStr, params.getPhotoList()) {
         #ifdef linux
@@ -57,14 +66,16 @@ bool DaVinci::draw(Parameters params)
 
         // Scale picture
         if (picture.width() > picture.height()){
-            picture.scaledToWidth(photoSize);
+            picture = picture.scaledToWidth(photoSize);
         } else {
-            picture.scaledToHeight(photoSize);
+            picture = picture.scaledToHeight(photoSize);
         }
 
+        // TODO position
         painter.drawPixmap(0, 0, picture);
     }
 
+    // TODO strech / repeat
     mCanvas->setPixmap(mPixmap->scaled(mCanvas->width(), mCanvas->height()));
 
     mCanvas->show();

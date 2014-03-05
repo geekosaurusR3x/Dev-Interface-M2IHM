@@ -208,7 +208,7 @@ void MainWindow::SetEnabledDistancePhoto()
 
 void MainWindow::ChangerCouleurArrierePlan()
 {
-    WindowSlave::ChangerCouleurArrierePlan(LabelCouleurArrierePlan);
+    mBackgroundColor = WindowSlave::ChangerCouleurArrierePlan(LabelCouleurArrierePlan);
 }
 
 void MainWindow::RestaurerValParDefaut()
@@ -354,7 +354,7 @@ Parameters MainWindow::getParameters() {
     int imageSize = -1;
     int nbPhotos = -1;
     int distanceBetweenPhotos = -1;
-    QImage background = QImage(this->LienPhotoArrierePlan);
+    QImage background; //  = QImage(this->LienPhotoArrierePlan);
     CollageForm form;
 
     if (this->ModeTailleCollage) {
@@ -396,6 +396,17 @@ Parameters MainWindow::getParameters() {
         form = CIRCLE;
     } else {
         form = RECTANGLE;
+    }
+
+    if (ui->RadioBoutonArrierePlanColorie->isChecked()) {
+        background = QImage(1, 1, QImage::Format_ARGB32);
+        background.fill(mBackgroundColor);
+    } else if (ui->RadioBoutonArrierePlanTransparent->isChecked()) {
+        background = QImage(1,1, QImage::Format_ARGB32);
+        //background.fill(qRgba(0,0,0,0));
+        background.fill(Qt::transparent);
+    } else {
+        background = QImage(this->LienPhotoArrierePlan);
     }
 
     Parameters params = Parameters(collageSize, imageSize, nbPhotos, distanceBetweenPhotos, background, form, this->grillePhotos->getListePhoto());

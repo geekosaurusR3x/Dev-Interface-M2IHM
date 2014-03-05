@@ -71,6 +71,7 @@ private:
     DaVinci* mDaVinci;
     void showSuccessDialog();
     void showFailureDialog();
+    QColor mBackgroundColor;
 
 private slots:
     void OnActionQuitter();

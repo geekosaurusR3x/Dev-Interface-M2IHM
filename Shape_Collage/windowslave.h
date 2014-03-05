@@ -27,7 +27,7 @@ public:
     static void EffacerListePhoto(GrillePhotos *g, QPushButton *moins, QPushButton *clear, QLabel *l);
     static void SetTextBouton(bool value, QPushButton *bouton, const QString &section);
     static void GriseOuDegriseGroupe(bool &mode, QPushButton *boutonMode, const QString &section, QWidget * *groupe, int nb);
-    static void ChangerCouleurArrierePlan(LabelClicable* label);
+    static QColor ChangerCouleurArrierePlan(LabelClicable* label);
     static void ChargerPhotoArrierePlan(LabelClicable* label,QString& lienPhoto);
     static void DessinerForme();
     static bool EstUneImage(QString& fichier);

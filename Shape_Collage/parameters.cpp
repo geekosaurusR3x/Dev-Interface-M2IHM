@@ -90,7 +90,7 @@ QDebug operator <<(QDebug dbg, const Parameters& obj) {
     dbg.space() << "PhotoSize: " << obj.getPhotoSize();
     dbg.space() << "Nb Photos: " << obj.getNbPhotos();
     dbg.space() << "Distance: " << obj.getDistanceBetweenPhotos();
-    // dbg << "Background: " << obj.getBackground();
+    dbg << "Background: " << obj.getBackground().isNull() << obj.getBackground().size().rheight() <<  "x" << obj.getBackground().size().rwidth();
     dbg.space() << "form: " << obj.getForm();
     dbg.space() << "PhotoList"; //<< obj.getPhotoList();
     return dbg.space();
