@@ -6,6 +6,7 @@
 #include "parameters.h"
 #include <QPainter>
 #include <QPicture>
+#include <QFile>
 
 class DaVinci : public QObject
 {
@@ -21,6 +22,7 @@ public:
 private:
     QLabel *mCanvas;
     bool mAlreadyGenerated;
+    QPixmap* mPixmap;
 signals:
 
 public slots:

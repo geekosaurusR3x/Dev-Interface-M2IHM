@@ -18,35 +18,64 @@ DaVinci::DaVinci(QLabel*& label, QObject *parent) :
 
 bool DaVinci::draw(Parameters params)
 {
-    // TODO
-    // this->mCanvas->setText("TEST");
+    QSize collageSize;
+    int photoSize;
+    int distanceBetweenPhotos;
 
-    // TODO Check size
-    QPixmap pixmap(params.getCollageSize());
+    // Check parameters
+    if (params.getCollageSize().rheight() < 0) {
+        collageSize = QSize(200, 200);
+    } else {
+       collageSize = params.getCollageSize();
+    }
+
+    if (params.getPhotoSize() < 0) {
+        photoSize = 200;
+    } else {
+        photoSize = params.getPhotoSize();
+    }
+
+    if (params.getDistanceBetweenPhotos() < 0) {
+        distanceBetweenPhotos = 200;
+    } else {
+        distanceBetweenPhotos = params.getDistanceBetweenPhotos();
+    }
+
+    mPixmap = new QPixmap(collageSize);
     QPixmap picture;
-    QPainter painter(&pixmap);
+    QPainter painter(mPixmap);
 
     foreach (QString imgStr, params.getPhotoList()) {
-#ifdef linux
-        imgStr = "/" + imgStr;
-#endif
+        #ifdef linux
+           imgStr = "/" + imgStr;
+        #endif
         qDebug() << "Draw : " << imgStr;
         if (!picture.load(imgStr)) {
             qDebug() << "FAILURE";
+            // return;
         }
 
+        // Scale picture
+        if (picture.width() > picture.height()){
+            picture.scaledToWidth(photoSize);
+        } else {
+            picture.scaledToHeight(photoSize);
+        }
 
         painter.drawPixmap(0, 0, picture);
     }
 
-    mCanvas->setPixmap(pixmap);
+    mCanvas->setPixmap(mPixmap->scaled(mCanvas->width(), mCanvas->height()));
+
     mCanvas->show();
     mAlreadyGenerated = true;
     return true;
 }
 
 bool DaVinci::exportImage(Parameters params) {
-    // TODO
+    QFile file("/tmp/tmp.png");
+    file.open(QIODevice::WriteOnly);
+    mPixmap->save(&file, "PNG");
     return true;
 }
 

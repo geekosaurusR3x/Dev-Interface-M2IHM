@@ -428,9 +428,10 @@ void MainWindow::showFailureDialog()  {
 void MainWindow::on_BoutonCreer_clicked()
 {
     Parameters params = getParameters();
-    if (! mDaVinci->getAlreadyGenerated()) {
+    // TODO Uncomment
+    //if (! mDaVinci->getAlreadyGenerated()) {
         mDaVinci->draw(params);
-    }
+    //}
     if (mDaVinci->exportImage(params)) {
         showSuccessDialog();
     } else {
