@@ -362,12 +362,12 @@ Parameters MainWindow::getParameters() {
             float width = ui->LineEditLargeur->text().toInt();
             switch (this->UMTailleCollage) {
                 case 1: // Current: inch (pouces)
-                    height = Convertisseur::Convertisseur::PouceToPixels(height);
-                    width = Convertisseur::Convertisseur::PouceToPixels(width);
+                    height = Convertisseur::PouceToPixels(height);
+                    width = Convertisseur::PouceToPixels(width);
                     break;
                 case 2: // Current: cm
-                    height = Convertisseur::Convertisseur::CmToPixel(height);
-                    width = Convertisseur::Convertisseur::CmToPixel(width);
+                    height = Convertisseur::CmToPixel(height);
+                    width = Convertisseur::CmToPixel(width);
                     break;
             }
             // TODO Multiply by 100 to get rid float

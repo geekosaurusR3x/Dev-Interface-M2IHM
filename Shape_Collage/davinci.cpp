@@ -27,11 +27,14 @@ bool DaVinci::draw(Parameters params)
     QPainter painter(&pixmap);
 
     foreach (QString imgStr, params.getPhotoList()) {
+#ifdef linux
         imgStr = "/" + imgStr;
+#endif
         qDebug() << "Draw : " << imgStr;
         if (!picture.load(imgStr)) {
-                qDebug() << "FAILURE";
+            qDebug() << "FAILURE";
         }
+
 
         painter.drawPixmap(0, 0, picture);
     }
