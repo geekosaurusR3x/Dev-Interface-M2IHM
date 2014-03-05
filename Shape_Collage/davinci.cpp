@@ -19,7 +19,25 @@ DaVinci::DaVinci(QLabel*& label, QObject *parent) :
 bool DaVinci::draw(Parameters params)
 {
     // TODO
-    this->mCanvas->setText("TEST");
+    // this->mCanvas->setText("TEST");
+
+    // TODO Check size
+    QPixmap pixmap(params.getCollageSize());
+    QPixmap picture;
+    QPainter painter(&pixmap);
+
+    foreach (QString imgStr, params.getPhotoList()) {
+        imgStr = "/" + imgStr;
+        qDebug() << "Draw : " << imgStr;
+        if (!picture.load(imgStr)) {
+                qDebug() << "FAILURE";
+        }
+
+        painter.drawPixmap(0, 0, picture);
+    }
+
+    mCanvas->setPixmap(pixmap);
+    mCanvas->show();
     mAlreadyGenerated = true;
     return true;
 }

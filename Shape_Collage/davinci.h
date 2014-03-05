@@ -4,6 +4,8 @@
 #include <QObject>
 #include <QLabel>
 #include "parameters.h"
+#include <QPainter>
+#include <QPicture>
 
 class DaVinci : public QObject
 {
