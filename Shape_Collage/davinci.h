@@ -10,7 +10,7 @@
 #include <QFile>
 #include <qmath.h>
 #include <QBitmap>
-
+#include <ctime>
 class DaVinci : public QObject
 {
     Q_OBJECT
