@@ -144,11 +144,9 @@ bool DaVinci::draw(Parameters params)
 
         // Rotation
         QTransform rotation;
-        float randRotation = rand() % 180;
+        float randRotation = -30 + rand() % 60;
         rotation.rotate(randRotation);
         currentImage = currentImage.transformed(rotation);
-
-//        currentImage.setMask(currentImage.createHeuristicMask());
 
         // Scale image
         if (currentImage.width() > currentImage.height()) {
