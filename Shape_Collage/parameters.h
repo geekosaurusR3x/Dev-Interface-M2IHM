@@ -42,6 +42,9 @@ class Parameters : public QObject
     QStringList getPhotoList() const;
     void setPhotoList(const QStringList &value);
 
+    bool getDrawingAnimation() const;
+    void setDrawingAnimation(bool value);
+
 signals:
 
 public slots:
@@ -54,6 +57,7 @@ private:
     QPixmap background;
     CollageForm form;
     QStringList photoList;
+    bool drawingAnimation;
 };
 
 

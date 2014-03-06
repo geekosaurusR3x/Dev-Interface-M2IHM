@@ -426,6 +426,7 @@ Parameters MainWindow::getParameters() {
 
     int intImgSize = static_cast<int>(imageSize);
     Parameters params = Parameters(collageSize, intImgSize, nbPhotos, distanceBetweenPhotos, background, form, this->grillePhotos->getListePhoto());
+    params.setDrawingAnimation(ui->CheckBoxActiverAnimation->isChecked());
     qDebug() << params;
     return params;
 }
@@ -438,7 +439,7 @@ void MainWindow::on_BoutonApercu_clicked()
 {
     Parameters params = getParameters();
     if (this->grillePhotos->getListePhoto().size() > 0) {
-        mDaVinci->draw(params);
+        mDaVinci->draw(params, ui->ProgressBarJauge);
     } else {
         showFailureDialog("Veuillez ajouter au moins une photo.");
     }

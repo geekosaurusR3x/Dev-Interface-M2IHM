@@ -84,6 +84,16 @@ void Parameters::setPhotoList(const QStringList &value)
 {
     photoList = value;
 }
+bool Parameters::getDrawingAnimation() const
+{
+    return drawingAnimation;
+}
+
+void Parameters::setDrawingAnimation(bool value)
+{
+    drawingAnimation = value;
+}
+
 
 QDebug operator <<(QDebug dbg, const Parameters& obj) {
     dbg.nospace() << "CollageSize: " << obj.getCollageSize().rheight() << "x" << obj.getCollageSize().rwidth();

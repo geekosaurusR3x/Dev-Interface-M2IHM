@@ -16,7 +16,7 @@ DaVinci::DaVinci(QLabel*& label, QObject *parent) :
     mAlreadyGenerated = false;
 }
 
-bool DaVinci::draw(Parameters params)
+bool DaVinci::draw(Parameters params, QProgressBar*& progressBar)
 {
     QSize collageSize = params.getCollageSize();
     int photoSize = params.getPhotoSize();
@@ -24,6 +24,7 @@ bool DaVinci::draw(Parameters params)
     int nbPhotos = params.getNbPhotos();
     int horizontalPadding, verticalPadding;
     CollageForm form = params.getForm();
+    int progress = 0;
 
     // Collage size is set manually
     if (collageSize.width() > 0) {
@@ -41,6 +42,7 @@ bool DaVinci::draw(Parameters params)
             nbPhotos = params.getPhotoList().size();
         }
     }
+    progress = 100 / nbPhotos;
 
 
     int cols = qFloor(qSqrt(nbPhotos));
@@ -204,6 +206,11 @@ bool DaVinci::draw(Parameters params)
         qDebug() << "xpos size: " << xPos.size() << " ypos size: " << yPos.size() << " srcList" << "rotation: " << randRotation << "ImgSrcSize: " << imageSrcList.size();
 
         painter.drawPixmap(xPos.at(index), yPos.at(index), currentImage);
+        if (params.getDrawingAnimation()) {
+            finalPainter.drawPixmap(horizontalPadding / 2, verticalPadding / 2, pixmap);
+            mCanvas->setPixmap(mFinalPixmap->scaled(mCanvas->width(), mCanvas->height()));
+        }
+        progressBar->setValue(progressBar->value() + progress);
 
         // Pop
         nbPhotos--;
@@ -211,6 +218,9 @@ bool DaVinci::draw(Parameters params)
         xPos.removeAt(index);
         yPos.removeAt(index);
     }
+
+    // We are done
+    progressBar->setValue(100);
 
     finalPainter.drawPixmap(horizontalPadding / 2, verticalPadding / 2, pixmap);
 

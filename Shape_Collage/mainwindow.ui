@@ -178,7 +178,7 @@
       <enum>QFrame::Sunken</enum>
      </property>
      <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt; font-weight:600; color:#d3ccc9;&quot;&gt;Ajouter les photos et&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt; font-weight:600; color:#d3ccc9;&quot;&gt;cliquer sur &amp;quot;créer&amp;quot;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt; font-weight:600; color:#d3ccc9;&quot;&gt;Ajoutez les photos et&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt; font-weight:600; color:#d3ccc9;&quot;&gt;cliquez sur &amp;quot;Créer&amp;quot;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -189,12 +189,12 @@
       <rect>
        <x>150</x>
        <y>473</y>
-       <width>81</width>
+       <width>91</width>
        <height>20</height>
       </rect>
      </property>
      <property name="text">
-      <string>Terminer</string>
+      <string>Avancement</string>
      </property>
     </widget>
    </widget>

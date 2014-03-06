@@ -10,7 +10,9 @@
 #include <QFile>
 #include <qmath.h>
 #include <QBitmap>
+#include <QProgressBar>
 #include <ctime>
+
 class DaVinci : public QObject
 {
     Q_OBJECT
@@ -18,7 +20,7 @@ public:
     DaVinci(QObject *parent = 0);
     DaVinci(QLabel*&, QObject *parent = 0);
     DaVinci(const DaVinci&);
-    bool draw(Parameters);
+    bool draw(Parameters, QProgressBar*&);
     bool exportImage(QString);
     bool getAlreadyGenerated() const;
 
