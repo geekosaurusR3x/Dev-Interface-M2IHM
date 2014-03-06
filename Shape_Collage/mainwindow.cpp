@@ -437,7 +437,7 @@ void MainWindow::on_BoutonNombrePhotos_clicked() {
 void MainWindow::on_BoutonApercu_clicked()
 {
     Parameters params = getParameters();
-    if (params.getNbPhotos() > 0) {
+    if (this->grillePhotos->getListePhoto().size() > 0) {
         mDaVinci->draw(params);
     } else {
         showFailureDialog("Veuillez ajouter au moins une photo.");
@@ -467,7 +467,11 @@ void MainWindow::on_BoutonCreer_clicked()
     }
     if (mDaVinci->getAlreadyGenerated()) {
         // FIXME check file existance
-        QString fichier = QFileDialog::getSaveFileName(this,"Choisir où enregistrer votre collage","", ".png");
+        QString defaultLocation = "";
+#ifdef linux
+     defaultLocation = "/tmp";
+#endif
+        QString fichier = QFileDialog::getSaveFileName(this,"Choisir où enregistrer votre collage", defaultLocation, ".png");
 
         if (fichier != NULL) {
             if (mDaVinci->exportImage(fichier)) {

@@ -23,6 +23,7 @@ bool DaVinci::draw(Parameters params)
     float distanceBetweenPhotos = params.getDistanceBetweenPhotos();
     int nbPhotos = params.getNbPhotos();
     int horizontalPadding, verticalPadding;
+    CollageForm form = params.getForm();
 
     // Collage size is set manually
     if (collageSize.width() > 0) {
@@ -36,6 +37,9 @@ bool DaVinci::draw(Parameters params)
         int nbPhotosLine = (collageSize.width() - horizontalPadding) / photoSize;
         int nbPhotosCol = (collageSize.height() - verticalPadding) / photoSize;
         nbPhotos = nbPhotosLine * nbPhotosCol;
+        if (nbPhotos > params.getPhotoList().size()) {
+            nbPhotos = params.getPhotoList().size();
+        }
     }
 
 
@@ -112,19 +116,61 @@ bool DaVinci::draw(Parameters params)
 
             qDebug() << "current X: " << currentCellX <<  " current Y: " << currentCellY;
 
-            // TODO other forms
-            xPos.push_back(currentCellX);
-            yPos.push_back(currentCellY);
+            switch (form) {
+            case CIRCLE:
+            {
+                // Circle
+                float radius = qMax(collageSize.height(), collageSize.width()) / 2;
+                float centerX = collageSize.width() / 2;
+                float centerY = collageSize.height() / 2;
+
+                float currentCellCenterX = currentCellX + (cellWidth / 2);
+                float currentCellCenterY = currentCellY + (cellHeight / 2);
+
+                float distance = qSqrt(qPow((currentCellCenterX - centerX), 2) + qPow((currentCellCenterY - centerY), 2));
+
+                qDebug() << "Radius:" << radius << " centerX" << centerX << " centerY " << centerY  << " CurCellX: " << currentCellCenterX << " CurCellY :"  << currentCellCenterY << " Distance: " << distance;
+
+                if (distance < radius) {
+                    // position in circle
+                    xPos.push_back(currentCellX);
+                    yPos.push_back(currentCellY);
+                } else {
+                    nbRandomImages++;
+                }
+                break;
+            }
+            case RECTANGLE:
+            {
+                // Rectangle
+                xPos.push_back(currentCellX);
+                yPos.push_back(currentCellY);
+                break;
+            }
+            }
         }
     }
 
     // Randomly place the remaining images
     for (int i = 0; i < nbRandomImages; i++) {
-        xPos.push_back(rand() % collageSize.width());
-        yPos.push_back(rand() % collageSize.height());
+        switch (form) {
+        case RECTANGLE:
+        {
+            xPos.push_back(rand() % collageSize.width());
+            yPos.push_back(rand() % collageSize.height());
+            break;
+        }
+        default:
+        {
+            // Default to center
+            xPos.push_back(collageSize.width() / 2);
+            yPos.push_back(collageSize.height() / 2);
+            break;
+        }
+        }
     }
 
-    // Randomly place images (normal placement)
+    // Randomly place images
     while (nbPhotos > 0) {
         int index = rand() % nbPhotos;
 
