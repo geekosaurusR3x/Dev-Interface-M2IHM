@@ -39,7 +39,8 @@ void LabelClicable::ChangeCouleur(QColor couleur)
 
 void LabelClicable::mousePressEvent ( QMouseEvent * event )
 {
-    emit clicked();
+    if(event->button()==Qt::LeftButton)
+        emit clicked();
 }
 
 
