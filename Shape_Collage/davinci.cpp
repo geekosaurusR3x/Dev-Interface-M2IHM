@@ -215,11 +215,12 @@ bool DaVinci::draw(Parameters params)
     finalPainter.drawPixmap(horizontalPadding / 2, verticalPadding / 2, pixmap);
 
     // TODO strech / repeat
-    if (mFinalPixmap->width() < mCanvas->width() && mFinalPixmap->height() < mCanvas->height()) {
+    /*if (mFinalPixmap->width() < mCanvas->width() && mFinalPixmap->height() < mCanvas->height()) {
         mCanvas->setPixmap(*mFinalPixmap);
     } else {
+    */
        mCanvas->setPixmap(mFinalPixmap->scaled(mCanvas->width(), mCanvas->height()));
-    }
+    // }
     mCanvas->show();
     mAlreadyGenerated = true;
     return true;

@@ -76,7 +76,7 @@
       <rect>
        <x>70</x>
        <y>530</y>
-       <width>81</width>
+       <width>101</width>
        <height>23</height>
       </rect>
      </property>
@@ -151,7 +151,7 @@
       <rect>
        <x>20</x>
        <y>20</y>
-       <width>61</width>
+       <width>81</width>
        <height>21</height>
       </rect>
      </property>
@@ -227,7 +227,7 @@
        <rect>
         <x>10</x>
         <y>20</y>
-        <width>71</width>
+        <width>91</width>
         <height>17</height>
        </rect>
       </property>
@@ -246,7 +246,7 @@
        <rect>
         <x>10</x>
         <y>80</y>
-        <width>53</width>
+        <width>71</width>
         <height>17</height>
        </rect>
       </property>
@@ -260,10 +260,10 @@
      <widget class="QRadioButton" name="RadioBoutonExtra">
       <property name="geometry">
        <rect>
-        <x>130</x>
+        <x>118</x>
         <y>50</y>
-        <width>49</width>
-        <height>17</height>
+        <width>61</width>
+        <height>20</height>
        </rect>
       </property>
       <property name="statusTip">
@@ -321,7 +321,7 @@
        <rect>
         <x>10</x>
         <y>100</y>
-        <width>82</width>
+        <width>111</width>
         <height>21</height>
        </rect>
       </property>
@@ -335,10 +335,10 @@
      <widget class="QRadioButton" name="RadioBoutonArrierePlanPhoto">
       <property name="geometry">
        <rect>
-        <x>130</x>
+        <x>110</x>
         <y>60</y>
-        <width>51</width>
-        <height>16</height>
+        <width>71</width>
+        <height>20</height>
        </rect>
       </property>
       <property name="statusTip">
@@ -388,7 +388,7 @@
        <rect>
         <x>10</x>
         <y>20</y>
-        <width>81</width>
+        <width>101</width>
         <height>16</height>
        </rect>
       </property>
@@ -404,7 +404,7 @@
        <rect>
         <x>120</x>
         <y>20</y>
-        <width>41</width>
+        <width>51</width>
         <height>16</height>
        </rect>
       </property>
@@ -420,7 +420,7 @@
        <rect>
         <x>190</x>
         <y>20</y>
-        <width>41</width>
+        <width>61</width>
         <height>16</height>
        </rect>
       </property>
@@ -537,7 +537,7 @@
        <rect>
         <x>10</x>
         <y>80</y>
-        <width>91</width>
+        <width>111</width>
         <height>16</height>
        </rect>
       </property>
@@ -613,7 +613,7 @@
        <rect>
         <x>10</x>
         <y>140</y>
-        <width>91</width>
+        <width>131</width>
         <height>16</height>
        </rect>
       </property>
@@ -696,7 +696,7 @@
        <rect>
         <x>220</x>
         <y>170</y>
-        <width>41</width>
+        <width>61</width>
         <height>21</height>
        </rect>
       </property>
@@ -725,7 +725,7 @@
        <rect>
         <x>30</x>
         <y>220</y>
-        <width>131</width>
+        <width>171</width>
         <height>16</height>
        </rect>
       </property>
@@ -861,9 +861,9 @@
    <widget class="QPushButton" name="BoutonRestaurerValeurs">
     <property name="geometry">
      <rect>
-      <x>800</x>
+      <x>770</x>
       <y>560</y>
-      <width>181</width>
+      <width>211</width>
       <height>23</height>
      </rect>
     </property>
@@ -879,7 +879,7 @@
      <rect>
       <x>360</x>
       <y>540</y>
-      <width>201</width>
+      <width>271</width>
       <height>21</height>
      </rect>
     </property>
