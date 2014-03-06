@@ -348,10 +348,7 @@ void MainWindow::GriserBoutonRetirerImage()
 }*/
 
 Parameters MainWindow::getParameters() {
-
-// TODO Check if photo list is empty
-
-    QSize collageSize; // NULL ?
+    QSize collageSize;
     double imageSize = -1;
     int nbPhotos = -1;
     int distanceBetweenPhotos = -1;
@@ -470,7 +467,7 @@ void MainWindow::on_BoutonCreer_clicked()
         // FIXME check file existance
         QString defaultLocation = "";
 #ifdef linux
-     defaultLocation = "/tmp";
+        defaultLocation = "/tmp";
 #endif
         QString fichier = QFileDialog::getSaveFileName(this,"Choisir où enregistrer votre collage", defaultLocation, ".png");
 

@@ -19,7 +19,7 @@ LabelClicable::LabelClicable(bool acceptdrop, QWidget * parent )
     setAcceptDrops(acceptdrop);
     if(acceptdrop)
     {
-        setText("<b>Faite glisser la photo ici</b>");
+        setText("<b>Faites glisser une image ici</b>");
         setWordWrap(acceptdrop);
         setAlignment(Qt::AlignCenter);
     }
