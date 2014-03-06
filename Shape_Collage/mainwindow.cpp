@@ -352,15 +352,18 @@ Parameters MainWindow::getParameters() {
 // TODO Check if photo list is empty
 
     QSize collageSize; // NULL ?
-    int imageSize = -1;
+    double imageSize = -1;
     int nbPhotos = -1;
     int distanceBetweenPhotos = -1;
     QPixmap background; //  = QImage(this->LienPhotoArrierePlan);
     CollageForm form;
 
     if (this->ModeTailleCollage) {
-            float height = ui->LineEditHauteur->text().toInt();
-            float width = ui->LineEditLargeur->text().toInt();
+            float height = ui->LineEditHauteur->text().toFloat();
+            float width = ui->LineEditLargeur->text().toFloat();
+            qDebug() << "orig W: " << ui->LineEditLargeur->text() << " orig H: " << ui->LineEditHauteur;
+            qDebug() << "W: " << width << " H:" << height;
+
             switch (this->UMTailleCollage) {
                 case 1: // Current: inch (pouces)
                     height = Convertisseur::PouceToPixels(height);
@@ -376,7 +379,17 @@ Parameters MainWindow::getParameters() {
     }
 
     if (this->ModeTaillePhoto) {
-        imageSize = ui->LineEditTaillePhoto->text().toInt();
+        imageSize = ui->LineEditTaillePhoto->text().toFloat();
+        switch (this->UMTaillePhoto) {
+        case 1:
+            imageSize = Convertisseur::PouceToPixels(imageSize);
+            break;
+        case 2:
+            imageSize = Convertisseur::CmToPixel(imageSize);
+            break;
+        }
+
+        qDebug() << "UI Image size: " << ui->LineEditTaillePhoto->text();
     }
 
     if (this->ModeNombrePhoto) {
@@ -413,7 +426,8 @@ Parameters MainWindow::getParameters() {
         background = QPixmap::fromImage(QImage(this->LienPhotoArrierePlan));
     }
 
-    Parameters params = Parameters(collageSize, imageSize, nbPhotos, distanceBetweenPhotos, background, form, this->grillePhotos->getListePhoto());
+    int intImgSize = static_cast<int>(imageSize);
+    Parameters params = Parameters(collageSize, intImgSize, nbPhotos, distanceBetweenPhotos, background, form, this->grillePhotos->getListePhoto());
     qDebug() << params;
     return params;
 }
