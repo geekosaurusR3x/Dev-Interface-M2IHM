@@ -77,47 +77,17 @@ bool DaVinci::draw(Parameters params)
     painter.drawPixmap(0, 0 , collageSize.rwidth(), collageSize.rheight(), params.getBackground());
     // painter.fillRect(mPixmap->rect(), QColor(0,0,0,0));
 
-
+    QList<int> xPos, yPos;
 
     for (int c = 0; c < cols; ++c) {
         for (int l = 0; l < lines; ++l) {
-
-            qDebug() << "l: " << l << " /" << lines << " c: " << c << " /" << cols << " it index: " << imageSrcList.indexOf(*it);
-
-            QString imgSrc = *it;
-            #ifdef linux
-                imgSrc = "/" + imgSrc;
-            #endif
-            qDebug() << "Draw : " << imgSrc;
-            // Load image
-            if (!currentImage.load(imgSrc)) {
-                    qDebug() << "FAILURE";
-                    break;
-                    // return;
-            }
-
-            // Scale image
-            if (currentImage.width() > currentImage.height()) {
-                currentImage = currentImage.scaledToWidth(photoSize);
-            } else {
-                currentImage = currentImage.scaledToHeight(photoSize);
-            }
-            //int imgWidth = currentImage.width();
-            //int imgHeight = currentImage.height();
-
             int currentCellX = l * cellWidth;
             int currentCellY = c * cellHeight;
 
             qDebug() << "current X: " << currentCellX <<  " current Y: " << currentCellY;
 
-            // TODO add padding
-            // FIXME
-
-            // TODO Random rotation
-
-            // Place normally
-            painter.drawPixmap(currentCellX, currentCellY, currentImage);
-            it++;
+            xPos.push_back(currentCellX);
+            yPos.push_back(currentCellY);
         }
     }
 
@@ -126,6 +96,38 @@ bool DaVinci::draw(Parameters params)
         currentImage.load(imageSrcList.at(imageSrcList.size() - i));
         // TODO Placement
     }
+
+    // Randomly place images (normal placement)
+    srand (time(NULL));
+    while (!imageSrcList.empty()) {
+        int index = rand() % imageSrcList.size();
+
+        QString imgSrc = imageSrcList.at(index);
+            #ifdef linux
+                imgSrc = "/" + imgSrc;
+            #endif
+            qDebug() << "Draw : " << imgSrc;
+            // Load image
+            if (!currentImage.load(imgSrc)) {
+            qDebug() << "FAILURE";
+            break;
+            // return;
+            }
+
+            // Scale image
+            if (currentImage.width() > currentImage.height()) {
+                currentImage = currentImage.scaledToWidth(photoSize);
+            } else {
+                currentImage = currentImage.scaledToHeight(photoSize);
+            }
+
+        painter.drawPixmap(xPos.at(index), yPos.at(index), currentImage);
+        // Delete img
+        imageSrcList.removeAt(index);
+        xPos.removeAt(index);
+        yPos.removeAt(index);
+    }
+
 
     /*
     QPixmap picture;
