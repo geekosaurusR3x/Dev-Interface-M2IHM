@@ -148,7 +148,7 @@ bool DaVinci::draw(Parameters params)
         rotation.rotate(randRotation);
         currentImage = currentImage.transformed(rotation);
 
-        currentImage.setMask(currentImage.createHeuristicMask());
+//        currentImage.setMask(currentImage.createHeuristicMask());
 
         // Scale image
         if (currentImage.width() > currentImage.height()) {
