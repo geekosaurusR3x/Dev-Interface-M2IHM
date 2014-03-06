@@ -3,7 +3,7 @@
 #include "ostream"
 
 #include <QObject>
-#include <QImage>
+#include <QPixmap>
 #include <QSize>
 #include <QStringList>
 #include <QDebug>
@@ -19,7 +19,7 @@ class Parameters : public QObject
     Q_OBJECT
     friend QDebug operator <<(QDebug dbg, const Parameters& obj);
     public:
-    Parameters(QSize&, int&, int&, int&, QImage&, CollageForm, QStringList, QObject *parent = 0);
+    Parameters(QSize&, int&, int&, int&, QPixmap&, CollageForm, QStringList, QObject *parent = 0);
     Parameters(const Parameters&);
     QSize getCollageSize() const;
     void setCollageSize(const QSize &value);
@@ -33,8 +33,8 @@ class Parameters : public QObject
     int getDistanceBetweenPhotos() const;
     void setDistanceBetweenPhotos(const int &value);
 
-    QImage getBackground() const;
-    void setBackground(const QImage &value);
+    QPixmap getBackground() const;
+    void setBackground(const QPixmap &value);
 
     CollageForm getForm() const;
     void setForm(const CollageForm &value);
@@ -51,7 +51,7 @@ private:
     int photoSize;
     int nbPhotos;
     int distanceBetweenPhotos;
-    QImage background;
+    QPixmap background;
     CollageForm form;
     QStringList photoList;
 };

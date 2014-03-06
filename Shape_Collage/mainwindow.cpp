@@ -27,6 +27,7 @@ MainWindow::MainWindow(QWidget *parent) :
     LabelPhotoArrierePlan->setStatusTip("Utiliser une photo pour l'arrière-plan");
 
     mDaVinci = new DaVinci(ui->LabelEtat);
+    mBackgroundColor = Qt::white;
 
     connect(grillePhotos,SIGNAL(clicked()),this,SLOT(DegriseRetirerImage()));
     connect(grillePhotos,SIGNAL(clacked()),this,SLOT(GriserBoutonRetirerImage()));
@@ -354,7 +355,7 @@ Parameters MainWindow::getParameters() {
     int imageSize = -1;
     int nbPhotos = -1;
     int distanceBetweenPhotos = -1;
-    QImage background; //  = QImage(this->LienPhotoArrierePlan);
+    QPixmap background; //  = QImage(this->LienPhotoArrierePlan);
     CollageForm form;
 
     if (this->ModeTailleCollage) {
@@ -399,14 +400,17 @@ Parameters MainWindow::getParameters() {
     }
 
     if (ui->RadioBoutonArrierePlanColorie->isChecked()) {
-        background = QImage(1, 1, QImage::Format_ARGB32);
+        background = QPixmap(1, 1);
         background.fill(mBackgroundColor);
     } else if (ui->RadioBoutonArrierePlanTransparent->isChecked()) {
-        background = QImage(1,1, QImage::Format_ARGB32);
+        background = QPixmap(1,1);
         //background.fill(qRgba(0,0,0,0));
-        background.fill(Qt::transparent);
+        // background.fill(QColor(Qt::transparent));
+        background.fill(QColor(Qt::transparent).rgb());
+        background.setMask(background.mask());
     } else {
-        background = QImage(this->LienPhotoArrierePlan);
+        // background = QImage(this->LienPhotoArrierePlan);
+        background = QPixmap::fromImage(QImage(this->LienPhotoArrierePlan));
     }
 
     Parameters params = Parameters(collageSize, imageSize, nbPhotos, distanceBetweenPhotos, background, form, this->grillePhotos->getListePhoto());

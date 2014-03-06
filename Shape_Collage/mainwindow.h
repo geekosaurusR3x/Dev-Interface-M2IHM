@@ -29,6 +29,7 @@
 #include "exceptionerreure.h"
 #include "parameters.h"
 #include "davinci.h"
+#include <QBitmap>
 
 namespace Ui {
 class MainWindow;

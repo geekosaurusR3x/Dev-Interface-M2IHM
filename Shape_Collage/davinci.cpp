@@ -20,40 +20,115 @@ bool DaVinci::draw(Parameters params)
 {
     QSize collageSize;
     int photoSize;
-    int distanceBetweenPhotos;
+    float distanceBetweenPhotos;
 
     // Clear
     mCanvas->clear();
 
-    // Check parameters
-    if (params.getCollageSize().rheight() < 0) {
-        collageSize = QSize(1600, 900);
-    } else {
-       collageSize = params.getCollageSize();
-    }
-
     if (params.getPhotoSize() < 0) {
+        // TODO default photo size
         photoSize = 200;
     } else {
         photoSize = params.getPhotoSize();
     }
 
     if (params.getDistanceBetweenPhotos() < 0) {
+        // TODO default distance
         distanceBetweenPhotos = 200;
     } else {
         distanceBetweenPhotos = params.getDistanceBetweenPhotos();
     }
+    distanceBetweenPhotos *= 0.01;
+
+    // TODO position
+    int nbPhotos = params.getNbPhotos();
+    int cols = qFloor(qSqrt(nbPhotos));
+    int lines = qFloor(nbPhotos / cols);
+    int nbRandomImages = nbPhotos - (cols * lines);
+
+    // Cell size
+    int cellWidth = photoSize * distanceBetweenPhotos;
+    int cellHeight = photoSize * distanceBetweenPhotos;
+
+    // Check parameters
+    if (params.getCollageSize().rheight() < 0) {
+        // TODO compute default collage size
+        collageSize = QSize(cellWidth * cols, cellHeight * lines);
+    } else {
+       collageSize = params.getCollageSize();
+    }
+
+    // TODO randomize photo array
+    // Iterate over images
+    QStringList imageSrcList = params.getPhotoList();
+    QList<QString>::iterator it;
+    it = imageSrcList.begin();
+    QPixmap currentImage;
 
     mPixmap = new QPixmap(collageSize);
     // mPixmap->setMask(mPixmap->createHeuristicMask(true));
-    QPixmap picture;
     QPainter painter(mPixmap);
-    //painter.setCompositionMode(QPainter::CompositionMode_Clear);
-    // Background image
-    //mPixmap->fill(params.getBackground());
-    // painter.background(params.getBackground());
-    painter.drawImage(QRect(0, 0 , collageSize.rwidth(), collageSize.rheight()), params.getBackground());
+    painter.setCompositionMode(QPainter::CompositionMode_Source);
 
+    // Background image
+    // mPixmap->fill(params.getBackground());
+    // painter.background(params.getBackground());
+    // painter.drawImage(QRect(0, 0 , collageSize.rwidth(), collageSize.rheight()), params.getBackground());
+    painter.drawPixmap(0, 0 , collageSize.rwidth(), collageSize.rheight(), params.getBackground());
+    // painter.fillRect(mPixmap->rect(), QColor(0,0,0,0));
+
+
+
+    for (int c = 0; c < cols; ++c) {
+        for (int l = 0; l < lines; ++l) {
+
+            qDebug() << "l: " << l << " /" << lines << " c: " << c << " /" << cols << " it index: " << imageSrcList.indexOf(*it);
+
+            QString imgSrc = *it;
+            #ifdef linux
+                imgSrc = "/" + imgSrc;
+            #endif
+            qDebug() << "Draw : " << imgSrc;
+            // Load image
+            if (!currentImage.load(imgSrc)) {
+                    qDebug() << "FAILURE";
+                    break;
+                    // return;
+            }
+
+            // Scale image
+            if (currentImage.width() > currentImage.height()) {
+                currentImage = currentImage.scaledToWidth(photoSize);
+            } else {
+                currentImage = currentImage.scaledToHeight(photoSize);
+            }
+            //int imgWidth = currentImage.width();
+            //int imgHeight = currentImage.height();
+
+            int currentCellX = l * cellWidth;
+            int currentCellY = c * cellHeight;
+
+            qDebug() << "current X: " << currentCellX <<  " current Y: " << currentCellY;
+
+            // TODO add padding
+            // FIXME
+
+            // TODO Random rotation
+
+            // Place normally
+            painter.drawPixmap(currentCellX, currentCellY, currentImage);
+            it++;
+        }
+    }
+
+    // Randomly place the remaining images
+    for (int i = 0; i < nbRandomImages; i++) {
+        currentImage.load(imageSrcList.at(imageSrcList.size() - i));
+        // TODO Placement
+    }
+
+    /*
+    QPixmap picture;
     foreach (QString imgStr, params.getPhotoList()) {
         #ifdef linux
            imgStr = "/" + imgStr;
@@ -61,6 +136,7 @@ bool DaVinci::draw(Parameters params)
         qDebug() << "Draw : " << imgStr;
         if (!picture.load(imgStr)) {
             qDebug() << "FAILURE";
+            break;
             // return;
         }
 
@@ -71,9 +147,9 @@ bool DaVinci::draw(Parameters params)
             picture = picture.scaledToHeight(photoSize);
         }
 
-        // TODO position
+
         painter.drawPixmap(0, 0, picture);
-    }
+    }*/
 
     // TODO strech / repeat
     mCanvas->setPixmap(mPixmap->scaled(mCanvas->width(), mCanvas->height()));

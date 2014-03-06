@@ -6,7 +6,9 @@
 #include "parameters.h"
 #include <QPainter>
 #include <QPicture>
+#include <QStringList>
 #include <QFile>
+#include <qmath.h>
 
 class DaVinci : public QObject
 {

@@ -1,6 +1,6 @@
 #include "parameters.h"
 
-Parameters::Parameters(QSize& collageSize, int& photoSize, int& nbPhotos, int& distanceBetweenPhotos, QImage& background, CollageForm form, QStringList photoList, QObject* parent) : QObject(parent) {
+Parameters::Parameters(QSize& collageSize, int& photoSize, int& nbPhotos, int& distanceBetweenPhotos, QPixmap& background, CollageForm form, QStringList photoList, QObject* parent) : QObject(parent) {
 
     this->collageSize = collageSize;
     this->photoSize = photoSize;
@@ -57,12 +57,12 @@ void Parameters::setDistanceBetweenPhotos(const int &value)
 {
     distanceBetweenPhotos = value;
 }
-QImage Parameters::getBackground() const
+QPixmap Parameters::getBackground() const
 {
     return background;
 }
 
-void Parameters::setBackground(const QImage &value)
+void Parameters::setBackground(const QPixmap &value)
 {
     background = value;
 }
