@@ -71,7 +71,7 @@ private:
     Parameters getParameters();
     DaVinci* mDaVinci;
     void showSuccessDialog();
-    void showFailureDialog();
+    void showFailureDialog(QString);
     QColor mBackgroundColor;
 
 private slots:

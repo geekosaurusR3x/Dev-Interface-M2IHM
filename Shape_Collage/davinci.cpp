@@ -19,20 +19,35 @@ DaVinci::DaVinci(QLabel*& label, QObject *parent) :
 bool DaVinci::draw(Parameters params)
 {
     QSize collageSize = params.getCollageSize();
-    int photoSize;
-    float distanceBetweenPhotos;
-    // TODO Auto photo number
+    int photoSize = params.getPhotoSize();
+    float distanceBetweenPhotos = params.getDistanceBetweenPhotos();
     int nbPhotos = params.getNbPhotos();
+    int horizontalPadding, verticalPadding;
+
+    // Collage size is set manually
+    if (collageSize.width() > 0) {
+        horizontalPadding = collageSize.width() * 0.1;
+        verticalPadding = collageSize.height() * 0.1;
+    }
+
+    // nbPhoto is auto
+    if (nbPhotos < 0) {
+        // TODO: AUTO
+        int nbPhotosLine = (collageSize.width() - horizontalPadding) / photoSize;
+        int nbPhotosCol = (collageSize.height() - verticalPadding) / photoSize;
+        nbPhotos = nbPhotosLine * nbPhotosCol;
+    }
+
 
     int cols = qFloor(qSqrt(nbPhotos));
     int lines = qFloor(nbPhotos / cols);
     int nbRandomImages = nbPhotos - (cols * lines);
 
-    int horizontalPadding, verticalPadding;
-
-    if (collageSize.width() > 0) {
-        horizontalPadding = collageSize.width() * 0.1;
-        verticalPadding = collageSize.height() * 0.1;
+    // Photo size is auto
+    if (params.getPhotoSize() < 0) {
+        int photoSizeWidth = (collageSize.width() - horizontalPadding) / cols;
+        int photoSizeHeight = (collageSize.height() - verticalPadding) / lines;
+        photoSize = qMax(photoSizeWidth, photoSizeHeight);
     }
 
     // Clear
@@ -41,19 +56,9 @@ bool DaVinci::draw(Parameters params)
     // init random number generator
     srand (time(NULL));
 
-    if (params.getPhotoSize() < 0) {
-        int photoSizeWidth = (collageSize.width() - horizontalPadding) / cols;
-        int photoSizeHeight = (collageSize.height() - verticalPadding) / lines;
-        photoSize = qMax(photoSizeWidth, photoSizeHeight);
-    } else {
-        photoSize = params.getPhotoSize();
-    }
-
     if (params.getDistanceBetweenPhotos() < 0) {
         // TODO default distance
-        distanceBetweenPhotos = 200;
-    } else {
-        distanceBetweenPhotos = params.getDistanceBetweenPhotos();
+        distanceBetweenPhotos = 100;
     }
     distanceBetweenPhotos *= 0.01;
 
@@ -67,7 +72,7 @@ bool DaVinci::draw(Parameters params)
     }
 
     // Padding
-    QPixmap finalPixmap(collageSize);
+    mFinalPixmap = new QPixmap(collageSize);
     horizontalPadding = collageSize.width() * 0.1;
     verticalPadding = collageSize.height() * 0.1;
 
@@ -82,14 +87,14 @@ bool DaVinci::draw(Parameters params)
     it = imageSrcList.begin();
     QPixmap currentImage;
 
-    mPixmap = new QPixmap(collageSize);
-    // mPixmap->setMask(mPixmap->createHeuristicMask(true));
-    QPainter painter(mPixmap);
-    QPainter finalPainter(&finalPixmap);
-    painter.setCompositionMode(QPainter::CompositionMode_Source);
+    QPixmap pixmap(collageSize);
+    pixmap.fill(Qt::transparent);
+    mFinalPixmap->fill(Qt::transparent);
+    QPainter painter(&pixmap);
+    QPainter finalPainter(mFinalPixmap);
 
     // Background image
-    finalPainter.drawPixmap(0, 0 , finalPixmap.width(), finalPixmap.height(), params.getBackground());
+    finalPainter.drawPixmap(0, 0 , mFinalPixmap->width(), mFinalPixmap->height(), params.getBackground());
 
     QList<int> xPos, yPos;
 
@@ -120,8 +125,8 @@ bool DaVinci::draw(Parameters params)
     }
 
     // Randomly place images (normal placement)
-    while (!imageSrcList.empty()) {
-        int index = rand() % imageSrcList.size();
+    while (nbPhotos > 0) {
+        int index = rand() % nbPhotos;
 
         qDebug() << "current index: " << index;
 
@@ -137,6 +142,14 @@ bool DaVinci::draw(Parameters params)
             // return;
         }
 
+        // Rotation
+        QTransform rotation;
+        float randRotation = rand() % 180;
+        rotation.rotate(randRotation);
+        currentImage = currentImage.transformed(rotation);
+
+        currentImage.setMask(currentImage.createHeuristicMask());
+
         // Scale image
         if (currentImage.width() > currentImage.height()) {
             currentImage = currentImage.scaledToWidth(photoSize);
@@ -144,32 +157,34 @@ bool DaVinci::draw(Parameters params)
             currentImage = currentImage.scaledToHeight(photoSize);
         }
 
-        qDebug() << "xpos size: " << xPos.size() << " ypos size: " << yPos.size() << " srcList" << imageSrcList.size();
+        qDebug() << "xpos size: " << xPos.size() << " ypos size: " << yPos.size() << " srcList" << "rotation: " << randRotation << "ImgSrcSize: " << imageSrcList.size();
 
         painter.drawPixmap(xPos.at(index), yPos.at(index), currentImage);
+
         // Pop
+        nbPhotos--;
         imageSrcList.removeAt(index);
         xPos.removeAt(index);
         yPos.removeAt(index);
     }
 
-    finalPainter.drawPixmap(horizontalPadding / 2, verticalPadding / 2, *mPixmap);
+    finalPainter.drawPixmap(horizontalPadding / 2, verticalPadding / 2, pixmap);
 
     // TODO strech / repeat
-    if (finalPixmap.width() < mCanvas->width() && finalPixmap.height() < mCanvas->height()) {
-        mCanvas->setPixmap(finalPixmap);
+    if (mFinalPixmap->width() < mCanvas->width() && mFinalPixmap->height() < mCanvas->height()) {
+        mCanvas->setPixmap(*mFinalPixmap);
     } else {
-       mCanvas->setPixmap(finalPixmap.scaled(mCanvas->width(), mCanvas->height()));
+       mCanvas->setPixmap(mFinalPixmap->scaled(mCanvas->width(), mCanvas->height()));
     }
     mCanvas->show();
     mAlreadyGenerated = true;
     return true;
 }
 
-bool DaVinci::exportImage(Parameters params) {
-    QFile file("/tmp/tmp.png");
+bool DaVinci::exportImage(QString filename) {
+    QFile file(filename + ".png");
     file.open(QIODevice::WriteOnly);
-    mPixmap->save(&file, "PNG");
+    mFinalPixmap->save(&file, "PNG");
     return true;
 }
 

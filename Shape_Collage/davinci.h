@@ -9,6 +9,7 @@
 #include <QStringList>
 #include <QFile>
 #include <qmath.h>
+#include <QBitmap>
 
 class DaVinci : public QObject
 {
@@ -18,13 +19,13 @@ public:
     DaVinci(QLabel*&, QObject *parent = 0);
     DaVinci(const DaVinci&);
     bool draw(Parameters);
-    bool exportImage(Parameters);
+    bool exportImage(QString);
     bool getAlreadyGenerated() const;
 
 private:
     QLabel *mCanvas;
     bool mAlreadyGenerated;
-    QPixmap* mPixmap;
+    QPixmap* mFinalPixmap;
 signals:
 
 public slots:

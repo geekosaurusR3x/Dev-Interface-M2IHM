@@ -393,10 +393,11 @@ Parameters MainWindow::getParameters() {
     }
 
     if (this->ModeNombrePhoto) {
+        int maxPhotos = this->grillePhotos->getListePhoto().size();
         if (ui->RadioBoutonPhotos->isChecked()) {
-            nbPhotos = ui->LineEditNombrePhoto->text().toInt();
+            nbPhotos = qMin(maxPhotos,ui->LineEditNombrePhoto->text().toInt());
         } else {
-            nbPhotos = this->grillePhotos->getListePhoto().size();
+            nbPhotos = maxPhotos;
         }
     }
 
@@ -417,10 +418,7 @@ Parameters MainWindow::getParameters() {
         background.fill(mBackgroundColor);
     } else if (ui->RadioBoutonArrierePlanTransparent->isChecked()) {
         background = QPixmap(1,1);
-        //background.fill(qRgba(0,0,0,0));
-        // background.fill(QColor(Qt::transparent));
-        background.fill(QColor(Qt::transparent).rgb());
-        background.setMask(background.mask());
+        background.fill(Qt::transparent);
     } else {
         // background = QImage(this->LienPhotoArrierePlan);
         background = QPixmap::fromImage(QImage(this->LienPhotoArrierePlan));
@@ -438,8 +436,12 @@ void MainWindow::on_BoutonNombrePhotos_clicked() {
 
 void MainWindow::on_BoutonApercu_clicked()
 {
-        mDaVinci->draw(getParameters());
-
+    Parameters params = getParameters();
+    if (params.getNbPhotos() > 0) {
+        mDaVinci->draw(params);
+    } else {
+        showFailureDialog("Veuillez ajouter au moins une photo.");
+    }
 }
 
 void MainWindow::showSuccessDialog() {
@@ -448,9 +450,10 @@ void MainWindow::showSuccessDialog() {
     msgBox.exec();
 }
 
-void MainWindow::showFailureDialog()  {
+void MainWindow::showFailureDialog(QString errMsg)  {
     QMessageBox msgBox;
     msgBox.setText("Erreur!");
+    msgBox.setInformativeText(errMsg);
     msgBox.exec();
 }
 
@@ -458,12 +461,20 @@ void MainWindow::on_BoutonCreer_clicked()
 {
     Parameters params = getParameters();
     // TODO Uncomment
-    //if (! mDaVinci->getAlreadyGenerated()) {
-        mDaVinci->draw(params);
-    //}
-    if (mDaVinci->exportImage(params)) {
-        showSuccessDialog();
-    } else {
-        showFailureDialog();
+    if (!mDaVinci->getAlreadyGenerated()) {
+        // mDaVinci->draw(params);
+        this->on_BoutonApercu_clicked();
+    }
+    if (mDaVinci->getAlreadyGenerated()) {
+        // FIXME check file existance
+        QString fichier = QFileDialog::getSaveFileName(this,"Choisir où enregistrer votre collage","", ".png");
+
+        if (fichier != NULL) {
+            if (mDaVinci->exportImage(fichier)) {
+                showSuccessDialog();
+            } else {
+                showFailureDialog("Votre collage n'a pas pu être enregistré.");
+            }
+        }
     }
 }
