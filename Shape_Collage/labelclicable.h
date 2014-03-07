@@ -6,7 +6,7 @@ class LabelClicable : public QLabel
 {
     Q_OBJECT
     public:
-    LabelClicable(bool acceptdrop, QWidget * parent = 0 );
+    LabelClicable(bool acceptdrop, QWidget * parent = 0, QString text = "");
     ~LabelClicable(){}
     void ChangeCouleur(QColor couleur);
 

@@ -177,6 +177,11 @@ void WindowSlave::DessinerForme()
     dlg.exec();
 }
 
+void WindowSlave::DessinerFormeSetPoint(LabelClicable* label) {
+
+
+}
+
 bool WindowSlave::EstUneImage(QString &fichier)
 {
     QString extension = fichier.mid(fichier.lastIndexOf(".")+1).toLower();

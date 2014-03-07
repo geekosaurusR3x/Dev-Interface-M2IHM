@@ -9,7 +9,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->VerticalLayoutPhotos->addWidget(grillePhotos);
     LabelCouleurArrierePlan = new LabelClicable(false,this);
     ui->LayoutCouleurArrirePlan->addWidget(LabelCouleurArrierePlan);
-    LabelPhotoArrierePlan = new LabelClicable(true,this);
+    LabelPhotoArrierePlan = new LabelClicable(true,this, "Faites glisser une image ici");
     ui->LayoutPhotoArrierePlan->addWidget(LabelPhotoArrierePlan);
     LabelFormeExtra = new LabelClicable(false,this);
     ui->LayoutFormeExtra->addWidget(LabelFormeExtra);

@@ -40,7 +40,8 @@ SOURCES += main.cpp\
     exceptionerreure.cpp \
     wizardcollage.cpp \
     parameters.cpp \
-    davinci.cpp
+    davinci.cpp \
+    labeldessinable.cpp
 
 HEADERS  += mainwindow.h \
     forme.h \
@@ -69,7 +70,8 @@ HEADERS  += mainwindow.h \
     exceptionerreure.h \
     wizardcollage.h \
     parameters.h \
-    davinci.h
+    davinci.h \
+    labeldessinable.h
 
 FORMS    += mainwindow.ui \
     dialogapropos.ui \

@@ -31,6 +31,7 @@ public:
     static void ChargerPhotoArrierePlan(LabelClicable* label,QString& lienPhoto);
     static void DessinerForme();
     static bool EstUneImage(QString& fichier);
+    static void DessinerFormeSetPoint(LabelClicable* label);
     static void RemettreValeursParDefaut(QRadioButton* radioRectangle,QComboBox *comboTaillecollage,
                                          QLineEdit* largeur,QLineEdit* hauteur,QComboBox* comboTaillePhoto,
                                          QLineEdit* taillePhoto,QRadioButton* tout,QLineEdit* nbPhoto,

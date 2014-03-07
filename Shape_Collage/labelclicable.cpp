@@ -11,7 +11,7 @@
 #include<QPixmap>
 
 
-LabelClicable::LabelClicable(bool acceptdrop, QWidget * parent )
+LabelClicable::LabelClicable(bool acceptdrop, QWidget * parent,  QString text)
 :QLabel(parent)
 {
     setFrameShape(QFrame::Box);
@@ -19,7 +19,7 @@ LabelClicable::LabelClicable(bool acceptdrop, QWidget * parent )
     setAcceptDrops(acceptdrop);
     if(acceptdrop)
     {
-        setText("<b>Faites glisser une image ici</b>");
+        setText("<b>" + text + "</b>");
         setWordWrap(acceptdrop);
         setAlignment(Qt::AlignCenter);
     }
@@ -37,7 +37,7 @@ void LabelClicable::ChangeCouleur(QColor couleur)
 
 
 
-void LabelClicable::mousePressEvent ( QMouseEvent * event )
+void LabelClicable::mousePressEvent (QMouseEvent * event)
 {
     if(event->button()==Qt::LeftButton)
         emit clicked();

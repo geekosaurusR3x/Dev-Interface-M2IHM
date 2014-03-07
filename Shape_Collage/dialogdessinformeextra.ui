@@ -37,12 +37,12 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>60</y>
-     <width>381</width>
-     <height>311</height>
+     <y>50</y>
+     <width>361</width>
+     <height>321</height>
     </rect>
    </property>
-   <layout class="QVBoxLayout" name="LaoyoutDessinPolygone"/>
+   <layout class="QVBoxLayout" name="LayoutDessinPolygone"/>
   </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
@@ -179,8 +179,8 @@
     <property name="geometry">
      <rect>
       <x>50</x>
-      <y>10</y>
-      <width>21</width>
+      <y>20</y>
+      <width>31</width>
       <height>16</height>
      </rect>
     </property>
@@ -207,7 +207,7 @@
     <rect>
      <x>410</x>
      <y>350</y>
-     <width>75</width>
+     <width>81</width>
      <height>23</height>
     </rect>
    </property>

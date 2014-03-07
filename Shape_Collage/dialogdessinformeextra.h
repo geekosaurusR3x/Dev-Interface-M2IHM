@@ -2,7 +2,8 @@
 #define DIALOGDESSINFORMEEXTRA_H
 
 #include <QDialog>
-#include"labelclicable.h"
+#include"labeldessinable.h"
+#include <windowslave.h>
 
 namespace Ui {
 class DialogDessinFormeExtra;
@@ -19,6 +20,9 @@ public:
 private:
     Ui::DialogDessinFormeExtra *ui;
     LabelClicable  *label;
+
+private slots:
+    void SetPoint();
 };
 
 #endif // DIALOGDESSINFORMEEXTRA_H
