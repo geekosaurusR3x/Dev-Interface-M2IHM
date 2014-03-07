@@ -9,6 +9,7 @@
 #include <QGraphicsView>
 #include <QPainter>
 #include <QLineF>
+#include <qmath.h>
 #include "labelclicable.h"
 
 
@@ -21,14 +22,18 @@ public:
 private:
     QVector<QPoint> mPoints;
     QPolygon mPolygon;
-    void draw(QPoint);
+    QPoint mClick;
+    bool mDraw;
+    void draw();
     void drawLine(QLineF);
+    void computePolygon(QPoint);
 
 signals:
     void clicked();
 public slots:
     void mousePressEvent (QMouseEvent * event);
     void mouseMoveEvent(QMouseEvent* event);
+    void mouseReleaseEvent(QMouseEvent* event);
 };
 
 #endif // LABELDESSINABLE_H
