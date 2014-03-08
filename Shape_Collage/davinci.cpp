@@ -25,7 +25,7 @@ bool DaVinci::draw(Parameters params, QProgressBar*& progressBar)
     int horizontalPadding, verticalPadding;
     CollageForm form = params.getForm();
     int progress = 0;
-
+    progressBar->setValue(0);
     // Collage size is set manually
     if (collageSize.width() > 0) {
         horizontalPadding = collageSize.width() * 0.1;
