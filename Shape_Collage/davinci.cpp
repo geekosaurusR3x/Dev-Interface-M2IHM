@@ -197,32 +197,30 @@ bool DaVinci::draw(Parameters params, QProgressBar*& progressBar)
         // Load image
         if (!currentImage.load(imgSrc)) {
             qDebug() << "FAILURE";
-            break;
             // return;
-        }
-
-        // Rotation
-        QTransform rotation;
-        float randRotation = -30 + rand() % 60;
-        rotation.rotate(randRotation);
-        currentImage = currentImage.transformed(rotation);
-
-        // Scale image
-        if (currentImage.width() > currentImage.height()) {
-            currentImage = currentImage.scaledToWidth(photoSize);
         } else {
-            currentImage = currentImage.scaledToHeight(photoSize);
+            // Rotation
+            QTransform rotation;
+            float randRotation = -30 + rand() % 60;
+            rotation.rotate(randRotation);
+            currentImage = currentImage.transformed(rotation);
+
+            // Scale image
+            if (currentImage.width() > currentImage.height()) {
+                currentImage = currentImage.scaledToWidth(photoSize);
+            } else {
+                currentImage = currentImage.scaledToHeight(photoSize);
+            }
+
+            qDebug() << "xpos size: " << xPos.size() << " ypos size: " << yPos.size() << " srcList" << "rotation: " << randRotation << "ImgSrcSize: " << imageSrcList.size();
+
+            painter.drawPixmap(xPos.at(index), yPos.at(index), currentImage);
+            if (params.getDrawingAnimation()) {
+                finalPainter.drawPixmap(horizontalPadding / 2, verticalPadding / 2, pixmap);
+                mCanvas->setPixmap(mFinalPixmap->scaled(mCanvas->width(), mCanvas->height()));
+            }
+            progressBar->setValue(progressBar->value() + progress);
         }
-
-        qDebug() << "xpos size: " << xPos.size() << " ypos size: " << yPos.size() << " srcList" << "rotation: " << randRotation << "ImgSrcSize: " << imageSrcList.size();
-
-        painter.drawPixmap(xPos.at(index), yPos.at(index), currentImage);
-        if (params.getDrawingAnimation()) {
-            finalPainter.drawPixmap(horizontalPadding / 2, verticalPadding / 2, pixmap);
-            mCanvas->setPixmap(mFinalPixmap->scaled(mCanvas->width(), mCanvas->height()));
-        }
-        progressBar->setValue(progressBar->value() + progress);
-
         // Pop
         nbPhotos--;
         imageSrcList.removeAt(index);
