@@ -159,6 +159,7 @@ void WindowSlave::ChargerPhotoArrierePlan(LabelClicable *label, QString &lienPho
                                  "Désirez-vous adapter la taille du collage à celle de la photo d'arrière-plan ?",
                                  QMessageBox::Yes|QMessageBox::No)==QMessageBox::Yes)
         {
+            // TODO Set collage size in ui
             qDebug()<<"adapter"<<endl;
         }
         else
@@ -190,7 +191,7 @@ bool WindowSlave::EstUneImage(QString &fichier)
 void WindowSlave::RemettreValeursParDefaut(QRadioButton* radioRectangle,QComboBox *comboTaillecollage,
                                            QLineEdit* largeur,QLineEdit* hauteur,QComboBox* comboTaillePhoto,
                                            QLineEdit* taillePhoto,QRadioButton* tout,QLineEdit* nbPhoto,
-                                           QSlider* distance,QRadioButton* arrierePlan,LabelClicable* couleur)
+                                           QSlider* distance,QRadioButton* arrierePlan,LabelClicable* couleur, LabelDessinable* preview)
 {
     radioRectangle->setChecked(true);
     comboTaillecollage->setCurrentIndex(0);
@@ -207,6 +208,7 @@ void WindowSlave::RemettreValeursParDefaut(QRadioButton* radioRectangle,QComboBo
 
     arrierePlan->setChecked(true);
     couleur->ChangeCouleur(Qt::white);
+    preview->clear();
 }
 
 

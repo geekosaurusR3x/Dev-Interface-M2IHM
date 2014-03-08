@@ -58,9 +58,14 @@ void LabelClicable::dragMoveEvent(QDragMoveEvent *event)
 void LabelClicable::dropEvent(QDropEvent *event)
 {
     QString fichier = event->mimeData()->urls().at(0).url().mid(8);
+#ifdef linux
+    fichier = "/" + fichier;
+#endif
     //tester si c'est une image!
+    qDebug() << "Droping bqckground picture";
     if(WindowSlave::EstUneImage(fichier))
     {
+        qDebug() << " is ok" << fichier;
         setPixmap(QPixmap(fichier));
         setScaledContents(true);
         adjustSize();

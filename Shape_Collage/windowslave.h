@@ -38,7 +38,7 @@ public:
     static void RemettreValeursParDefaut(QRadioButton* radioRectangle,QComboBox *comboTaillecollage,
                                          QLineEdit* largeur,QLineEdit* hauteur,QComboBox* comboTaillePhoto,
                                          QLineEdit* taillePhoto,QRadioButton* tout,QLineEdit* nbPhoto,
-                                         QSlider* distance,QRadioButton* arrierePlan,LabelClicable* couleur);
+                                         QSlider* distance,QRadioButton* arrierePlan,LabelClicable* couleur, LabelDessinable* preview);
 };
 
 #endif // WINDOWSLAVE_H

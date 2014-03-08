@@ -265,7 +265,7 @@ void MainWindow::Remettre_Valeurs_Par_Defaut()
     WindowSlave::RemettreValeursParDefaut(ui->RadioBoutonRectangle,ui->ComboBoxTailleCollage,ui->LineEditLargeur,
                                           ui->LineEditHauteur,ui->ComboBoxTaillePhoto,ui->LineEditTaillePhoto,
                                           ui->RadioBoutonTout,ui->LineEditNombrePhoto,ui->SliderDistancePhotos,
-                                          ui->RadioBoutonArrierePlanColorie,LabelCouleurArrierePlan);
+                                          ui->RadioBoutonArrierePlanColorie,LabelCouleurArrierePlan, LabelFormeExtra);
 }
 
 void MainWindow::OnActionNouveauProjet()
