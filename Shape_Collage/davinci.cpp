@@ -152,8 +152,7 @@ bool DaVinci::draw(Parameters params, QProgressBar*& progressBar)
             case FREEHAND:
             {
                 // TODO resize?
-                //QPolygon pol = params.getPolygon();
-                QPolygon pol(WindowSlave::computePolygon(QPoint(0,0), QPoint(collageSize.width(), collageSize.height())));
+                QPolygon pol(MathHelper::computePolygon(QPoint(0,0), QPoint(collageSize.width(), collageSize.height()), params.getNbVertex()));
 
                 foreach (QPoint pt, pol) {
                     qDebug() << "pt: " << pt.x() << pt.y();

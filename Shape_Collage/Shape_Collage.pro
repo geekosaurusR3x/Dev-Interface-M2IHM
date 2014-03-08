@@ -41,7 +41,8 @@ SOURCES += main.cpp\
     wizardcollage.cpp \
     parameters.cpp \
     davinci.cpp \
-    labeldessinable.cpp
+    labeldessinable.cpp \
+    mathhelper.cpp
 
 HEADERS  += mainwindow.h \
     forme.h \
@@ -71,7 +72,8 @@ HEADERS  += mainwindow.h \
     wizardcollage.h \
     parameters.h \
     davinci.h \
-    labeldessinable.h
+    labeldessinable.h \
+    mathhelper.h
 
 FORMS    += mainwindow.ui \
     dialogapropos.ui \

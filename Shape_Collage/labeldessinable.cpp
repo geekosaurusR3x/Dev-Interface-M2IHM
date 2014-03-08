@@ -103,44 +103,28 @@ void LabelDessinable::mousePressEvent(QMouseEvent *event) {
 
 void LabelDessinable::mouseMoveEvent(QMouseEvent* event) {
     // TODO draw?
-    // draw(event->pos());
     if(mDraw)
     {
-        // computePolygon(event->pos());
-        mPoints = computePolygon(mClick, event->pos());
+        mPoints = MathHelper::computePolygon(mClick, event->pos(), mNbVertex);
         draw();
     }
 }
 
-// TODO deleteme
-QVector<QPoint> LabelDessinable::computePolygon(QPoint start, QPoint end) {
-    qDebug() << "Start computing Polygon" << start.x() << " " << start.y();
-    float rayon = QLineF(start, end).length();
-    rayon = rayon/2;
-    // mPoints.clear();
-    QVector<QPoint> points;
-    int x,y;
-    int nb_points = 3;
-    float pas_angle = 2 * PI /nb_points;
-    int centreX = (start.x() + end.x())/2;
-    int centreY = (start.y() + end.y())/2;;
-    float angle = pas_angle;
-    for(int i = 0; i < nb_points ; i++)
-    {
-        x = centreX + rayon*qCos(angle);
-        y = centreY + rayon*qSin(angle);
-        points.push_back(QPoint(x,y));
-        angle += pas_angle;
-    }
-
-    qDebug() << "End computing Polygon";
-
-    return points;
+int LabelDessinable::getNbVertex() const
+{
+    return mNbVertex;
 }
+
+void LabelDessinable::setNbVertex(int value)
+{
+    mNbVertex = value;
+}
+
 
 void LabelDessinable::mouseReleaseEvent(QMouseEvent *event)
 {
     if (event->button() == Qt::LeftButton) {
+        mLastClickPos = event->pos();
         mDraw = false;
     }
 
@@ -157,6 +141,19 @@ void LabelDessinable::drawLine(QLineF line)  {
 QPolygon LabelDessinable::getPolygon() {
     QPolygon pol(mPoints);
     return pol;
+}
+
+void LabelDessinable::update() {
+    if (!mClick.isNull() && !mLastClickPos.isNull()) {
+        mPoints = MathHelper::computePolygon(mClick, mLastClickPos, mNbVertex);
+        draw();
+    }
+}
+
+void LabelDessinable::clear() {
+    LabelClicable::clear();
+    mClick = QPoint();
+    mLastClickPos = QPoint();
 }
 
 void LabelDessinable::draw() {

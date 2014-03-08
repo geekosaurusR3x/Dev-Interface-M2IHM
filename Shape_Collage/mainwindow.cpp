@@ -222,7 +222,7 @@ void MainWindow::DessinerPolygone()
 void MainWindow::DessinerPolygoneSivide()
 {
     //tester si il n'y a pas déjà un polygone dans le label forme extra
-    mPolygon = WindowSlave::DessinerForme();
+    mNbVertex = WindowSlave::DessinerForme();
     //qDebug()<<"tester si vide"<<endl;
 }
 
@@ -402,7 +402,8 @@ Parameters MainWindow::getParameters() {
     int intImgSize = static_cast<int>(imageSize);
     Parameters params = Parameters(collageSize, intImgSize, nbPhotos, distanceBetweenPhotos, background, form, this->grillePhotos->getListePhoto());
     params.setDrawingAnimation(ui->CheckBoxActiverAnimation->isChecked());
-    params.setPolygon(mPolygon);
+    // TODO
+    params.setNbVertex(mNbVertex);
     qDebug() << params;
     return params;
 }

@@ -11,7 +11,7 @@
 #include <QLineF>
 #include <qmath.h>
 #include "labelclicable.h"
-#define PI 3.141592653
+#include "mathhelper.h"
 
 class LabelDessinable : public LabelClicable
 {
@@ -19,12 +19,17 @@ class LabelDessinable : public LabelClicable
 public:
     explicit LabelDessinable(QWidget *parent = 0);
     QPolygon getPolygon();
-    static QVector<QPoint> computePolygon(QPoint start, QPoint end);
+    int getNbVertex() const;
+    void setNbVertex(int value);
+    void update();
+    void clear();
 private:
     QVector<QPoint> mPoints;
     QPolygon mPolygon;
     QPoint mClick;
+    QPoint mLastClickPos;
     bool mDraw;
+    int mNbVertex;
     void draw();
     void drawLine(QLineF);
 signals:

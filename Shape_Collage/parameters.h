@@ -48,6 +48,9 @@ class Parameters : public QObject
     QPolygon getPolygon() const;
     void setPolygon(const QPolygon &value);
 
+    int getNbVertex() const;
+    void setNbVertex(int value);
+
 signals:
 
 public slots:
@@ -62,6 +65,7 @@ private:
     QStringList photoList;
     bool drawingAnimation;
     QPolygon polygon;
+    int nbVertex;
 };
 
 

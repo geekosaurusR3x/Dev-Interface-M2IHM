@@ -17,13 +17,15 @@ class DialogDessinFormeExtra : public QDialog
 public:
     explicit DialogDessinFormeExtra(QWidget *parent = 0);
     ~DialogDessinFormeExtra();
-    QPolygon getResult();
-
+    int getNbVertex();
 private:
     Ui::DialogDessinFormeExtra *ui;
     LabelDessinable  *label;
+    int defaultSliderValue;
 
 private slots:
+    void on_SliderTaillePainceau_valueChanged(int value);
+    void on_BoutonReinitialiser_clicked();
 };
 
 #endif // DIALOGDESSINFORMEEXTRA_H

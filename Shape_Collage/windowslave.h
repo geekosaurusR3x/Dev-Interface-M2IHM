@@ -32,13 +32,12 @@ public:
     static void GriseOuDegriseGroupe(bool &mode, QPushButton *boutonMode, const QString &section, QWidget * *groupe, int nb);
     static QColor ChangerCouleurArrierePlan(LabelClicable* label);
     static void ChargerPhotoArrierePlan(LabelClicable* label,QString& lienPhoto);
-    static QPolygon DessinerForme();
+    static int DessinerForme();
     static bool EstUneImage(QString& fichier);
     static void RemettreValeursParDefaut(QRadioButton* radioRectangle,QComboBox *comboTaillecollage,
                                          QLineEdit* largeur,QLineEdit* hauteur,QComboBox* comboTaillePhoto,
                                          QLineEdit* taillePhoto,QRadioButton* tout,QLineEdit* nbPhoto,
                                          QSlider* distance,QRadioButton* arrierePlan,LabelClicable* couleur);
-    static QVector<QPoint> computePolygon(QPoint, QPoint);
 };
 
 #endif // WINDOWSLAVE_H

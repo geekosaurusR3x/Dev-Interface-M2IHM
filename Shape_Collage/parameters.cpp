@@ -19,6 +19,7 @@ Parameters::Parameters(const Parameters& params) {
     this->background = params.getBackground();
     this->form = params.getForm();
     this->polygon = params.getPolygon();
+    this->nbVertex = params.getNbVertex();
     this->photoList = params.getPhotoList();
 }
 
@@ -104,6 +105,16 @@ void Parameters::setPolygon(const QPolygon &value)
 {
     polygon = value;
 }
+int Parameters::getNbVertex() const
+{
+    return nbVertex;
+}
+
+void Parameters::setNbVertex(int value)
+{
+    nbVertex = value;
+}
+
 
 
 
