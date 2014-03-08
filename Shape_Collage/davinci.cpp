@@ -149,6 +149,28 @@ bool DaVinci::draw(Parameters params, QProgressBar*& progressBar)
                 yPos.push_back(currentCellY);
                 break;
             }
+            case FREEHAND:
+            {
+                // TODO resize?
+                //QPolygon pol = params.getPolygon();
+                QPolygon pol(WindowSlave::computePolygon(QPoint(0,0), QPoint(collageSize.width(), collageSize.height())));
+
+                foreach (QPoint pt, pol) {
+                    qDebug() << "pt: " << pt.x() << pt.y();
+                }
+
+                float currentCellCenterX = currentCellX + (cellWidth / 2);
+                float currentCellCenterY = currentCellY + (cellHeight / 2);
+
+                if (pol.containsPoint(QPoint(currentCellCenterX, currentCellCenterY), Qt::OddEvenFill)) {
+                    xPos.push_back(currentCellX);
+                    yPos.push_back(currentCellY);
+                } else {
+                    nbRandomImages++;
+                }
+                break;
+            }
+
             }
         }
     }

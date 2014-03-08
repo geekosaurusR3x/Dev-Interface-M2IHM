@@ -18,6 +18,7 @@ Parameters::Parameters(const Parameters& params) {
     this->distanceBetweenPhotos = params.getDistanceBetweenPhotos();
     this->background = params.getBackground();
     this->form = params.getForm();
+    this->polygon = params.getPolygon();
     this->photoList = params.getPhotoList();
 }
 
@@ -93,6 +94,17 @@ void Parameters::setDrawingAnimation(bool value)
 {
     drawingAnimation = value;
 }
+
+QPolygon Parameters::getPolygon() const
+{
+    return polygon;
+}
+
+void Parameters::setPolygon(const QPolygon &value)
+{
+    polygon = value;
+}
+
 
 
 QDebug operator <<(QDebug dbg, const Parameters& obj) {

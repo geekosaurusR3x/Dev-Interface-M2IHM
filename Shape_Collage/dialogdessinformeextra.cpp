@@ -13,10 +13,8 @@ DialogDessinFormeExtra::DialogDessinFormeExtra(QWidget *parent) :
     connect(label, SIGNAL(clicked()), this, SLOT(SetPoint()));
 }
 
-
-void DialogDessinFormeExtra::SetPoint() {
-    qDebug() << "Set point";
-    WindowSlave::DessinerFormeSetPoint(this->label);
+QPolygon DialogDessinFormeExtra::getResult() {
+    return label->getPolygon();
 }
 
 DialogDessinFormeExtra::~DialogDessinFormeExtra()

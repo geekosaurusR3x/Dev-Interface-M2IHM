@@ -45,6 +45,9 @@ class Parameters : public QObject
     bool getDrawingAnimation() const;
     void setDrawingAnimation(bool value);
 
+    QPolygon getPolygon() const;
+    void setPolygon(const QPolygon &value);
+
 signals:
 
 public slots:
@@ -58,6 +61,7 @@ private:
     CollageForm form;
     QStringList photoList;
     bool drawingAnimation;
+    QPolygon polygon;
 };
 
 

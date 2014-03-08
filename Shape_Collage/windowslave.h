@@ -13,8 +13,11 @@
 #include<QRadioButton>
 #include<QComboBox>
 #include<QLineEdit>
+#include <QPoint>
+#include <QVector>
 #include"dialogdessinformeextra.h"
 #include"labelclicable.h"
+#define PI 3.141592653
 
 class WindowSlave
 {
@@ -29,13 +32,13 @@ public:
     static void GriseOuDegriseGroupe(bool &mode, QPushButton *boutonMode, const QString &section, QWidget * *groupe, int nb);
     static QColor ChangerCouleurArrierePlan(LabelClicable* label);
     static void ChargerPhotoArrierePlan(LabelClicable* label,QString& lienPhoto);
-    static void DessinerForme();
+    static QPolygon DessinerForme();
     static bool EstUneImage(QString& fichier);
-    static void DessinerFormeSetPoint(LabelClicable* label);
     static void RemettreValeursParDefaut(QRadioButton* radioRectangle,QComboBox *comboTaillecollage,
                                          QLineEdit* largeur,QLineEdit* hauteur,QComboBox* comboTaillePhoto,
                                          QLineEdit* taillePhoto,QRadioButton* tout,QLineEdit* nbPhoto,
                                          QSlider* distance,QRadioButton* arrierePlan,LabelClicable* couleur);
+    static QVector<QPoint> computePolygon(QPoint, QPoint);
 };
 
 #endif // WINDOWSLAVE_H

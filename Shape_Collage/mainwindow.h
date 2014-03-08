@@ -73,7 +73,7 @@ private:
     void showSuccessDialog();
     void showFailureDialog(QString);
     QColor mBackgroundColor;
-
+    QPolygon mPolygon;
 private slots:
     void OnActionQuitter();
     void OnActionAPropos();

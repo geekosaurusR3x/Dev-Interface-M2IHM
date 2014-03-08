@@ -4,6 +4,7 @@
 #include <QDialog>
 #include"labeldessinable.h"
 #include <windowslave.h>
+#include <QPolygon>
 
 namespace Ui {
 class DialogDessinFormeExtra;
@@ -16,13 +17,13 @@ class DialogDessinFormeExtra : public QDialog
 public:
     explicit DialogDessinFormeExtra(QWidget *parent = 0);
     ~DialogDessinFormeExtra();
-    
+    QPolygon getResult();
+
 private:
     Ui::DialogDessinFormeExtra *ui;
-    LabelClicable  *label;
+    LabelDessinable  *label;
 
 private slots:
-    void SetPoint();
 };
 
 #endif // DIALOGDESSINFORMEEXTRA_H

@@ -171,16 +171,39 @@ void WindowSlave::ChargerPhotoArrierePlan(LabelClicable *label, QString &lienPho
     }
 }
 
-void WindowSlave::DessinerForme()
+QPolygon WindowSlave::DessinerForme()
 {
     DialogDessinFormeExtra dlg;
-    dlg.exec();
+    if (dlg.exec() == QDialog::Accepted) {
+        return dlg.getResult();
+    }
 }
 
-void WindowSlave::DessinerFormeSetPoint(LabelClicable* label) {
+QVector<QPoint> WindowSlave::computePolygon(QPoint start, QPoint end) {
+    qDebug() << "Start computing Polygon" << start.x() << " " << start.y();
+    float rayon = QLineF(start, end).length();
+    rayon = rayon/2;
+    // mPoints.clear();
+    QVector<QPoint> points;
+    int x,y;
+    int nb_points = 3;
+    float pas_angle = 2 * PI /nb_points;
+    int centreX = (start.x() + end.x())/2;
+    int centreY = (start.y() + end.y())/2;;
+    float angle = pas_angle;
+    for(int i = 0; i < nb_points ; i++)
+    {
+        x = centreX + rayon*qCos(angle);
+        y = centreY + rayon*qSin(angle);
+        points.push_back(QPoint(x,y));
+        angle += pas_angle;
+    }
 
+    qDebug() << "End computing Polygon";
 
+    return points;
 }
+
 
 bool WindowSlave::EstUneImage(QString &fichier)
 {

@@ -11,14 +11,15 @@
 #include <QLineF>
 #include <qmath.h>
 #include "labelclicable.h"
-
+#define PI 3.141592653
 
 class LabelDessinable : public LabelClicable
 {
     Q_OBJECT
 public:
     explicit LabelDessinable(QWidget *parent = 0);
-
+    QPolygon getPolygon();
+    static QVector<QPoint> computePolygon(QPoint start, QPoint end);
 private:
     QVector<QPoint> mPoints;
     QPolygon mPolygon;
@@ -26,8 +27,6 @@ private:
     bool mDraw;
     void draw();
     void drawLine(QLineF);
-    void computePolygon(QPoint);
-
 signals:
     void clicked();
 public slots:

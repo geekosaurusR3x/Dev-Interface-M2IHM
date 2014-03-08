@@ -12,6 +12,7 @@
 #include <QBitmap>
 #include <QProgressBar>
 #include <ctime>
+#include "windowslave.h"
 
 class DaVinci : public QObject
 {

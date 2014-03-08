@@ -32,30 +32,8 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(grillePhotos,SIGNAL(clicked()),this,SLOT(DegriseRetirerImage()));
     connect(grillePhotos,SIGNAL(clacked()),this,SLOT(GriserBoutonRetirerImage()));
     connect(LabelCouleurArrierePlan, SIGNAL( clicked() ), this, SLOT( ChangerCouleurArrierePlan()));
-    connect(LabelPhotoArrierePlan, SIGNAL(clicked()), this, SLOT(ChargerPhotoArrierePlan()));
+    connect(LabelPhotoArrierePlan, SIGNAL(clicked()), this, SLOT(ChargePhotoArrierePlan()));
     connect(LabelFormeExtra, SIGNAL(clicked()), this, SLOT(DessinerPolygone()));
-
-//    {
-//        throw  ExceptionErreure("test rien à signaler");
-//    } catch (ExceptionErreure &e)
-//    {
-//        e.Afficher(this);
-//    }
-
-   // Wizard wiz;
-   // wiz.exec();
-
-    //grillePhotos->AjoutePhoto("C:/Users/DANIEL-6/Pictures/dora.jpg");
-    //grillePhotos->AjoutePhoto("C:/Users/DANIEL-6/Pictures/dora.jpg");
-    //grillePhotos->AjoutePhoto("C:/Users/DANIEL-6/Pictures/drole.jpg");
-
-//    QPixmap pixmap(100,100);
-//    pixmap.fill(QColor("transparent"));
-//    QPainter painter(&pixmap);
-//    painter.setBrush(QBrush(Qt::blue));
-//    painter.drawRect(10, 10, 100, 100);
-//    painter.setBrush(QBrush(Qt::red));
-//    painter.drawEllipse(10, 10, 50, 50);
 }
 
 MainWindow::~MainWindow()
@@ -244,7 +222,7 @@ void MainWindow::DessinerPolygone()
 void MainWindow::DessinerPolygoneSivide()
 {
     //tester si il n'y a pas déjà un polygone dans le label forme extra
-    WindowSlave::DessinerForme();
+    mPolygon = WindowSlave::DessinerForme();
     //qDebug()<<"tester si vide"<<endl;
 }
 
@@ -424,6 +402,7 @@ Parameters MainWindow::getParameters() {
     int intImgSize = static_cast<int>(imageSize);
     Parameters params = Parameters(collageSize, intImgSize, nbPhotos, distanceBetweenPhotos, background, form, this->grillePhotos->getListePhoto());
     params.setDrawingAnimation(ui->CheckBoxActiverAnimation->isChecked());
+    params.setPolygon(mPolygon);
     qDebug() << params;
     return params;
 }
@@ -469,7 +448,7 @@ void MainWindow::on_BoutonCreer_clicked()
 #ifdef linux
         defaultLocation = "/tmp";
 #endif
-        QString fichier = QFileDialog::getSaveFileName(this,"Choisir où enregistrer votre collage", defaultLocation, ".png");
+        QString fichier = QFileDialog::getSaveFileName(this, "Choisissez où enregistrer votre collage", defaultLocation, ".png");
 
         if (fichier != NULL) {
             if (mDaVinci->exportImage(fichier)) {
