@@ -11,7 +11,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->LayoutCouleurArrirePlan->addWidget(LabelCouleurArrierePlan);
     LabelPhotoArrierePlan = new LabelClicable(true,this, "Faites glisser une image ici");
     ui->LayoutPhotoArrierePlan->addWidget(LabelPhotoArrierePlan);
-    LabelFormeExtra = new LabelClicable(false,this);
+    LabelFormeExtra = new LabelDessinable(this);
     ui->LayoutFormeExtra->addWidget(LabelFormeExtra);
     ModeTailleCollage = false;
     ModeTaillePhoto = true;
@@ -216,13 +216,13 @@ void MainWindow::ChargerPhotoArrierePlan()
 
 void MainWindow::DessinerPolygone()
 {
-    WindowSlave::DessinerForme();
+    WindowSlave::DessinerForme(LabelFormeExtra);
 }
 
 void MainWindow::DessinerPolygoneSivide()
 {
     //tester si il n'y a pas déjà un polygone dans le label forme extra
-    mNbVertex = WindowSlave::DessinerForme();
+    mNbVertex = WindowSlave::DessinerForme(LabelFormeExtra);
     //qDebug()<<"tester si vide"<<endl;
 }
 

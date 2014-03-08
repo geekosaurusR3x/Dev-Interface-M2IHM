@@ -4,7 +4,7 @@
 #include<QLabel>
 #include<QRadioButton>
 #include<QLayout>
-#include"labelclicable.h"
+#include"labeldessinable.h"
 #include"windowslave.h"
 
 class WizardSelectionForme: public QWizardPage
@@ -17,7 +17,7 @@ private:
     QRadioButton *rectangle;
     QRadioButton *cercle;
     QRadioButton *extra;
-    LabelClicable *labelExtra;
+    LabelDessinable *labelExtra;
 private slots:
     void DessinerForme();
     void DessinerFormeSiVide();

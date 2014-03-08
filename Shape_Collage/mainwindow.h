@@ -16,7 +16,7 @@
 #include <QChar>
 #include <QRegExp>
 #include <QFileDialog>
-#include "labelclicable.h"
+#include "labeldessinable.h"
 #include <QPushButton>
 #include <QString>
 #include "dialogdessinformeextra.h"
@@ -50,7 +50,7 @@ private:
     GrillePhotos *grillePhotos;
     LabelClicable *LabelCouleurArrierePlan;
     LabelClicable *LabelPhotoArrierePlan;
-    LabelClicable *LabelFormeExtra;
+    LabelDessinable *LabelFormeExtra;
 
     QString LienPhotoArrierePlan;
 

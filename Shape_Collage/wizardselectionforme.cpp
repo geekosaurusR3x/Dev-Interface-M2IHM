@@ -11,7 +11,7 @@ WizardSelectionForme::WizardSelectionForme(QWidget *parent):QWizardPage(parent)
     rectangle->setChecked(true);
     this->cercle = new QRadioButton("Cercle");
     this->extra = new QRadioButton("Extra");
-    this->labelExtra = new LabelClicable(false,parent);
+    this->labelExtra = new LabelDessinable(parent);
     labelExtra->setSizePolicy( QSizePolicy( QSizePolicy::Expanding, QSizePolicy::Expanding ) );
 
     QVBoxLayout *boiteVerticalePrincipale = new QVBoxLayout();
@@ -49,10 +49,10 @@ WizardSelectionForme::~WizardSelectionForme()
 
 void WizardSelectionForme::DessinerForme()
 {
-    WindowSlave::DessinerForme();
+    WindowSlave::DessinerForme(labelExtra);
 }
 
 void WizardSelectionForme::DessinerFormeSiVide()
 {
-    WindowSlave::DessinerForme();
+    WindowSlave::DessinerForme(labelExtra);
 }

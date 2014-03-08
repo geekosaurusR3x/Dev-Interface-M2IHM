@@ -23,6 +23,8 @@ public:
     void setNbVertex(int value);
     void update();
     void clear();
+    void setPreviewLabel(LabelDessinable *value);
+
 private:
     QVector<QPoint> mPoints;
     QPolygon mPolygon;
@@ -32,6 +34,7 @@ private:
     int mNbVertex;
     void draw();
     void drawLine(QLineF);
+    LabelDessinable* mPreviewLabel;
 signals:
     void clicked();
 public slots:

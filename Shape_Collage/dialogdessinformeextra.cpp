@@ -1,15 +1,16 @@
 #include "dialogdessinformeextra.h"
 #include "ui_dialogdessinformeextra.h"
 
-DialogDessinFormeExtra::DialogDessinFormeExtra(QWidget *parent) :
+DialogDessinFormeExtra::DialogDessinFormeExtra(LabelDessinable* previewLabel, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::DialogDessinFormeExtra)
 {
     ui->setupUi(this);
     label = new LabelDessinable(this);
-
+    mMainPreviewLabel = previewLabel;
     ui->LayoutDessinPolygone->addWidget(label);
     label->setNbVertex(ui->SliderTaillePainceau->value());
+    label->setPreviewLabel(mMainPreviewLabel);
     defaultSliderValue = ui->SliderTaillePainceau->value();
     connect(label, SIGNAL(clicked()), this, SLOT(SetPoint()));
 }

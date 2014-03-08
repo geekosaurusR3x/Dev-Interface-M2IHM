@@ -171,9 +171,9 @@ void WindowSlave::ChargerPhotoArrierePlan(LabelClicable *label, QString &lienPho
     }
 }
 
-int WindowSlave::DessinerForme()
+int WindowSlave::DessinerForme(LabelDessinable*& previewLabel)
 {
-    DialogDessinFormeExtra dlg;
+    DialogDessinFormeExtra dlg(previewLabel);
     if (dlg.exec() == QDialog::Accepted) {
         return dlg.getNbVertex();
     }

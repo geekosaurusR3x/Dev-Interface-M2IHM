@@ -15,6 +15,7 @@
 #include<QLineEdit>
 #include <QPoint>
 #include <QVector>
+#include "labeldessinable.h"
 #include"dialogdessinformeextra.h"
 #include"labelclicable.h"
 #define PI 3.141592653
@@ -32,7 +33,7 @@ public:
     static void GriseOuDegriseGroupe(bool &mode, QPushButton *boutonMode, const QString &section, QWidget * *groupe, int nb);
     static QColor ChangerCouleurArrierePlan(LabelClicable* label);
     static void ChargerPhotoArrierePlan(LabelClicable* label,QString& lienPhoto);
-    static int DessinerForme();
+    static int DessinerForme(LabelDessinable*&);
     static bool EstUneImage(QString& fichier);
     static void RemettreValeursParDefaut(QRadioButton* radioRectangle,QComboBox *comboTaillecollage,
                                          QLineEdit* largeur,QLineEdit* hauteur,QComboBox* comboTaillePhoto,
