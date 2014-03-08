@@ -154,8 +154,9 @@ void WindowSlave::ChargerPhotoArrierePlan(LabelClicable *label, QString &lienPho
     QString fichier=QFileDialog::getOpenFileName(label,"Choisir la photo de l'arrière-plan","","Image (*.png *.jpg *.bmp *.jpeg)");
     if(!fichier.isEmpty()&& (Autorisee.contains(fichier.mid(fichier.lastIndexOf(".")+1).toLower())))
     {
-        QPixmap pixmap(lienPhoto);
+
         lienPhoto=fichier;
+        QPixmap pixmap(lienPhoto);
         if (QMessageBox::question(label,"Taille du collage",
                                  "Désirez-vous adapter la taille du collage à celle de la photo d'arrière-plan ?",
                                  QMessageBox::Yes|QMessageBox::No)==QMessageBox::Yes)
@@ -166,7 +167,7 @@ void WindowSlave::ChargerPhotoArrierePlan(LabelClicable *label, QString &lienPho
             if (lineEditWidth != NULL) {
                 lineEditWidth->setText(QString::number(pixmap.width()));
             }
-            qDebug()<<"adapter"<<endl;
+            qDebug()<<"adapter to "<< QString::number(pixmap.height()) << " x " << QString::number(pixmap.width()) <<endl;
         }
         else
         {
