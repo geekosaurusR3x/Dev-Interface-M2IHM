@@ -6,6 +6,7 @@
 #include"labelclicable.h"
 #include"windowslave.h"
 #include<QRadioButton>
+#include"parameters.h"
 
 class WizardSelectionArrierePlan: public QWizardPage
 {
@@ -16,6 +17,7 @@ public:
     QHBoxLayout * PlacerArrierePlanPhoto();
     QHBoxLayout * PlacerArrierePlanColorie();
     QHBoxLayout * PlacerArrierePlanTransparent();
+    QPixmap GetBackground();
 private:
     QRadioButton *boutonRadioTransparent;
 
@@ -25,6 +27,7 @@ private:
     QRadioButton *boutonRadioPhoto;
     LabelClicable *labelPhoto;
     QString lienPhoto;
+    QColor mBackgroundColor;
 private slots:
     void ChangerCouleurArrierePlan();
     void ChargerPhotoArrierePlan();

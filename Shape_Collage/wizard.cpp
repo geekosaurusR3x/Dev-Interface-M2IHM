@@ -10,7 +10,7 @@ Wizard::Wizard(QWidget *parent):QWizard(parent)
     selectionArrierePlan = new WizardSelectionArrierePlan(this);
     collage = new WizardCollage(this);
 
-
+    mParams = new Parameters();
     mInfoId = this->addPage(information);
     mPhotoId = this->addPage(selectionPhoto);
     mFormId = this->addPage(selectionFrome);
@@ -19,6 +19,7 @@ Wizard::Wizard(QWidget *parent):QWizard(parent)
     mCollageId = this->addPage(collage);
     setWindowIcon(QIcon(":/Images/Icone"));
     setWindowTitle("Assistant de création de collage");
+
 }
 
 bool Wizard::validateCurrentPage() {
@@ -34,6 +35,8 @@ bool Wizard::validateCurrentPage() {
         case 1:
         {
             if (selectionPhoto->getPhotos()->getListePhoto().size() > 0) {
+                mParams->setPhotoList(selectionPhoto->getPhotos()->getListePhoto());
+                mParams->setNbPhotos(selectionPhoto->getPhotos()->getListePhoto().size());
                 valid = true;
             } else {
                 // TODO show error dialog
@@ -43,15 +46,18 @@ bool Wizard::validateCurrentPage() {
         }
         //case mFormId:
         case 2:
-            // TODO if freehand and no form drawn -> error message
+            mParams->setForm(selectionFrome->GetValue());
             valid = true;
             break;
         //case mSizeId:
         case 3:
+            selectionTaille->SetParam(*mParams);
             valid = true;
             break;
         // case mBackgroundId:
         case 4:
+            mParams->setBackground(selectionArrierePlan->GetBackground());
+            collage->Draw(*mParams);
             valid = true;
             break;
         //case mCollageId:
@@ -61,6 +67,8 @@ bool Wizard::validateCurrentPage() {
         default: // shouldn't ever be called
             break;
     }
+
+    qDebug() << *mParams;
     return valid;
 }
 

@@ -19,6 +19,7 @@ class Parameters : public QObject
     Q_OBJECT
     friend QDebug operator <<(QDebug dbg, const Parameters& obj);
     public:
+    Parameters(QObject *parent = 0);
     Parameters(QSize&, int&, int&, int&, QPixmap&, CollageForm, QStringList, QObject *parent = 0);
     Parameters(const Parameters&);
     QSize getCollageSize() const;

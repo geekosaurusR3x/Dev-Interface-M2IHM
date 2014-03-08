@@ -34,6 +34,8 @@ WizardSelectionTaille::WizardSelectionTaille(QWidget *parent):QWizardPage(parent
     connect(boutonModeDistancePhotos,SIGNAL(clicked()),this,SLOT(SetEnabledDistancePhoto()));
     connect(sliderDistancePhotos,SIGNAL(valueChanged(int)),spinboxDistancePhoto,SLOT(setValue(int)));
     connect(spinboxDistancePhoto,SIGNAL(valueChanged(int)),sliderDistancePhotos,SLOT(setValue(int)));
+    connect(combotc,SIGNAL(currentIndexChanged(int)),this,SLOT(MAJLargeurHauteur(int)));
+    connect(combotp,SIGNAL(currentIndexChanged(int)),this,SLOT(MAJTaillePhoto(int)));
     sliderDistancePhotos->setValue(67);
 
 }
@@ -145,7 +147,7 @@ QGroupBox * WizardSelectionTaille::PlacerDistanceEntrePhoto()
     QHBoxLayout *boiteHorizontaleDistancePhotos = new QHBoxLayout();
     this->boutonModeDistancePhotos = new QPushButton("Manuel");
     this->sliderDistancePhotos = new QSlider(Qt::Horizontal);
-    sliderDistancePhotos->setRange(0,208);
+    sliderDistancePhotos->setRange(0,200);
     this->spinboxDistancePhoto = new QSpinBox();
     spinboxDistancePhoto->setRange(0,500);
     this->labelPourcent = new QLabel("%");
@@ -157,6 +159,8 @@ QGroupBox * WizardSelectionTaille::PlacerDistanceEntrePhoto()
 
     return GBdistancePhotos;
 }
+
+
 
 void WizardSelectionTaille::GriseOuDegriseTailleCollage()
 {
@@ -275,3 +279,79 @@ void WizardSelectionTaille::SetEnabledDistancePhoto()
     }
 }
 
+
+void WizardSelectionTaille::MAJLargeurHauteur(int index)
+{
+    WindowSlave::ConvertAndMAJLineEdit(index,UMTailleCollage,largeur);
+    WindowSlave::ConvertAndMAJLineEdit(index,UMTailleCollage,hauteur);
+    UMTailleCollage=index;
+}
+
+void WizardSelectionTaille::MAJTaillePhoto(int index)
+{
+    WindowSlave::ConvertAndMAJLineEdit(index,UMTaillePhoto,taillPhoto);
+    UMTaillePhoto=index;
+}
+
+void WizardSelectionTaille::SetParam(Parameters& param )
+{
+    QSize collageSize;
+    double imageSize = -1;
+    int nbPhotos = -1;
+    int distanceBetweenPhotos = -1;
+
+    if (this->ModeTailleCollage) {
+            float height = hauteur->text().toFloat();
+            float width = largeur->text().toFloat();
+            qDebug() << "orig W: " << hauteur->text().toFloat() << " orig H: " <<  largeur->text().toFloat();
+            qDebug() << "W: " << width << " H:" << height;
+
+            switch (UMTailleCollage) {
+                case 1: // Current: inch (pouces)
+                    height = Convertisseur::PouceToPixels(height);
+                    width = Convertisseur::PouceToPixels(width);
+                    break;
+                case 2: // Current: cm
+                    height = Convertisseur::CmToPixel(height);
+                    width = Convertisseur::CmToPixel(width);
+                    break;
+            }
+            // TODO Multiply by 100 to get rid float
+            collageSize = QSize(width, height);
+    }
+
+    if (this->ModeTaillePhoto) {
+        imageSize = taillPhoto->text().toFloat();
+        switch (UMTaillePhoto) {
+        case 1:
+            imageSize = Convertisseur::PouceToPixels(imageSize);
+            break;
+        case 2:
+            imageSize = Convertisseur::CmToPixel(imageSize);
+            break;
+        }
+
+        qDebug() << "UI Image size: " << taillPhoto->text();
+    }
+
+    if (this->ModeNombrePhoto) {
+        int maxPhotos = param.getNbPhotos();
+        if (nomrePrecisPhotos->isChecked()) {
+            nbPhotos = qMin(maxPhotos,nombrePhotos->text().toInt());
+        } else {
+            nbPhotos = maxPhotos;
+        }
+    }
+
+    if (this->ModeDistanceEntrePhotos) {
+        distanceBetweenPhotos = sliderDistancePhotos->value();
+    }
+
+    int intImgSize = static_cast<int>(imageSize);
+
+    param.setCollageSize(collageSize);
+    param.setPhotoSize(intImgSize);
+    param.setNbPhotos(nbPhotos);
+    param.setDistanceBetweenPhotos(distanceBetweenPhotos);
+
+}

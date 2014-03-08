@@ -1,5 +1,10 @@
 #include "parameters.h"
 
+Parameters::Parameters(QObject* parent) : QObject(parent)
+{
+
+}
+
 Parameters::Parameters(QSize& collageSize, int& photoSize, int& nbPhotos, int& distanceBetweenPhotos, QPixmap& background, CollageForm form, QStringList photoList, QObject* parent) : QObject(parent) {
 
     this->collageSize = collageSize;
@@ -126,6 +131,9 @@ QDebug operator <<(QDebug dbg, const Parameters& obj) {
     dbg.space() << "Distance: " << obj.getDistanceBetweenPhotos();
     dbg << "Background: " << obj.getBackground().isNull() << obj.getBackground().size().rheight() <<  "x" << obj.getBackground().size().rwidth();
     dbg.space() << "form: " << obj.getForm();
-    dbg.space() << "PhotoList"; //<< obj.getPhotoList();
+    dbg.space() << "PhotoList:";
+    foreach (QString photo, obj.getPhotoList()) {
+        dbg.space()<< photo;
+    }
     return dbg.space();
 }

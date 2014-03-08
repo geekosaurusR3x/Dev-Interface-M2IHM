@@ -6,6 +6,7 @@
 #include<QLayout>
 #include"labeldessinable.h"
 #include"windowslave.h"
+#include"parameters.h"
 
 class WizardSelectionForme: public QWizardPage
 {
@@ -13,6 +14,7 @@ class WizardSelectionForme: public QWizardPage
 public:
     WizardSelectionForme(QWidget *parent = 0);
     ~WizardSelectionForme();
+    CollageForm GetValue();
 
 private:
     QRadioButton *rectangle;

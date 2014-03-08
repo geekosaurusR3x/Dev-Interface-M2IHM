@@ -333,7 +333,7 @@ Parameters MainWindow::getParameters() {
     if (this->ModeTailleCollage) {
             float height = ui->LineEditHauteur->text().toFloat();
             float width = ui->LineEditLargeur->text().toFloat();
-            qDebug() << "orig W: " << ui->LineEditLargeur->text() << " orig H: " << ui->LineEditHauteur;
+            qDebug() << "orig W: " << ui->LineEditLargeur->text() << " orig H: " << ui->LineEditHauteur->text();
             qDebug() << "W: " << width << " H:" << height;
 
             switch (this->UMTailleCollage) {

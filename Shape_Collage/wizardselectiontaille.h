@@ -11,6 +11,7 @@
 #include<QSlider>
 #include<QSpinBox>
 #include"windowslave.h"
+#include"parameters.h"
 
 class WizardSelectionTaille: public QWizardPage
 {
@@ -22,6 +23,7 @@ public:
     QGroupBox * PlacerTaillePhoto();
     QGroupBox * PlacerNombrePhoto();
     QGroupBox * PlacerDistanceEntrePhoto();
+    void SetParam(Parameters&param);
 private:
     QPushButton *boutonModeTailleCollage;
     QLineEdit *largeur;
@@ -48,12 +50,17 @@ private:
     QSpinBox *spinboxDistancePhoto;
     QLabel *labelPourcent;
     bool ModeDistanceEntrePhotos;
+
+   int UMTaillePhoto;
+   int UMTailleCollage;
 private slots:
     void GriseOuDegriseTailleCollage();
     void GriseOuDegriseTaillePhoto();
     void GriseOuDegriseNombrePhoto();
     void GriseOuDegriseDistancePhoto();
 
+    void MAJLargeurHauteur(int index);
+    void MAJTaillePhoto(int index);
 
     void SetEnabledTailleCollage();
     void SetEnabledTaillePhoto();

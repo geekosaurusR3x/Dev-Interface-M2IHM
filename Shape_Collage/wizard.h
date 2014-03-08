@@ -8,6 +8,7 @@
 #include"wizardselectionarriereplan.h"
 #include"wizardcollage.h"
 #include<QGroupBox>
+#include"parameters.h"
 
 class Wizard : public QWizard
 {
@@ -16,6 +17,7 @@ public:
     Wizard(QWidget *parent = 0);
     ~Wizard();
 private:
+    Parameters *mParams;
     WizardInfos *information;
     WizardSelectionPhotos *selectionPhoto;
     WizardSelectionForme *selectionFrome;
