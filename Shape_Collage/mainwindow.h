@@ -45,6 +45,7 @@ public:
 
     void Vider_GrillePhotos();
     void Remettre_Valeurs_Par_Defaut();
+
 private:
     Ui::MainWindow *ui;
     GrillePhotos *grillePhotos;

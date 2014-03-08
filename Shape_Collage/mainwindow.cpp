@@ -32,7 +32,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(grillePhotos,SIGNAL(clicked()),this,SLOT(DegriseRetirerImage()));
     connect(grillePhotos,SIGNAL(clacked()),this,SLOT(GriserBoutonRetirerImage()));
     connect(LabelCouleurArrierePlan, SIGNAL( clicked() ), this, SLOT( ChangerCouleurArrierePlan()));
-    connect(LabelPhotoArrierePlan, SIGNAL(clicked()), this, SLOT(ChargePhotoArrierePlan()));
+    connect(LabelPhotoArrierePlan, SIGNAL(clicked()), this, SLOT(ChargerPhotoArrierePlan()));
     connect(LabelFormeExtra, SIGNAL(clicked()), this, SLOT(DessinerPolygone()));
 }
 
@@ -203,10 +203,7 @@ void MainWindow::RestaurerValParDefaut()
 
 void MainWindow::ClicArrierePlanPhoto()
 {
-    if(LienPhotoArrierePlan=="")
-    {
-        ChargerPhotoArrierePlan();
-    }
+    ChargerPhotoArrierePlan();
 }
 
 void MainWindow::ChargerPhotoArrierePlan()
@@ -216,7 +213,7 @@ void MainWindow::ChargerPhotoArrierePlan()
 
 void MainWindow::DessinerPolygone()
 {
-    WindowSlave::DessinerForme(LabelFormeExtra);
+    mNbVertex = WindowSlave::DessinerForme(LabelFormeExtra);
 }
 
 void MainWindow::DessinerPolygoneSivide()

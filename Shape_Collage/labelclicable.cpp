@@ -68,4 +68,5 @@ void LabelClicable::dropEvent(QDropEvent *event)
         setScaledContents(true);
         adjustSize();
     }
+
 }
