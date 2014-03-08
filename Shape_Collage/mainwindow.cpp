@@ -211,7 +211,7 @@ void MainWindow::ClicArrierePlanPhoto()
 
 void MainWindow::ChargerPhotoArrierePlan()
 {
-    WindowSlave::ChargerPhotoArrierePlan(LabelPhotoArrierePlan,LienPhotoArrierePlan);
+    WindowSlave::ChargerPhotoArrierePlan(LabelPhotoArrierePlan, LienPhotoArrierePlan, ui->LineEditLargeur, ui->LineEditHauteur);
 }
 
 void MainWindow::DessinerPolygone()

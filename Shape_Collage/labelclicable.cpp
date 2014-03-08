@@ -62,10 +62,8 @@ void LabelClicable::dropEvent(QDropEvent *event)
     fichier = "/" + fichier;
 #endif
     //tester si c'est une image!
-    qDebug() << "Droping bqckground picture";
     if(WindowSlave::EstUneImage(fichier))
     {
-        qDebug() << " is ok" << fichier;
         setPixmap(QPixmap(fichier));
         setScaledContents(true);
         adjustSize();

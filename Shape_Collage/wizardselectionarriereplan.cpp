@@ -83,7 +83,7 @@ void WizardSelectionArrierePlan::ChangerCouleurArrierePlan()
 
 void WizardSelectionArrierePlan::ChargerPhotoArrierePlan()
 {
-    WindowSlave::ChargerPhotoArrierePlan(labelPhoto,lienPhoto);
+    WindowSlave::ChargerPhotoArrierePlan(labelPhoto, lienPhoto);
 }
 
 void WizardSelectionArrierePlan::PhotoSelected()

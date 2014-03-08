@@ -32,7 +32,7 @@ public:
     static void SetTextBouton(bool value, QPushButton *bouton, const QString &section);
     static void GriseOuDegriseGroupe(bool &mode, QPushButton *boutonMode, const QString &section, QWidget * *groupe, int nb);
     static QColor ChangerCouleurArrierePlan(LabelClicable* label);
-    static void ChargerPhotoArrierePlan(LabelClicable* label,QString& lienPhoto);
+    static void ChargerPhotoArrierePlan(LabelClicable* label,QString& lienPhoto, QLineEdit* leWidth = 0, QLineEdit* leHeight = 0);
     static int DessinerForme(LabelDessinable*&);
     static bool EstUneImage(QString& fichier);
     static void RemettreValeursParDefaut(QRadioButton* radioRectangle,QComboBox *comboTaillecollage,
