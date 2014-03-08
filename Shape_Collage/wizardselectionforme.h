@@ -13,6 +13,7 @@ class WizardSelectionForme: public QWizardPage
 public:
     WizardSelectionForme(QWidget *parent = 0);
     ~WizardSelectionForme();
+
 private:
     QRadioButton *rectangle;
     QRadioButton *cercle;

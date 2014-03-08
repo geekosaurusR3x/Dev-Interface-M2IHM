@@ -430,7 +430,7 @@ void MainWindow::showSuccessDialog() {
 
 void MainWindow::showFailureDialog(QString errMsg)  {
     QMessageBox msgBox;
-    msgBox.setText("Erreur!");
+    msgBox.setText("Erreur !");
     msgBox.setInformativeText(errMsg);
     msgBox.exec();
 }

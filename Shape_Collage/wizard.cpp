@@ -10,14 +10,65 @@ Wizard::Wizard(QWidget *parent):QWizard(parent)
     selectionArrierePlan = new WizardSelectionArrierePlan(this);
     collage = new WizardCollage(this);
 
-    this->addPage(information);
-    this->addPage(selectionPhoto);
-    this->addPage(selectionFrome);
-    this->addPage(selectionTaille);
-    this->addPage(selectionArrierePlan);
-    this->addPage(collage);
+
+    mInfoId = this->addPage(information);
+    mPhotoId = this->addPage(selectionPhoto);
+    mFormId = this->addPage(selectionFrome);
+    mSizeId = this->addPage(selectionTaille);
+    mBackgroundId = this->addPage(selectionArrierePlan);
+    mCollageId = this->addPage(collage);
     setWindowIcon(QIcon(":/Images/Icone"));
     setWindowTitle("Assistant de création de collage");
+}
+
+bool Wizard::validateCurrentPage() {
+    bool valid = false;
+    switch (this->currentId()) {
+        //case mInfoId:
+        case 0:
+        {
+            valid = true;
+            break;
+        }
+        //case mPhotoId:
+        case 1:
+        {
+            if (selectionPhoto->getPhotos()->getListePhoto().size() > 0) {
+                valid = true;
+            } else {
+                // TODO show error dialog
+                showErrorDialog("Veuillez ajouter au moins une photo.");
+            }
+            break;
+        }
+        //case mFormId:
+        case 2:
+            // TODO if freehand and no form drawn -> error message
+            valid = true;
+            break;
+        //case mSizeId:
+        case 3:
+            valid = true;
+            break;
+        // case mBackgroundId:
+        case 4:
+            valid = true;
+            break;
+        //case mCollageId:
+        case 5:
+            valid = true;
+            break;
+        default: // shouldn't ever be called
+            break;
+    }
+    return valid;
+}
+
+void Wizard::showErrorDialog(QString errMsg)  {
+    QMessageBox msgBox;
+    msgBox.setText("Erreur !");
+    msgBox.setInformativeText(errMsg);
+    msgBox.exec();
 }
 
 Wizard::~Wizard()
@@ -27,5 +78,6 @@ Wizard::~Wizard()
     selectionFrome = NULL; delete selectionFrome;
     selectionTaille = NULL; delete selectionTaille;
     selectionArrierePlan = NULL; delete selectionArrierePlan;
-    collage =NULL; delete collage;
+    collage =NULL;
+    delete collage;
 }

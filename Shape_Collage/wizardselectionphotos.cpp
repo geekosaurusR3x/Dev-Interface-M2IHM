@@ -53,6 +53,16 @@ WizardSelectionPhotos::~WizardSelectionPhotos()
     delete boutonMoins;
     delete boutonClear;
 }
+GrillePhotos *WizardSelectionPhotos::getPhotos() const
+{
+    return photos;
+}
+
+void WizardSelectionPhotos::setPhotos(GrillePhotos *value)
+{
+    photos = value;
+}
+
 
 void WizardSelectionPhotos::AjouterPhotos()
 {

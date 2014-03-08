@@ -3,7 +3,6 @@
 
 #include <QDialog>
 #include"labeldessinable.h"
-#include <windowslave.h>
 #include <QPolygon>
 
 namespace Ui {

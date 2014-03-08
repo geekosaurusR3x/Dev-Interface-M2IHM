@@ -30,9 +30,7 @@ WizardSelectionForme::WizardSelectionForme(QWidget *parent):QWizardPage(parent)
     //connexion des signaux
     connect(labelExtra,SIGNAL(clicked()),this,SLOT(DessinerForme()));
     connect(extra,SIGNAL(clicked()),this,SLOT(DessinerFormeSiVide()));
-
 }
-
 
 
 WizardSelectionForme::~WizardSelectionForme()

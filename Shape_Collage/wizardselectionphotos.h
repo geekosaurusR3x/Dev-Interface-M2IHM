@@ -13,6 +13,9 @@ class WizardSelectionPhotos : public QWizardPage
 public:
     WizardSelectionPhotos(QWidget *parent = 0);
     ~WizardSelectionPhotos();
+    GrillePhotos *getPhotos() const;
+    void setPhotos(GrillePhotos *value);
+
 private:
     GrillePhotos *photos;
     QLabel *nombrePhotos;

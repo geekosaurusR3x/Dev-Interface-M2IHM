@@ -73,8 +73,10 @@ bool DaVinci::draw(Parameters params, QProgressBar*& progressBar)
     int cellHeight = photoSize * distanceBetweenPhotos;
 
     // Check parameters
-    if (params.getCollageSize().rheight() < 0) {
-        collageSize = QSize((cellWidth * cols), (cellHeight * lines));
+    if (params.getCollageSize().rheight() < 0 || params.getCollageSize().rwidth() < 0) {
+        int w = cellWidth * cols;
+        int h = cellHeight * lines;
+        collageSize = QSize(1.1 * w, 1.1 * h);
     }
 
     // Padding
@@ -176,22 +178,10 @@ bool DaVinci::draw(Parameters params, QProgressBar*& progressBar)
 
     // Randomly place the remaining images
     for (int i = 0; i < nbRandomImages; i++) {
-        switch (form) {
-        case RECTANGLE:
-        {
-            xPos.push_back(rand() % collageSize.width());
-            yPos.push_back(rand() % collageSize.height());
-            break;
-        }
-        default:
-        {
-            // Default to center
-            xPos.push_back(collageSize.width() / 2);
-            yPos.push_back(collageSize.height() / 2);
-            break;
-        }
-        }
+            xPos.push_back(rand() % cols*cellWidth - photoSize);
+            yPos.push_back(rand() % lines*cellHeight - photoSize);
     }
+
 
     // Randomly place images
     while (nbPhotos > 0) {
