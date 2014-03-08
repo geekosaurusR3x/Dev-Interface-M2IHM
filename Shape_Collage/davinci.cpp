@@ -26,6 +26,7 @@ bool DaVinci::draw(Parameters params, QProgressBar*& progressBar)
     CollageForm form = params.getForm();
     int progress = 0;
     progressBar->setValue(0);
+    mCanvas->clear();
     // Collage size is set manually
     if (collageSize.width() > 0) {
         horizontalPadding = collageSize.width() * 0.1;
@@ -215,8 +216,8 @@ bool DaVinci::draw(Parameters params, QProgressBar*& progressBar)
             qDebug() << "xpos size: " << xPos.size() << " ypos size: " << yPos.size() << " srcList" << "rotation: " << randRotation << "ImgSrcSize: " << imageSrcList.size();
 
             painter.drawPixmap(xPos.at(index), yPos.at(index), currentImage);
+            finalPainter.drawPixmap(horizontalPadding / 2, verticalPadding / 2, pixmap);
             if (params.getDrawingAnimation()) {
-                finalPainter.drawPixmap(horizontalPadding / 2, verticalPadding / 2, pixmap);
                 mCanvas->setPixmap(mFinalPixmap->scaled(mCanvas->width(), mCanvas->height()));
             }
             progressBar->setValue(progressBar->value() + progress);

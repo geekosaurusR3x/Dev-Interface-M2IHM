@@ -21,6 +21,7 @@ Parameters::Parameters(const Parameters& params) {
     this->polygon = params.getPolygon();
     this->nbVertex = params.getNbVertex();
     this->photoList = params.getPhotoList();
+    this->drawingAnimation = params.getDrawingAnimation();
 }
 
 QSize Parameters::getCollageSize() const
