@@ -199,7 +199,7 @@ bool WindowSlave::EstUneImage(QString &fichier)
 void WindowSlave::RemettreValeursParDefaut(QRadioButton* radioRectangle,QComboBox *comboTaillecollage,
                                            QLineEdit* largeur,QLineEdit* hauteur,QComboBox* comboTaillePhoto,
                                            QLineEdit* taillePhoto,QRadioButton* tout,QLineEdit* nbPhoto,
-                                           QSlider* distance,QRadioButton* arrierePlan,LabelClicable* couleur, LabelDessinable* preview)
+                                           QSlider* distance,QRadioButton* arrierePlan,LabelClicable* couleur, LabelDessinable* preview, LabelClicable *labelPhotoBackground)
 {
     radioRectangle->setChecked(true);
     comboTaillecollage->setCurrentIndex(0);
@@ -216,6 +216,8 @@ void WindowSlave::RemettreValeursParDefaut(QRadioButton* radioRectangle,QComboBo
 
     arrierePlan->setChecked(true);
     couleur->ChangeCouleur(Qt::white);
+    labelPhotoBackground->clear();
+    labelPhotoBackground->setText("<b>Faites glisser une image ici</b>");
     preview->clear();
 }
 
