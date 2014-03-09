@@ -9,6 +9,11 @@ DaVinci::DaVinci(const DaVinci& obj) {
     this->mAlreadyGenerated = obj.mAlreadyGenerated;
 }
 
+/**
+ * @brief DaVinci::DaVinci Constructeur
+ * @param label Label sur lequel cette classe va dessiner
+ * @param parent Le parent
+ */
 DaVinci::DaVinci(QLabel*& label, QObject *parent) :
     QObject(parent)
 {
@@ -16,6 +21,12 @@ DaVinci::DaVinci(QLabel*& label, QObject *parent) :
     mAlreadyGenerated = false;
 }
 
+/**
+ * @brief DaVinci::draw Fonction de dessin
+ * @param params Les paramètres que l'utilisateur a demandé
+ * @param progressBar La barre de progression
+ * @return true si le collage a pu être généré sans encombre
+ */
 bool DaVinci::draw(Parameters params, QProgressBar*& progressBar)
 {
     QSize collageSize = params.getCollageSize();
@@ -246,6 +257,11 @@ bool DaVinci::draw(Parameters params, QProgressBar*& progressBar)
     return true;
 }
 
+/**
+ * @brief DaVinci::exportImage Export du collage (vers un fichier)
+ * @param filename Chemin vers le fichier à créer
+ * @return true si l'image a pu être exportée
+ */
 bool DaVinci::exportImage(QString filename) {
     QFile file(filename + ".png");
     file.open(QIODevice::WriteOnly);
