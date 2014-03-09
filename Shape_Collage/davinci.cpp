@@ -125,6 +125,9 @@ bool DaVinci::draw(Parameters params, QProgressBar*& progressBar)
     qDebug() << "Distance BPhotos: " << distanceBetweenPhotos;
     qDebug() << "NbPhotos: " << nbPhotos << " ";
 
+    float centerX = collageSize.width() / 2;
+    float centerY = collageSize.height() / 2;
+
     for (int c = 0; c < cols; ++c) {
         for (int l = 0; l < lines; ++l) {
             int currentCellX = l * cellWidth;
@@ -137,8 +140,7 @@ bool DaVinci::draw(Parameters params, QProgressBar*& progressBar)
             {
                 // Circle
                 float radius = qMax(collageSize.height(), collageSize.width()) / 2;
-                float centerX = collageSize.width() / 2;
-                float centerY = collageSize.height() / 2;
+
 
                 float currentCellCenterX = currentCellX + (cellWidth / 2);
                 float currentCellCenterY = currentCellY + (cellHeight / 2);
@@ -188,10 +190,15 @@ bool DaVinci::draw(Parameters params, QProgressBar*& progressBar)
         }
     }
 
+    centerX = ((cols*cellWidth)/2)-photoSize;
+    centerY = ((lines*cellHeight)/2)-photoSize;
     // Randomly place the remaining images
     for (int i = 0; i < nbRandomImages; i++) {
-            xPos.push_back(rand() % cols*cellWidth - photoSize);
-            yPos.push_back(rand() % lines*cellHeight - photoSize);
+        int randx = (rand() % 2*photoSize)-photoSize;
+        int randy = (rand() % 2*photoSize)-photoSize;
+
+        xPos.push_back(centerX+randx);
+        yPos.push_back(centerY+randy);
     }
 
 
