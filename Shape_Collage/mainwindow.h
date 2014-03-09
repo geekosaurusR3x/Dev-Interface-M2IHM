@@ -88,8 +88,6 @@ private:
 
     Parameters getParameters();
     DaVinci* mDaVinci;
-    void showSuccessDialog();
-    void showFailureDialog(QString);
     QColor mBackgroundColor;
     int mNbVertex;
 private slots:

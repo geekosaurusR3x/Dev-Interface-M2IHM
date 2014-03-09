@@ -415,22 +415,10 @@ void MainWindow::on_BoutonApercu_clicked()
     if (this->grillePhotos->getListePhoto().size() > 0) {
         mDaVinci->draw(params, ui->ProgressBarJauge);
     } else {
-        showFailureDialog("Veuillez ajouter au moins une photo.");
+        WindowSlave::showFailureDialog("Veuillez ajouter au moins une photo.");
     }
 }
 
-void MainWindow::showSuccessDialog() {
-    QMessageBox msgBox;
-    msgBox.setText("Votre image a bien été enregistrée!");
-    msgBox.exec();
-}
-
-void MainWindow::showFailureDialog(QString errMsg)  {
-    QMessageBox msgBox;
-    msgBox.setText("Erreur !");
-    msgBox.setInformativeText(errMsg);
-    msgBox.exec();
-}
 
 void MainWindow::on_BoutonCreer_clicked()
 {
@@ -445,9 +433,9 @@ void MainWindow::on_BoutonCreer_clicked()
 
         if (fichier != NULL) {
             if (mDaVinci->exportImage(fichier)) {
-                showSuccessDialog();
+                WindowSlave::showSuccessDialog();
             } else {
-                showFailureDialog("Votre collage n'a pas pu être enregistré.");
+                WindowSlave::showFailureDialog("Votre collage n'a pas pu être enregistré.");
             }
         }
     }
