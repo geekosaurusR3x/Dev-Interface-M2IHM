@@ -1,5 +1,6 @@
 #include "windowslave.h"
 
+
 WindowSlave::WindowSlave()
 {
 }
@@ -69,7 +70,7 @@ void WindowSlave::ConvertAndMAJLineEdit(int index, int &oldindex, QLineEdit *lin
 void WindowSlave::AjouterImage(GrillePhotos *g, QPushButton *moins, QPushButton* clear, QLabel *l)
 {
     QStringList images;
-    images=QFileDialog::getOpenFileNames(g,"Ajouter des photos","","Images (*.png *.jpg *.bmp *.jpeg)");
+    images=QFileDialog::getOpenFileNames(g,"Ajouter des photos",QDir::homePath(),"Images (*.png *.jpg *.bmp *.jpeg)");
     if(!images.isEmpty())
     {
         for (int i = 0; i < images.count(); ++i)

@@ -18,6 +18,9 @@
 #include "labeldessinable.h"
 #include"dialogdessinformeextra.h"
 #include"labelclicable.h"
+
+#include <QDesktopServices>
+
 #define PI 3.141592653
 /**
  * \brief Cette classe fournis, exclusivement, des services spécifiques à la fenetre principale et ses composants
