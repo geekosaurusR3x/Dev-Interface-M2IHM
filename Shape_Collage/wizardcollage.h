@@ -11,9 +11,10 @@ class WizardCollage : public QWizardPage
 public:
     WizardCollage(QWidget* parent=0);
     void Draw(Parameters&);
+    bool Save(QString);
 private:
     DaVinci* mDavinci;
-    LabelClicable* mCollage;
+    QLabel* mCollage;
     QProgressBar* mBar;
 };
 

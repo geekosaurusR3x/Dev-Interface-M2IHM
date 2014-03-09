@@ -10,7 +10,7 @@ WizardCollage::WizardCollage(QWidget* parent):QWizardPage(parent)
                                "Cliquez sur \"terminer\" pour l'enregistrer");
     label->setWordWrap(true);
 
-    mCollage = new LabelClicable(false,parent);
+    mCollage = new QLabel(parent);
     mBar = new QProgressBar();
     QVBoxLayout *layout = new QVBoxLayout();
     layout->addWidget(label);
@@ -22,4 +22,8 @@ WizardCollage::WizardCollage(QWidget* parent):QWizardPage(parent)
 void WizardCollage::Draw(Parameters &param)
 {
     mDavinci->draw(param,mBar);
+}
+
+bool WizardCollage::Save(QString fichier){
+    return mDavinci->exportImage(fichier);
 }
