@@ -129,21 +129,26 @@ bool DaVinci::draw(Parameters params, QProgressBar*& progressBar)
     float centerY = collageSize.height() / 2;
 
     QGraphicsItem* Form;
+    painter.setBrush(Qt::red);
     switch (form) {
         case CIRCLE:
         {
             Form = new QGraphicsEllipseItem(0,0,collageSize.width(),collageSize.height());
+            painter.drawEllipse(Form->boundingRect());
             break;
         }
         case FREEHAND:
         {
             QPolygon pol(MathHelper::computePolygon(QPoint(0,0), QPoint(collageSize.width(), collageSize.height()), params.getNbVertex()));
             Form = new QGraphicsPolygonItem(pol);
+            painter.drawConvexPolygon(QGraphicsPolygonItem(pol).polygon());
+            // finalPainter.drawEllipse(Form->boundingRect());
             break;
         }
         default:
         {
             Form = new QGraphicsRectItem(0,0,collageSize.width(),collageSize.height());
+            painter.drawRect(Form->boundingRect());
             break;
         }
     }
