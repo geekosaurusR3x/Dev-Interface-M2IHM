@@ -215,6 +215,14 @@ public:
       * @return La QPixmap generée
       */
      static QPixmap BackgroundUiToParam(QRadioButton* radiocolor,QColor color,QRadioButton* radiotransparent,QString lienPhoto);
+
+     /**
+      * @brief ResizeToFit Redimensionne une pixmap pour tenir dans un label
+      * @param pixmap La pixmap à redimensionner
+      * @param label Le label dans lequel la pixmap doit tenir
+      * @return La pixmap redimensionnée
+      */
+     static QPixmap ResizeToFit(QPixmap& pixmap, QLabel* label);
 };
 
 #endif // WINDOWSLAVE_H

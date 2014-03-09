@@ -62,10 +62,11 @@ void LabelClicable::dropEvent(QDropEvent *event)
     fichier = "/" + fichier;
 #endif
     //tester si c'est une image!
-    if(WindowSlave::EstUneImage(fichier))
+    if (WindowSlave::EstUneImage(fichier))
     {
-        setPixmap(QPixmap(fichier));
-        setScaledContents(true);
+        QPixmap pixmap(fichier);
+        setPixmap(WindowSlave::ResizeToFit(pixmap, this));
+        setScaledContents(false);
         adjustSize();
         emit clacked(fichier);
     }

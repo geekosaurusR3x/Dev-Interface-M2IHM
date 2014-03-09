@@ -171,8 +171,8 @@ void WindowSlave::ChangerPhotoArrierePlan(LabelClicable* label, QString &fichier
         if (AskCollageSizeToBackgroundAdjustement()) {
             AdjustCollageSize(lineEditWidth, lineEditHeight, pixmap.width(), pixmap.height());
         }
-        label->setPixmap(pixmap);
-        label->setScaledContents(true);
+        label->setPixmap(WindowSlave::ResizeToFit(pixmap, label));
+        label->setScaledContents(false);
         label->adjustSize();
     }
 }
@@ -181,6 +181,18 @@ void WindowSlave::ChargerPhotoArrierePlan(LabelClicable* label, QString &lienPho
 {
     QString fichier = QFileDialog::getOpenFileName(label,"Choisir la photo de l'arrière-plan","","Image (*.png *.jpg *.bmp *.jpeg)");
     ChangerPhotoArrierePlan(label, fichier, lineEditWidth, lineEditHeight);
+}
+
+QPixmap WindowSlave::ResizeToFit(QPixmap& pixmap, QLabel* label) {
+    int pixmapMax = qMax(pixmap.height(), pixmap.width());
+    int labelMax = qMax(label->height(), label->width());
+    int minSize = qMin(pixmapMax, labelMax);
+    if (pixmap.height() == pixmapMax) {
+        pixmap = pixmap.scaledToHeight(minSize);
+    } else if (pixmap.width() == pixmapMax) {
+        pixmap = pixmap.scaledToWidth(minSize);
+    }
+    return pixmap;
 }
 
 int WindowSlave::DessinerForme(LabelDessinable*& previewLabel)
