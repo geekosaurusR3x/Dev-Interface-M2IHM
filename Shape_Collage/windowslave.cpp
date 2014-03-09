@@ -147,37 +147,40 @@ QColor WindowSlave::ChangerCouleurArrierePlan(LabelClicable *label)
     return couleur;
 }
 
-void WindowSlave::ChargerPhotoArrierePlan(LabelClicable *label, QString &lienPhoto, QLineEdit* lineEditWidth, QLineEdit* lineEditHeight)
-{
+bool WindowSlave::AskCollageSizeToBackgroundAdjustement() {
+   return QMessageBox::question(0, "Taille du collage",
+                             "Désirez-vous adapter la taille du collage à celle de la photo d'arrière-plan ?",
+                             QMessageBox::Yes|QMessageBox::No) == QMessageBox::Yes;
+}
 
+void WindowSlave::AdjustCollageSize(QLineEdit* lineEditWidth, QLineEdit* lineEditHeight, int width, int height) {
+    if (lineEditHeight != NULL) {
+        lineEditHeight->setText(QString::number(height));
+    }
+    if (lineEditWidth != NULL) {
+        lineEditWidth->setText(QString::number(width));
+    }
+}
+
+void WindowSlave::ChangerPhotoArrierePlan(LabelClicable* label, QString &fichier, QLineEdit* lineEditWidth, QLineEdit* lineEditHeight) {
     QStringList Autorisee;
     Autorisee<<"jpg"<<"jpeg"<<"bmp"<<"png";
-    QString fichier=QFileDialog::getOpenFileName(label,"Choisir la photo de l'arrière-plan","","Image (*.png *.jpg *.bmp *.jpeg)");
     if(!fichier.isEmpty()&& (Autorisee.contains(fichier.mid(fichier.lastIndexOf(".")+1).toLower())))
     {
-
-        lienPhoto=fichier;
-        QPixmap pixmap(lienPhoto);
-        if (QMessageBox::question(label,"Taille du collage",
-                                 "Désirez-vous adapter la taille du collage à celle de la photo d'arrière-plan ?",
-                                 QMessageBox::Yes|QMessageBox::No)==QMessageBox::Yes)
-        {
-            if (lineEditHeight != NULL) {
-                lineEditHeight->setText(QString::number(pixmap.height()));
-            }
-            if (lineEditWidth != NULL) {
-                lineEditWidth->setText(QString::number(pixmap.width()));
-            }
-            qDebug()<<"adapter to "<< QString::number(pixmap.height()) << " x " << QString::number(pixmap.width()) <<endl;
-        }
-        else
-        {
-            qDebug()<<"ne pas adapter"<<endl;
+        QPixmap pixmap(fichier);
+        if (AskCollageSizeToBackgroundAdjustement()) {
+            AdjustCollageSize(lineEditWidth, lineEditHeight, pixmap.width(), pixmap.height());
         }
         label->setPixmap(pixmap);
         label->setScaledContents(true);
         label->adjustSize();
     }
+}
+
+void WindowSlave::ChargerPhotoArrierePlan(LabelClicable* label, QString &lienPhoto, QLineEdit* lineEditWidth, QLineEdit* lineEditHeight)
+{
+    QString fichier = QFileDialog::getOpenFileName(label,"Choisir la photo de l'arrière-plan","","Image (*.png *.jpg *.bmp *.jpeg)");
+    ChangerPhotoArrierePlan(label, fichier, lineEditWidth, lineEditHeight);
 }
 
 int WindowSlave::DessinerForme(LabelDessinable*& previewLabel)
@@ -188,8 +191,11 @@ int WindowSlave::DessinerForme(LabelDessinable*& previewLabel)
             qDebug() << "IS VALID";
         } else {
             qDebug() << "NOT VALID";
+            // showFailureDialog("La forme que vous avez dessinée n'est pas valide");
         }
         return dlg.getNbVertex();
+    } else {
+        previewLabel->clear();
     }
 }
 

@@ -174,9 +174,14 @@ private slots:
     void RestaurerValParDefaut();
 
     /**
-     * \brief procédure Appelée au click sur le bouton radio RadioBoutonArrierePlanPhoto pour sélectionner unephoto d'arriere-plan
+     * \brief procédure Appelée au click sur le bouton radio RadioBoutonArrierePlanPhoto pour sélectionner une photo d'arriere-plan
      */
     void ClicArrierePlanPhoto();
+
+    /**
+     * \brief DragNDropBackground Appelée quand on glisse une image sur le label d'arrière-plan
+     */
+    void DragNDropBackground(QString filename);
 
     /**
      * \brief Procédure permettant de télécharger une image pour la mettre en arriere-plan du collage
