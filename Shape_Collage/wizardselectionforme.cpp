@@ -55,6 +55,8 @@ CollageForm WizardSelectionForme::GetValue()
     } else {
         form = RECTANGLE;
     }
+
+    return form;
 }
 
 void WizardSelectionForme::DessinerForme()
