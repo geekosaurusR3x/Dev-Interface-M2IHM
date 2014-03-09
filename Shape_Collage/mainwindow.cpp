@@ -330,80 +330,33 @@ void MainWindow::GriserBoutonRetirerImage()
 
 Parameters MainWindow::getParameters() {
     QSize collageSize;
-    double imageSize = -1;
+    int imageSize = -1;
     int nbPhotos = -1;
     int distanceBetweenPhotos = -1;
-    QPixmap background; //  = QImage(this->LienPhotoArrierePlan);
+    QPixmap background;
     CollageForm form;
 
     if (this->ModeTailleCollage) {
-            float height = ui->LineEditHauteur->text().toFloat();
-            float width = ui->LineEditLargeur->text().toFloat();
-            qDebug() << "orig W: " << ui->LineEditLargeur->text() << " orig H: " << ui->LineEditHauteur->text();
-            qDebug() << "W: " << width << " H:" << height;
-
-            switch (this->UMTailleCollage) {
-                case 1: // Current: inch (pouces)
-                    height = Convertisseur::PouceToPixels(height);
-                    width = Convertisseur::PouceToPixels(width);
-                    break;
-                case 2: // Current: cm
-                    height = Convertisseur::CmToPixel(height);
-                    width = Convertisseur::CmToPixel(width);
-                    break;
-            }
-            // TODO Multiply by 100 to get rid float
-            collageSize = QSize(width, height);
+            collageSize = WindowSlave::SizeUiToParam(this->UMTailleCollage,ui->LineEditLargeur,ui->LineEditLargeur);
     }
 
     if (this->ModeTaillePhoto) {
-        imageSize = ui->LineEditTaillePhoto->text().toFloat();
-        switch (this->UMTaillePhoto) {
-        case 1:
-            imageSize = Convertisseur::PouceToPixels(imageSize);
-            break;
-        case 2:
-            imageSize = Convertisseur::CmToPixel(imageSize);
-            break;
-        }
-
-        qDebug() << "UI Image size: " << ui->LineEditTaillePhoto->text();
+        imageSize = WindowSlave::PhotoSizeUiToParam(this->UMTaillePhoto,ui->LineEditTaillePhoto);
     }
 
     if (this->ModeNombrePhoto) {
-        int maxPhotos = this->grillePhotos->getListePhoto().size();
-        if (ui->RadioBoutonPhotos->isChecked()) {
-            nbPhotos = qMin(maxPhotos,ui->LineEditNombrePhoto->text().toInt());
-        } else {
-            nbPhotos = maxPhotos;
-        }
+        nbPhotos = WindowSlave::NbPhotoUiToParam(this->grillePhotos->getListePhoto().size(),ui->RadioBoutonPhotos,ui->LineEditNombrePhoto);
     }
 
     if (this->ModeDistanceEntrePhotos) {
-        distanceBetweenPhotos = ui->SpinBoxDistancePhotos->value();
+        distanceBetweenPhotos = WindowSlave::DistancePhotoUItoParam(ui->SpinBoxDistancePhotos);
     }
 
-    if (ui->RadioBoutonExtra->isChecked()) {
-        form = FREEHAND;
-    } else if (ui->RadioBoutonCercle->isChecked()) {
-        form = CIRCLE;
-    } else {
-        form = RECTANGLE;
-    }
+    form = WindowSlave::FormUIToParam(ui->RadioBoutonExtra,ui->RadioBoutonCercle);
 
-    if (ui->RadioBoutonArrierePlanColorie->isChecked()) {
-        background = QPixmap(1, 1);
-        background.fill(mBackgroundColor);
-    } else if (ui->RadioBoutonArrierePlanTransparent->isChecked()) {
-        background = QPixmap(1,1);
-        background.fill(Qt::transparent);
-    } else {
-        // background = QImage(this->LienPhotoArrierePlan);
-        background = QPixmap::fromImage(QImage(this->LienPhotoArrierePlan));
-    }
+    background = WindowSlave::BackgroundUiToParam(ui->RadioBoutonArrierePlanColorie,mBackgroundColor,ui->RadioBoutonArrierePlanTransparent,LienPhotoArrierePlan);
 
-    int intImgSize = static_cast<int>(imageSize);
-    Parameters params = Parameters(collageSize, intImgSize, nbPhotos, distanceBetweenPhotos, background, form, this->grillePhotos->getListePhoto());
+    Parameters params = Parameters(collageSize, imageSize, nbPhotos, distanceBetweenPhotos, background, form, this->grillePhotos->getListePhoto());
     params.setDrawingAnimation(ui->CheckBoxActiverAnimation->isChecked());
     // TODO
     params.setNbVertex(mNbVertex);
