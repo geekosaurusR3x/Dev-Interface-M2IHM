@@ -106,6 +106,25 @@ public:
      */
     static void ChargerPhotoArrierePlan(LabelClicable* label,QString& lienPhoto, QLineEdit* leWidth = 0, QLineEdit* leHeight = 0);
 
+    /**
+     * @brief ChangerPhotoArrierePlan Change la photo d'arrière-plan
+     * @param label Label contenant l'arrière-plan
+     * @param fichier Chemin vers l'image d'arrière-plan
+     * @param lineEditWidth Widget contenant la taille de l'image (largeur)
+     * @param lineEditHeigh Widget content la taille de l'image (hauteur)
+     */
+    static void ChangerPhotoArrierePlan(LabelClicable* label, QString &fichier, QLineEdit* lineEditWidth, QLineEdit* lineEditHeigh);
+
+    /**
+     * @brief AskCollageSizeToBackgroundAdjustement Affiche un dialog demandant à l'utilisateur s'il désire ajuster la taille du collage à celui de la photo d'arrière plan
+     */
+    static bool AskCollageSizeToBackgroundAdjustement();
+
+    /**
+     * @brief AdjustCollageSizeToBackground Ajuste la taille du collage
+     *
+     */
+    static void AdjustCollageSize(QLineEdit* lineEditWidth, QLineEdit* lineEditHeight, int width, int height);
 
     static int DessinerForme(LabelDessinable*&);
 

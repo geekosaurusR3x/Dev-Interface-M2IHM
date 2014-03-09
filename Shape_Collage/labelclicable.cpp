@@ -67,6 +67,6 @@ void LabelClicable::dropEvent(QDropEvent *event)
         setPixmap(QPixmap(fichier));
         setScaledContents(true);
         adjustSize();
+        emit clacked(fichier);
     }
-
 }

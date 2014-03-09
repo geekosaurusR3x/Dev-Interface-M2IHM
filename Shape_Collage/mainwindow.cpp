@@ -31,7 +31,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
     connect(grillePhotos,SIGNAL(clicked()),this,SLOT(DegriseRetirerImage()));
     connect(grillePhotos,SIGNAL(clacked()),this,SLOT(GriserBoutonRetirerImage()));
-    connect(LabelCouleurArrierePlan, SIGNAL( clicked() ), this, SLOT( ChangerCouleurArrierePlan()));
+    connect(LabelCouleurArrierePlan, SIGNAL(clicked()), this, SLOT( ChangerCouleurArrierePlan()));
+    connect(LabelPhotoArrierePlan, SIGNAL(clacked(QString)), this, SLOT(DragNDropBackground(QString)));
     connect(LabelPhotoArrierePlan, SIGNAL(clicked()), this, SLOT(ChargerPhotoArrierePlan()));
     connect(LabelFormeExtra, SIGNAL(clicked()), this, SLOT(DessinerPolygone()));
 }
@@ -204,6 +205,11 @@ void MainWindow::RestaurerValParDefaut()
 void MainWindow::ClicArrierePlanPhoto()
 {
     ChargerPhotoArrierePlan();
+}
+
+void MainWindow::DragNDropBackground(QString filename) {
+    qDebug() << "Dragndrop image" << filename;
+    WindowSlave::ChangerPhotoArrierePlan(LabelPhotoArrierePlan, filename, ui->LineEditLargeur, ui->LineEditHauteur);
 }
 
 void MainWindow::ChargerPhotoArrierePlan()

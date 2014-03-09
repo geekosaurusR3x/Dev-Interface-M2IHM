@@ -22,6 +22,7 @@ signals:
      * \brief signal créer pour interactions diverses
      */
     void clicked();
+    void clacked(QString filename);
 protected:
     /**
      * \brief traitement du signal d'entré d'éléments sur le label via drag and drop
@@ -45,7 +46,7 @@ protected:
      * \brief traitement du signal de click souris sur le label
      * \a event évènement souris
      */
-    void mousePressEvent ( QMouseEvent * event ) ;
+    void mousePressEvent (QMouseEvent * event) ;
 
 };
 #endif // LABELCLICABLE_H
