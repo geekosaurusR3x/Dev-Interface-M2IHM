@@ -2,11 +2,9 @@
 
 Parameters::Parameters(QObject* parent) : QObject(parent)
 {
-
 }
 
 Parameters::Parameters(QSize& collageSize, int& photoSize, int& nbPhotos, int& distanceBetweenPhotos, QPixmap& background, CollageForm form, QStringList photoList, QObject* parent) : QObject(parent) {
-
     this->collageSize = collageSize;
     this->photoSize = photoSize;
     this->nbPhotos = nbPhotos;
