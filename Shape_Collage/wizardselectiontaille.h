@@ -18,9 +18,24 @@ class WizardSelectionTaille: public QWizardPage
 public:
     WizardSelectionTaille(QWidget *parent = 0);
     ~WizardSelectionTaille();
+    /**
+     * \return Initialise et retourne le groupebox et les champs de la section Taille du collage
+     */
     QGroupBox * PlacerTailleCollage();
+
+    /**
+     * \return Initialise et retourne le groupebox et les champs de la section Taille de la photo
+     */
     QGroupBox * PlacerTaillePhoto();
+
+    /**
+     * \return Initialise et retourne le groupebox et les champs de la section Nombre de photo
+     */
     QGroupBox * PlacerNombrePhoto();
+
+    /**
+     * \return Initialise et retourne le groupebox et les champs de la section Distance entre les photos
+     */
     QGroupBox * PlacerDistanceEntrePhoto();
 private:
     QPushButton *boutonModeTailleCollage;
@@ -49,15 +64,45 @@ private:
     QLabel *labelPourcent;
     bool ModeDistanceEntrePhotos;
 private slots:
+
+    /**
+     * \brief Grise les champs de la section Taille du collage si ils sontdégrisés et les dégrise sinon
+     */
     void GriseOuDegriseTailleCollage();
+
+    /**
+     * \brief Grise les champs de la section Taille de la photo si ils sontdégrisés et les dégrise sinon
+     */
     void GriseOuDegriseTaillePhoto();
+
+    /**
+     * \brief Grise les champs de la section Nombre de photos si ils sontdégrisés et les dégrise sinon
+     */
     void GriseOuDegriseNombrePhoto();
+
+    /**
+     * \brief Grise les champs de la section Distance entre les photos si ils sontdégrisés et les dégrise sinon
+     */
     void GriseOuDegriseDistancePhoto();
 
-
+    /**
+     * \brief grise ou dégrise les champs de la section Taille du collage et met à jour les autres sections
+     */
     void SetEnabledTailleCollage();
+
+    /**
+     * \brief grise ou dégrise les champs de la section Taille de la photo et met à jour les autres sections
+     */
     void SetEnabledTaillePhoto();
+
+    /**
+     * \brief grise ou dégrise les champs de la section Nombre de photos et met à jour les autres sections
+     */
     void SetEnabledNombrePhoto();
+
+    /**
+     * \brief grise ou dégrise les champs de la section Distanre entre les photos et met à jour les autres sections
+     */
     void SetEnabledDistancePhoto();
 };
 

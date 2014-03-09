@@ -6,7 +6,9 @@
 namespace Ui {
 class DialogAPropos;
 }
-
+/**
+ * \brief Classe de la boite de dialogue à propos
+ */
 class DialogAPropos : public QDialog
 {
     Q_OBJECT
