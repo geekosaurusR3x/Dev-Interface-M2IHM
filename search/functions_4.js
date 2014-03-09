@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['forme',['Forme',['../class_forme.html#a3c97c1066856b548d2fe6db963a28800',1,'Forme']]],
-  ['formecercle',['FormeCercle',['../class_forme_cercle.html#af6b4dcf9e03a1748d462d87890f91234',1,'FormeCercle::FormeCercle()'],['../class_forme_cercle.html#af66caaa7662b52b00346425cea109e69',1,'FormeCercle::FormeCercle(int r)']]],
-  ['formeextra',['FormeExtra',['../class_forme_extra.html#ac9260534ffe44da804f262f1e67967fc',1,'FormeExtra']]],
-  ['formerectangle',['FormeRectangle',['../class_forme_rectangle.html#a26b8dfa86d3b77a9f085ce387168d52d',1,'FormeRectangle::FormeRectangle()'],['../class_forme_rectangle.html#ad19ea5dcd0d791e80df8cf5f37bdb450',1,'FormeRectangle::FormeRectangle(int l, int h)']]]
+  ['effacerliste',['EffacerListe',['../class_grille_photos.html#aa516e182aafb8273423d175c35079ec8',1,'GrillePhotos']]],
+  ['effacerlistephoto',['EffacerListePhoto',['../class_window_slave.html#a0cc1c722d229203abe63dd3c43984454',1,'WindowSlave']]],
+  ['estuneimage',['EstUneImage',['../class_grille_photos.html#a43041246a7fb38a5be05d0af7ef4e8fa',1,'GrillePhotos::EstUneImage()'],['../class_window_slave.html#aa8f853a4295f08f50b96a04df613d49c',1,'WindowSlave::EstUneImage()']]],
+  ['exportimage',['exportImage',['../class_da_vinci.html#a257bc1264332d1bea0b1b4d34859b4bc',1,'DaVinci']]]
 ];

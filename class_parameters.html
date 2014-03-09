@@ -25,7 +25,7 @@
    <div id="projectname">ShapeCollage
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   <div id="projectbrief">Projet Qt - M2IHM 2014</div>
+   <div id="projectbrief">Projet QT - M2IHM 2014</div>
   </td>
  </tr>
  </tbody>
@@ -93,20 +93,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
+<p>Cette classe est construite lors du click sur les boutons Aperçu et Créer Elle contient tous les paramètres saisis par l'utilisateur et est donc passée à <a class="el" href="class_da_vinci.html" title="L&#39;original, le peintre par excellence. Cette classe réalise le collage selon les paramètres renseigné...">DaVinci</a>, qui lui se charge de créer le collage en adéquation.  
+ <a href="class_parameters.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="parameters_8h_source.html">parameters.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Parameters:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_parameters__inherit__graph.png" border="0" usemap="#_parameters_inherit__map" alt="Inheritance graph"/></div>
-<map name="_parameters_inherit__map" id="_parameters_inherit__map">
-</map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for Parameters:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_parameters__coll__graph.png" border="0" usemap="#_parameters_coll__map" alt="Collaboration graph"/></div>
-<map name="_parameters_coll__map" id="_parameters_coll__map">
-</map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -118,44 +117,64 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac9f0de01233484fa2866ec1b698145bb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parameters.html#ac9f0de01233484fa2866ec1b698145bb">Parameters</a> (const <a class="el" href="class_parameters.html">Parameters</a> &amp;)</td></tr>
 <tr class="separator:ac9f0de01233484fa2866ec1b698145bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a594d991be21dc163339b3a455910f2"><td class="memItemLeft" align="right" valign="top">QSize&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parameters.html#a4a594d991be21dc163339b3a455910f2">getCollageSize</a> () const </td></tr>
+<tr class="memdesc:a4a594d991be21dc163339b3a455910f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">getCollageSize Retourne la taille du collage désirée  <a href="#a4a594d991be21dc163339b3a455910f2">More...</a><br/></td></tr>
 <tr class="separator:a4a594d991be21dc163339b3a455910f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a6212ea3cbd4d4605a23af2f1314037"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parameters.html#a9a6212ea3cbd4d4605a23af2f1314037">setCollageSize</a> (const QSize &amp;value)</td></tr>
+<tr class="memdesc:a9a6212ea3cbd4d4605a23af2f1314037"><td class="mdescLeft">&#160;</td><td class="mdescRight">setCollageSize Change la taille du collage demandée  <a href="#a9a6212ea3cbd4d4605a23af2f1314037">More...</a><br/></td></tr>
 <tr class="separator:a9a6212ea3cbd4d4605a23af2f1314037"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa460d1088933deae71a6d4a08ac38a5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parameters.html#afa460d1088933deae71a6d4a08ac38a5">getPhotoSize</a> () const </td></tr>
+<tr class="memdesc:afa460d1088933deae71a6d4a08ac38a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">getPhotoSize Renvoit la taille maximale (hauteur OU largeur) qu'une photo peut avoir dans le collage  <a href="#afa460d1088933deae71a6d4a08ac38a5">More...</a><br/></td></tr>
 <tr class="separator:afa460d1088933deae71a6d4a08ac38a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a771441501ed22d78db34fa76f916e988"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parameters.html#a771441501ed22d78db34fa76f916e988">setPhotoSize</a> (const int &amp;value)</td></tr>
+<tr class="memdesc:a771441501ed22d78db34fa76f916e988"><td class="mdescLeft">&#160;</td><td class="mdescRight">setPhotoSize Fixe la taille des photos  <a href="#a771441501ed22d78db34fa76f916e988">More...</a><br/></td></tr>
 <tr class="separator:a771441501ed22d78db34fa76f916e988"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1add514950a3dcd62b9e46fff63acbf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parameters.html#ab1add514950a3dcd62b9e46fff63acbf">getNbPhotos</a> () const </td></tr>
+<tr class="memdesc:ab1add514950a3dcd62b9e46fff63acbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">getNbPhotos Combien de photos doivent être utilisées pour le collage  <a href="#ab1add514950a3dcd62b9e46fff63acbf">More...</a><br/></td></tr>
 <tr class="separator:ab1add514950a3dcd62b9e46fff63acbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4370e0858b5207886541acb3bdf38d4f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parameters.html#a4370e0858b5207886541acb3bdf38d4f">setNbPhotos</a> (const int &amp;value)</td></tr>
+<tr class="memdesc:a4370e0858b5207886541acb3bdf38d4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">setNbPhotos Fixe le nombre de photos à utiliser parmis les photos importées  <a href="#a4370e0858b5207886541acb3bdf38d4f">More...</a><br/></td></tr>
 <tr class="separator:a4370e0858b5207886541acb3bdf38d4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9909837d960dc13e1c3e0c4f2fbd5367"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parameters.html#a9909837d960dc13e1c3e0c4f2fbd5367">getDistanceBetweenPhotos</a> () const </td></tr>
+<tr class="memdesc:a9909837d960dc13e1c3e0c4f2fbd5367"><td class="mdescLeft">&#160;</td><td class="mdescRight">getDistanceBetweenPhotos Retourne la distance relative désirée entre deux photos  <a href="#a9909837d960dc13e1c3e0c4f2fbd5367">More...</a><br/></td></tr>
 <tr class="separator:a9909837d960dc13e1c3e0c4f2fbd5367"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d2537066fb8d6bf987f0c11ed1ebb30"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parameters.html#a1d2537066fb8d6bf987f0c11ed1ebb30">setDistanceBetweenPhotos</a> (const int &amp;value)</td></tr>
+<tr class="memdesc:a1d2537066fb8d6bf987f0c11ed1ebb30"><td class="mdescLeft">&#160;</td><td class="mdescRight">setDistanceBetweenPhotos Fixe la distance entre les photos (pourcentage)  <a href="#a1d2537066fb8d6bf987f0c11ed1ebb30">More...</a><br/></td></tr>
 <tr class="separator:a1d2537066fb8d6bf987f0c11ed1ebb30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1290ffe01fb323ac10f2d2213c8360bd"><td class="memItemLeft" align="right" valign="top">QPixmap&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parameters.html#a1290ffe01fb323ac10f2d2213c8360bd">getBackground</a> () const </td></tr>
+<tr class="memdesc:a1290ffe01fb323ac10f2d2213c8360bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">getBackground Retourne une pixmap avec l'arrière-plan du collage  <a href="#a1290ffe01fb323ac10f2d2213c8360bd">More...</a><br/></td></tr>
 <tr class="separator:a1290ffe01fb323ac10f2d2213c8360bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa536727e257321d83c627e92c3ec8906"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parameters.html#aa536727e257321d83c627e92c3ec8906">setBackground</a> (const QPixmap &amp;value)</td></tr>
+<tr class="memdesc:aa536727e257321d83c627e92c3ec8906"><td class="mdescLeft">&#160;</td><td class="mdescRight">setBackground Fixe l'image d'arrière-plan  <a href="#aa536727e257321d83c627e92c3ec8906">More...</a><br/></td></tr>
 <tr class="separator:aa536727e257321d83c627e92c3ec8906"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a370ce104528858e1553367e824121943"><td class="memItemLeft" align="right" valign="top"><a class="el" href="parameters_8h.html#abf1e43d45506775316a1d90e7c2824f2">CollageForm</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parameters.html#a370ce104528858e1553367e824121943">getForm</a> () const </td></tr>
+<tr class="memdesc:a370ce104528858e1553367e824121943"><td class="mdescLeft">&#160;</td><td class="mdescRight">getForm Retourn la forme de collage désirée (CIRCLE, RECTANGLE ou FREEHAND)  <a href="#a370ce104528858e1553367e824121943">More...</a><br/></td></tr>
 <tr class="separator:a370ce104528858e1553367e824121943"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad601b287246d3355cdbb4ef348616138"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parameters.html#ad601b287246d3355cdbb4ef348616138">setForm</a> (const <a class="el" href="parameters_8h.html#abf1e43d45506775316a1d90e7c2824f2">CollageForm</a> &amp;value)</td></tr>
+<tr class="memdesc:ad601b287246d3355cdbb4ef348616138"><td class="mdescLeft">&#160;</td><td class="mdescRight">setForm Fixe la forme du collage  <a href="#ad601b287246d3355cdbb4ef348616138">More...</a><br/></td></tr>
 <tr class="separator:ad601b287246d3355cdbb4ef348616138"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac93dd4de1ffc7a20027d7f1f6cfac3f0"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parameters.html#ac93dd4de1ffc7a20027d7f1f6cfac3f0">getPhotoList</a> () const </td></tr>
+<tr class="memdesc:ac93dd4de1ffc7a20027d7f1f6cfac3f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">getPhotoList Retourne une liste contenant les chemins vers les photos à utiliser pour le collage  <a href="#ac93dd4de1ffc7a20027d7f1f6cfac3f0">More...</a><br/></td></tr>
 <tr class="separator:ac93dd4de1ffc7a20027d7f1f6cfac3f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2254cd0e0f4ae68f0ba4875c6a072a44"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parameters.html#a2254cd0e0f4ae68f0ba4875c6a072a44">setPhotoList</a> (const QStringList &amp;value)</td></tr>
+<tr class="memdesc:a2254cd0e0f4ae68f0ba4875c6a072a44"><td class="mdescLeft">&#160;</td><td class="mdescRight">setPhotoList Fixe les chemins vers les photos à utiliser  <a href="#a2254cd0e0f4ae68f0ba4875c6a072a44">More...</a><br/></td></tr>
 <tr class="separator:a2254cd0e0f4ae68f0ba4875c6a072a44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a977082009f94b7be1729571890255c5b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parameters.html#a977082009f94b7be1729571890255c5b">getDrawingAnimation</a> () const </td></tr>
+<tr class="memdesc:a977082009f94b7be1729571890255c5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">getDrawingAnimation Retourne la préférence relative à l'animation du collage  <a href="#a977082009f94b7be1729571890255c5b">More...</a><br/></td></tr>
 <tr class="separator:a977082009f94b7be1729571890255c5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac4f0ea64693bc9c5a4f5e02286342b9e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parameters.html#ac4f0ea64693bc9c5a4f5e02286342b9e">setDrawingAnimation</a> (bool value)</td></tr>
+<tr class="memdesc:ac4f0ea64693bc9c5a4f5e02286342b9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">setDrawingAnimation Fixe la préférence d'animation  <a href="#ac4f0ea64693bc9c5a4f5e02286342b9e">More...</a><br/></td></tr>
 <tr class="separator:ac4f0ea64693bc9c5a4f5e02286342b9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b0aeb1a1bdce87c651603cff253e393"><td class="memItemLeft" align="right" valign="top">QPolygon&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parameters.html#a4b0aeb1a1bdce87c651603cff253e393">getPolygon</a> () const </td></tr>
+<tr class="memdesc:a4b0aeb1a1bdce87c651603cff253e393"><td class="mdescLeft">&#160;</td><td class="mdescRight">getPolygon Retourne polygone dessiné par l'utilisateur (forme FREEHAND seulement) Confer labeldessinable  <a href="#a4b0aeb1a1bdce87c651603cff253e393">More...</a><br/></td></tr>
 <tr class="separator:a4b0aeb1a1bdce87c651603cff253e393"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a12a993b1a1fdc12f4b3ca0c31d4ba760"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parameters.html#a12a993b1a1fdc12f4b3ca0c31d4ba760">setPolygon</a> (const QPolygon &amp;value)</td></tr>
+<tr class="memdesc:a12a993b1a1fdc12f4b3ca0c31d4ba760"><td class="mdescLeft">&#160;</td><td class="mdescRight">setPolygon Fixe le polygone dessiné par l'utilisateur (forme FREEHAND seulement)  <a href="#a12a993b1a1fdc12f4b3ca0c31d4ba760">More...</a><br/></td></tr>
 <tr class="separator:a12a993b1a1fdc12f4b3ca0c31d4ba760"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a694488966be76a53bbf9b79e87758a32"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parameters.html#a694488966be76a53bbf9b79e87758a32">getNbVertex</a> () const </td></tr>
+<tr class="memdesc:a694488966be76a53bbf9b79e87758a32"><td class="mdescLeft">&#160;</td><td class="mdescRight">getNbVertex Retourne le nombre de sommets du polygone dessiné par l'utilisateur (forme FREEHAND seulement)  <a href="#a694488966be76a53bbf9b79e87758a32">More...</a><br/></td></tr>
 <tr class="separator:a694488966be76a53bbf9b79e87758a32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f2a759c1926fe53062b6fb695c363ff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parameters.html#a8f2a759c1926fe53062b6fb695c363ff">setNbVertex</a> (int value)</td></tr>
+<tr class="memdesc:a8f2a759c1926fe53062b6fb695c363ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">setNbVertex Fixe le nombre de sommets du polygone de l'utilisateur  <a href="#a8f2a759c1926fe53062b6fb695c363ff">More...</a><br/></td></tr>
 <tr class="separator:a8f2a759c1926fe53062b6fb695c363ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
@@ -163,7 +182,9 @@ Friends</h2></td></tr>
 <tr class="memitem:a8aa22747bac5502cf1b06b8d4a45375d"><td class="memItemLeft" align="right" valign="top">QDebug&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parameters.html#a8aa22747bac5502cf1b06b8d4a45375d">operator&lt;&lt;</a> (QDebug dbg, const <a class="el" href="class_parameters.html">Parameters</a> &amp;obj)</td></tr>
 <tr class="separator:a8aa22747bac5502cf1b06b8d4a45375d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Cette classe est construite lors du click sur les boutons Aperçu et Créer Elle contient tous les paramètres saisis par l'utilisateur et est donc passée à <a class="el" href="class_da_vinci.html" title="L&#39;original, le peintre par excellence. Cette classe réalise le collage selon les paramètres renseigné...">DaVinci</a>, qui lui se charge de créer le collage en adéquation. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aeb4c9b1f00af547680c6efd55f25ad63"></a>
 <div class="memitem">
 <div class="memproto">
@@ -261,7 +282,7 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_parameters_ac9f0de01233484fa2866ec1b698145bb_cgraph.png" border="0" usemap="#class_parameters_ac9f0de01233484fa2866ec1b698145bb_cgraph" alt=""/></div>
 <map name="class_parameters_ac9f0de01233484fa2866ec1b698145bb_cgraph" id="class_parameters_ac9f0de01233484fa2866ec1b698145bb_cgraph">
-<area shape="rect" id="node2" href="class_parameters.html#a4a594d991be21dc163339b3a455910f2" title="Parameters::getCollageSize" alt="" coords="237,5,422,32"/><area shape="rect" id="node3" href="class_parameters.html#afa460d1088933deae71a6d4a08ac38a5" title="Parameters::getPhotoSize" alt="" coords="242,56,417,83"/><area shape="rect" id="node4" href="class_parameters.html#ab1add514950a3dcd62b9e46fff63acbf" title="Parameters::getNbPhotos" alt="" coords="243,107,416,133"/><area shape="rect" id="node5" href="class_parameters.html#a9909837d960dc13e1c3e0c4f2fbd5367" title="Parameters::getDistanceBetween\lPhotos" alt="" coords="220,158,439,199"/><area shape="rect" id="node6" href="class_parameters.html#a1290ffe01fb323ac10f2d2213c8360bd" title="Parameters::getBackground" alt="" coords="237,224,421,251"/><area shape="rect" id="node7" href="class_parameters.html#a370ce104528858e1553367e824121943" title="Parameters::getForm" alt="" coords="257,275,402,301"/><area shape="rect" id="node8" href="class_parameters.html#a4b0aeb1a1bdce87c651603cff253e393" title="Parameters::getPolygon" alt="" coords="248,325,411,352"/><area shape="rect" id="node9" href="class_parameters.html#a694488966be76a53bbf9b79e87758a32" title="Parameters::getNbVertex" alt="" coords="244,376,415,403"/><area shape="rect" id="node10" href="class_parameters.html#ac93dd4de1ffc7a20027d7f1f6cfac3f0" title="Parameters::getPhotoList" alt="" coords="244,427,415,453"/><area shape="rect" id="node11" href="class_parameters.html#a977082009f94b7be1729571890255c5b" title="Parameters::getDrawingAnimation" alt="" coords="219,477,440,504"/></map>
+<area shape="rect" id="node2" href="class_parameters.html#a4a594d991be21dc163339b3a455910f2" title="getCollageSize Retourne la taille du collage désirée " alt="" coords="237,5,422,32"/><area shape="rect" id="node3" href="class_parameters.html#afa460d1088933deae71a6d4a08ac38a5" title="getPhotoSize Renvoit la taille maximale (hauteur OU largeur) qu&#39;une photo peut avoir dans le collage ..." alt="" coords="242,56,417,83"/><area shape="rect" id="node4" href="class_parameters.html#ab1add514950a3dcd62b9e46fff63acbf" title="getNbPhotos Combien de photos doivent être utilisées pour le collage " alt="" coords="243,107,416,133"/><area shape="rect" id="node5" href="class_parameters.html#a9909837d960dc13e1c3e0c4f2fbd5367" title="getDistanceBetweenPhotos Retourne la distance relative désirée entre deux photos " alt="" coords="220,158,439,199"/><area shape="rect" id="node6" href="class_parameters.html#a1290ffe01fb323ac10f2d2213c8360bd" title="getBackground Retourne une pixmap avec l&#39;arrière&#45;plan du collage " alt="" coords="237,224,421,251"/><area shape="rect" id="node7" href="class_parameters.html#a370ce104528858e1553367e824121943" title="getForm Retourn la forme de collage désirée (CIRCLE, RECTANGLE ou FREEHAND) " alt="" coords="257,275,402,301"/><area shape="rect" id="node8" href="class_parameters.html#a4b0aeb1a1bdce87c651603cff253e393" title="getPolygon Retourne polygone dessiné par l&#39;utilisateur (forme FREEHAND seulement) Confer labeldessina..." alt="" coords="248,325,411,352"/><area shape="rect" id="node9" href="class_parameters.html#a694488966be76a53bbf9b79e87758a32" title="getNbVertex Retourne le nombre de sommets du polygone dessiné par l&#39;utilisateur (forme FREEHAND seule..." alt="" coords="244,376,415,403"/><area shape="rect" id="node10" href="class_parameters.html#ac93dd4de1ffc7a20027d7f1f6cfac3f0" title="getPhotoList Retourne une liste contenant les chemins vers les photos à utiliser pour le collage ..." alt="" coords="244,427,415,453"/><area shape="rect" id="node11" href="class_parameters.html#a977082009f94b7be1729571890255c5b" title="getDrawingAnimation Retourne la préférence relative à l&#39;animation du collage " alt="" coords="219,477,440,504"/></map>
 </div>
 </p>
 
@@ -280,6 +301,9 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>getBackground Retourne une pixmap avec l'arrière-plan du collage </p>
+<dl class="section return"><dt>Returns</dt><dd>La pixmap d'arrière-plan </dd></dl>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -305,6 +329,9 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>getCollageSize Retourne la taille du collage désirée </p>
+<dl class="section return"><dt>Returns</dt><dd>La taille du collage. NOTE: Si la taille est en automatique une taille de -1 x -1 est renvoyée </dd></dl>
+
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -328,6 +355,9 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>getDistanceBetweenPhotos Retourne la distance relative désirée entre deux photos </p>
+<dl class="section return"><dt>Returns</dt><dd>La distance relative entre les photos </dd></dl>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -353,6 +383,9 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>getDrawingAnimation Retourne la préférence relative à l'animation du collage </p>
+<dl class="section return"><dt>Returns</dt><dd>True si l'utilisateur désire voir l'animation </dd></dl>
+
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -376,6 +409,9 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>getForm Retourn la forme de collage désirée (CIRCLE, RECTANGLE ou FREEHAND) </p>
+<dl class="section return"><dt>Returns</dt><dd>La forme de collage désirée </dd></dl>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -401,6 +437,9 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>getNbPhotos Combien de photos doivent être utilisées pour le collage </p>
+<dl class="section return"><dt>Returns</dt><dd>Le nombre de photos à utiliser pour le collage </dd></dl>
+
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -424,6 +463,9 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>getNbVertex Retourne le nombre de sommets du polygone dessiné par l'utilisateur (forme FREEHAND seulement) </p>
+<dl class="section return"><dt>Returns</dt><dd>Le nombre de sommets du polygone dessiné </dd></dl>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -449,6 +491,9 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>getPhotoList Retourne une liste contenant les chemins vers les photos à utiliser pour le collage </p>
+<dl class="section return"><dt>Returns</dt><dd>La liste des chemins vers les photos </dd></dl>
+
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -473,6 +518,9 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>getPhotoSize Renvoit la taille maximale (hauteur OU largeur) qu'une photo peut avoir dans le collage </p>
+<dl class="section return"><dt>Returns</dt><dd>La taille maximale d'une photo </dd></dl>
+
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -496,6 +544,9 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>getPolygon Retourne polygone dessiné par l'utilisateur (forme FREEHAND seulement) Confer labeldessinable </p>
+<dl class="section return"><dt>Returns</dt><dd>Le polygone dessiné par l'utilisateur </dd></dl>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -522,6 +573,14 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>setBackground Fixe l'image d'arrière-plan </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>La pixmap d'arrière-plan désirée </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a class="anchor" id="a9a6212ea3cbd4d4605a23af2f1314037"></a>
@@ -537,6 +596,14 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>setCollageSize Change la taille du collage demandée </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>La taille du collage désirée </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -563,6 +630,14 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>setDistanceBetweenPhotos Fixe la distance entre les photos (pourcentage) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>La distance relative desirée </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -588,6 +663,14 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>setDrawingAnimation Fixe la préférence d'animation </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>La valeur de la préférence d'animation </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a class="anchor" id="ad601b287246d3355cdbb4ef348616138"></a>
@@ -604,6 +687,14 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>setForm Fixe la forme du collage </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>La nouvelle forme du collage </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a class="anchor" id="a4370e0858b5207886541acb3bdf38d4f"></a>
@@ -619,6 +710,14 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>setNbPhotos Fixe le nombre de photos à utiliser parmis les photos importées </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>Le nombre de photos à utiliser </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -645,6 +744,14 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>setNbVertex Fixe le nombre de sommets du polygone de l'utilisateur </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>Le nombre de sommets du polygone dessiné </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a class="anchor" id="a2254cd0e0f4ae68f0ba4875c6a072a44"></a>
@@ -661,6 +768,14 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>setPhotoList Fixe les chemins vers les photos à utiliser </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>La liste des chemins vers les photos </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a class="anchor" id="a771441501ed22d78db34fa76f916e988"></a>
@@ -676,6 +791,14 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>setPhotoSize Fixe la taille des photos </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>La tailler maximale des photos </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -701,6 +824,14 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>setPolygon Fixe le polygone dessiné par l'utilisateur (forme FREEHAND seulement) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>Le polygone dessiné </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -740,13 +871,13 @@ Here is the caller graph for this function:</div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/pschmitt/dev/qt/Dev-Interface-M2IHM/Shape_Collage/<a class="el" href="parameters_8h_source.html">parameters.h</a></li>
-<li>/home/pschmitt/dev/qt/Dev-Interface-M2IHM/Shape_Collage/<a class="el" href="parameters_8cpp.html">parameters.cpp</a></li>
+<li>/mnt/raid/dev/qt/PROJET/Shape_Collage/<a class="el" href="parameters_8h_source.html">parameters.h</a></li>
+<li>/mnt/raid/dev/qt/PROJET/Shape_Collage/<a class="el" href="parameters_8cpp.html">parameters.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Mar 9 2014 11:26:32 for ShapeCollage by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Mar 9 2014 16:36:48 for ShapeCollage by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

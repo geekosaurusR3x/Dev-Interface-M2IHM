@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['exceptionattention',['ExceptionAttention',['../class_exception_attention.html',1,'']]],
-  ['exceptionerreure',['ExceptionErreure',['../class_exception_erreure.html',1,'']]]
+  ['labelclicable',['LabelClicable',['../class_label_clicable.html',1,'']]],
+  ['labeldessinable',['LabelDessinable',['../class_label_dessinable.html',1,'']]]
 ];

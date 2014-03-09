@@ -1,3 +1,8 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node2" href="$class_main_window.html" title="MainWindow" alt="" coords="161,5,258,32"/>
+<area shape="rect" id="node2" href="$class_wizard_collage.html" title="Dernière page du wizard permettant d&#39;enregistrer le collage généré " alt="" coords="195,5,301,32"/>
+<area shape="rect" id="node3" href="$class_wizard_infos.html" title="Première page du wizard d&#39;aide à la création du collage. " alt="" coords="202,56,294,83"/>
+<area shape="rect" id="node4" href="$class_wizard_selection_arriere_plan.html" title="Page du wizard permettant de choisir l&#39;arrière&#45;plan. " alt="" coords="157,107,339,133"/>
+<area shape="rect" id="node5" href="$class_wizard_selection_forme.html" title="Page du wizard permettant de sélectionner la forme du collage. " alt="" coords="171,157,325,184"/>
+<area shape="rect" id="node6" href="$class_wizard_selection_photos.html" title="Page du wizard permettant de sélectionner les images à utiliser pour le collage. " alt="" coords="169,208,327,235"/>
+<area shape="rect" id="node7" href="$class_wizard_selection_taille.html" title="Page du wizard permettant de renseigner la taille du collage. " alt="" coords="174,259,322,285"/>
 </map>

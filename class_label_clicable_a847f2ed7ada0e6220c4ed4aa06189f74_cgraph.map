@@ -1,3 +1,4 @@
 <map id="LabelClicable::dropEvent" name="LabelClicable::dropEvent">
 <area shape="rect" id="node2" href="$class_window_slave.html#aa8f853a4295f08f50b96a04df613d49c" title="Teste si un fichier est une image fichier fichier à tester. " alt="" coords="222,5,413,32"/>
+<area shape="rect" id="node3" href="$class_window_slave.html#a40196df14892bc26745937060516989b" title="ResizeToFit Redimensionne une pixmap pour tenir dans un label. " alt="" coords="227,56,408,83"/>
 </map>

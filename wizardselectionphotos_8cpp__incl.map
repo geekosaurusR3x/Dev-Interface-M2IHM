@@ -1,10 +1,11 @@
-<map id="/home/pschmitt/dev/qt/Dev&#45;Interface&#45;M2IHM/Shape_Collage/wizardselectionphotos.cpp" name="/home/pschmitt/dev/qt/Dev&#45;Interface&#45;M2IHM/Shape_Collage/wizardselectionphotos.cpp">
-<area shape="rect" id="node2" href="$wizardselectionphotos_8h.html" title="wizardselectionphotos.h" alt="" coords="172,109,335,136"/>
-<area shape="rect" id="node7" href="$windowslave_8h.html" title="windowslave.h" alt="" coords="639,184,747,211"/>
-<area shape="rect" id="node10" href="$grillephotos_8h.html" title="grillephotos.h" alt="" coords="143,259,241,285"/>
-<area shape="rect" id="node8" href="$convertisseur_8h.html" title="convertisseur.h" alt="" coords="638,259,748,285"/>
-<area shape="rect" id="node22" href="$labeldessinable_8h.html" title="labeldessinable.h" alt="" coords="829,333,952,360"/>
-<area shape="rect" id="node29" href="$labelclicable_8h.html" title="labelclicable.h" alt="" coords="367,408,471,435"/>
-<area shape="rect" id="node33" href="$dialogdessinformeextra_8h.html" title="dialogdessinformeextra.h" alt="" coords="927,259,1093,285"/>
-<area shape="rect" id="node31" href="$mathhelper_8h.html" title="mathhelper.h" alt="" coords="874,408,971,435"/>
+<map id="/mnt/raid/dev/qt/PROJET/Shape_Collage/wizardselectionphotos.cpp" name="/mnt/raid/dev/qt/PROJET/Shape_Collage/wizardselectionphotos.cpp">
+<area shape="rect" id="node2" href="$wizardselectionphotos_8h.html" title="wizardselectionphotos.h" alt="" coords="173,96,336,123"/>
+<area shape="rect" id="node7" href="$windowslave_8h.html" title="windowslave.h" alt="" coords="1127,171,1235,197"/>
+<area shape="rect" id="node10" href="$grillephotos_8h.html" title="grillephotos.h" alt="" coords="321,245,420,272"/>
+<area shape="rect" id="node8" href="$convertisseur_8h.html" title="convertisseur.h" alt="" coords="2070,245,2180,272"/>
+<area shape="rect" id="node23" href="$labeldessinable_8h.html" title="labeldessinable.h" alt="" coords="1395,320,1517,347"/>
+<area shape="rect" id="node30" href="$labelclicable_8h.html" title="labelclicable.h" alt="" coords="495,395,599,421"/>
+<area shape="rect" id="node34" href="$dialogdessinformeextra_8h.html" title="dialogdessinformeextra.h" alt="" coords="1489,245,1655,272"/>
+<area shape="rect" id="node37" href="$parameters_8h.html" title="parameters.h" alt="" coords="1947,245,2045,272"/>
+<area shape="rect" id="node32" href="$mathhelper_8h.html" title="mathhelper.h" alt="" coords="1395,395,1492,421"/>
 </map>

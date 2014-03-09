@@ -1,19 +1,17 @@
-<map id="/home/pschmitt/dev/qt/Dev&#45;Interface&#45;M2IHM/Shape_Collage/mainwindow.h" name="/home/pschmitt/dev/qt/Dev&#45;Interface&#45;M2IHM/Shape_Collage/mainwindow.h">
-<area shape="rect" id="node3" href="$dialogapropos_8h.html" title="dialogapropos.h" alt="" coords="289,259,401,285"/>
-<area shape="rect" id="node10" href="$convertisseur_8h.html" title="convertisseur.h" alt="" coords="1502,333,1612,360"/>
-<area shape="rect" id="node18" href="$labeldessinable_8h.html" title="labeldessinable.h" alt="" coords="1131,408,1253,435"/>
-<area shape="rect" id="node31" href="$dialogdessinformeextra_8h.html" title="dialogdessinformeextra.h" alt="" coords="1006,333,1172,360"/>
-<area shape="rect" id="node33" href="$grillephotos_8h.html" title="grillephotos.h" alt="" coords="2687,333,2785,360"/>
-<area shape="rect" id="node35" href="$windowslave_8h.html" title="windowslave.h" alt="" coords="1933,259,2040,285"/>
-<area shape="rect" id="node40" href="$wizard_8h.html" title="wizard.h" alt="" coords="1765,109,1835,136"/>
-<area shape="rect" id="node45" href="$parameters_8h.html" title="parameters.h" alt="" coords="1349,259,1448,285"/>
-<area shape="rect" id="node47" href="$exceptionattention_8h.html" title="exceptionattention.h" alt="" coords="683,259,821,285"/>
-<area shape="rect" id="node48" href="$exceptionerreure_8h.html" title="exceptionerreure.h" alt="" coords="478,259,607,285"/>
-<area shape="rect" id="node49" href="$davinci_8h.html" title="davinci.h" alt="" coords="935,184,1008,211"/>
-<area shape="rect" id="node25" href="$labelclicable_8h.html" title="labelclicable.h" alt="" coords="1969,483,2073,509"/>
-<area shape="rect" id="node27" href="$mathhelper_8h.html" title="mathhelper.h" alt="" coords="993,483,1089,509"/>
-<area shape="rect" id="node42" href="$wizardinfos_8h.html" title="wizardinfos.h" alt="" coords="1861,184,1960,211"/>
-<area shape="rect" id="node43" href="$wizardselectionphotos_8h.html" title="wizardselectionphotos.h" alt="" coords="2497,184,2660,211"/>
-<area shape="rect" id="node44" href="$wizardselectionforme_8h.html" title="wizardselectionforme.h" alt="" coords="1583,184,1739,211"/>
-<area shape="rect" id="node46" href="$wizardselectiontaille_8h.html" title="wizardselectiontaille.h" alt="" coords="2043,184,2193,211"/>
+<map id="/mnt/raid/dev/qt/PROJET/Shape_Collage/mainwindow.h" name="/mnt/raid/dev/qt/PROJET/Shape_Collage/mainwindow.h">
+<area shape="rect" id="node3" href="$dialogapropos_8h.html" title="dialogapropos.h" alt="" coords="238,245,351,272"/>
+<area shape="rect" id="node10" href="$convertisseur_8h.html" title="convertisseur.h" alt="" coords="1147,320,1257,347"/>
+<area shape="rect" id="node18" href="$labeldessinable_8h.html" title="labeldessinable.h" alt="" coords="895,395,1017,421"/>
+<area shape="rect" id="node31" href="$dialogdessinformeextra_8h.html" title="dialogdessinformeextra.h" alt="" coords="630,320,796,347"/>
+<area shape="rect" id="node33" href="$grillephotos_8h.html" title="grillephotos.h" alt="" coords="2901,320,3000,347"/>
+<area shape="rect" id="node35" href="$windowslave_8h.html" title="windowslave.h" alt="" coords="1813,245,1920,272"/>
+<area shape="rect" id="node40" href="$parameters_8h.html" title="parameters.h" alt="" coords="1024,320,1123,347"/>
+<area shape="rect" id="node43" href="$wizard_8h.html" title="wizard.h" alt="" coords="1679,96,1749,123"/>
+<area shape="rect" id="node49" href="$davinci_8h.html" title="davinci.h" alt="" coords="576,171,649,197"/>
+<area shape="rect" id="node25" href="$labelclicable_8h.html" title="labelclicable.h" alt="" coords="2037,469,2141,496"/>
+<area shape="rect" id="node27" href="$mathhelper_8h.html" title="mathhelper.h" alt="" coords="679,469,776,496"/>
+<area shape="rect" id="node45" href="$wizardinfos_8h.html" title="wizardinfos.h" alt="" coords="1665,171,1764,197"/>
+<area shape="rect" id="node46" href="$wizardselectionphotos_8h.html" title="wizardselectionphotos.h" alt="" coords="2695,171,2857,197"/>
+<area shape="rect" id="node47" href="$wizardselectionforme_8h.html" title="wizardselectionforme.h" alt="" coords="1789,171,1944,197"/>
+<area shape="rect" id="node48" href="$wizardselectiontaille_8h.html" title="wizardselectiontaille.h" alt="" coords="2309,171,2459,197"/>
 </map>

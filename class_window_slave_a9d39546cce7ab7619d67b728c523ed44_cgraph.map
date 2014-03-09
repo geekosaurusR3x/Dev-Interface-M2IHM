@@ -1,4 +1,7 @@
 <map id="WindowSlave::DessinerForme" name="WindowSlave::DessinerForme">
-<area shape="rect" id="node2" href="$class_dialog_dessin_forme_extra.html#a7d8b5d94d0b4f31736db9777eb2a2e53" title="DialogDessinFormeExtra\l::getNbVertex" alt="" coords="253,5,421,46"/>
-<area shape="rect" id="node3" href="$class_label_dessinable.html#af6f4b97bece48405d432d66dc1660c01" title="LabelDessinable::getNbVertex" alt="" coords="470,12,669,39"/>
+<area shape="rect" id="node2" href="$class_dialog_dessin_forme_extra.html#aceedebbe6fd652e63df3863ec51639f0" title="DialogDessinFormeExtra\l::isValid" alt="" coords="253,5,421,46"/>
+<area shape="rect" id="node4" href="$class_dialog_dessin_forme_extra.html#a7d8b5d94d0b4f31736db9777eb2a2e53" title="DialogDessinFormeExtra\l::getNbVertex" alt="" coords="253,70,421,111"/>
+<area shape="rect" id="node6" href="$class_label_dessinable.html#ae4ff93aaa4e0fd5c7a3904966f4ee084" title="Efface le contenu du label, le polygone et le label de preview si celui ci est present. " alt="" coords="260,160,415,187"/>
+<area shape="rect" id="node3" href="$class_label_dessinable.html#afa9c0763b0e2141b409ba1152ab4c99d" title="LabelDessinable::getPolygon" alt="" coords="474,12,665,39"/>
+<area shape="rect" id="node5" href="$class_label_dessinable.html#af6f4b97bece48405d432d66dc1660c01" title="LabelDessinable::getNbVertex" alt="" coords="470,77,669,104"/>
 </map>

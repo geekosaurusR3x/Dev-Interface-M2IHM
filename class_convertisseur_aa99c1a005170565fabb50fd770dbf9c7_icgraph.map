@@ -1,4 +1,6 @@
 <map id="Convertisseur::CmToPixel" name="Convertisseur::CmToPixel">
 <area shape="rect" id="node2" href="$class_window_slave.html#a7e28f5b8acd99bacbfbdda2a8cc478d7" title="Convertis la valeur du text d&#39;un QLineEdit au format de la valeur d&#39;un index vers le format d&#39;un de l..." alt="" coords="229,5,483,32"/>
-<area shape="rect" id="node3" href="$class_wizard_selection_taille.html#afd14c7f5255d4d6018a153dcaae13f0a" title="WizardSelectionTaille\l::SetParam" alt="" coords="282,57,430,98"/>
+<area shape="rect" id="node3" href="$class_window_slave.html#a7a9f68ba516857bcafb3748d8793c13f" title="Converti les valeurs fournies en hauteur et largeur en QSize pour la classe parametre. " alt="" coords="255,56,457,83"/>
+<area shape="rect" id="node5" href="$class_window_slave.html#a37aee8301dfa4d5e85ac052a50bd53ef" title="Converti la valeur fournie en size en double pour la classe parametre. " alt="" coords="265,107,447,149"/>
+<area shape="rect" id="node4" href="$class_wizard_selection_taille.html#afd14c7f5255d4d6018a153dcaae13f0a" title="WizardSelectionTaille\l::SetParam" alt="" coords="531,78,679,119"/>
 </map>

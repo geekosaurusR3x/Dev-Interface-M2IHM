@@ -1,5 +1,19 @@
 var searchData=
 [
-  ['labelclicable',['LabelClicable',['../class_label_clicable.html#a646045880985caca0e7b1832ba2477f3',1,'LabelClicable']]],
-  ['labeldessinable',['LabelDessinable',['../class_label_dessinable.html#a260735e66076a8d4a50d942cd572bdff',1,'LabelDessinable']]]
+  ['getalreadygenerated',['getAlreadyGenerated',['../class_da_vinci.html#ad0483f7b4306666ee9e91cab1d3e039f',1,'DaVinci']]],
+  ['getbackground',['getBackground',['../class_parameters.html#a1290ffe01fb323ac10f2d2213c8360bd',1,'Parameters::getBackground()'],['../class_wizard_selection_arriere_plan.html#a6d60948449f3a30237a4eb5f5835b3b8',1,'WizardSelectionArrierePlan::GetBackground()']]],
+  ['getcollagesize',['getCollageSize',['../class_parameters.html#a4a594d991be21dc163339b3a455910f2',1,'Parameters']]],
+  ['getdistancebetweenphotos',['getDistanceBetweenPhotos',['../class_parameters.html#a9909837d960dc13e1c3e0c4f2fbd5367',1,'Parameters']]],
+  ['getdrawinganimation',['getDrawingAnimation',['../class_parameters.html#a977082009f94b7be1729571890255c5b',1,'Parameters']]],
+  ['getform',['getForm',['../class_parameters.html#a370ce104528858e1553367e824121943',1,'Parameters']]],
+  ['getlistephoto',['getListePhoto',['../class_grille_photos.html#a63ae41be486f501b3323d7301ca32740',1,'GrillePhotos']]],
+  ['getnbphotos',['getNbPhotos',['../class_parameters.html#ab1add514950a3dcd62b9e46fff63acbf',1,'Parameters']]],
+  ['getnbvertex',['getNbVertex',['../class_dialog_dessin_forme_extra.html#a7d8b5d94d0b4f31736db9777eb2a2e53',1,'DialogDessinFormeExtra::getNbVertex()'],['../class_label_dessinable.html#af6f4b97bece48405d432d66dc1660c01',1,'LabelDessinable::getNbVertex()'],['../class_parameters.html#a694488966be76a53bbf9b79e87758a32',1,'Parameters::getNbVertex()']]],
+  ['getphotolist',['getPhotoList',['../class_parameters.html#ac93dd4de1ffc7a20027d7f1f6cfac3f0',1,'Parameters']]],
+  ['getphotos',['getPhotos',['../class_wizard_selection_photos.html#afd0c840c83e513b4c2ab6d093b6e2e25',1,'WizardSelectionPhotos']]],
+  ['getphotosize',['getPhotoSize',['../class_parameters.html#afa460d1088933deae71a6d4a08ac38a5',1,'Parameters']]],
+  ['getpolygon',['getPolygon',['../class_label_dessinable.html#afa9c0763b0e2141b409ba1152ab4c99d',1,'LabelDessinable::getPolygon()'],['../class_parameters.html#a4b0aeb1a1bdce87c651603cff253e393',1,'Parameters::getPolygon()']]],
+  ['getvalue',['GetValue',['../class_wizard_selection_forme.html#ab2e1dee924b3ff048f711026631f66da',1,'WizardSelectionForme']]],
+  ['grillephotos',['GrillePhotos',['../class_grille_photos.html#a554af3ea532dfa37d35ae9cbfa8cd8be',1,'GrillePhotos']]],
+  ['griseoudegrisegroupe',['GriseOuDegriseGroupe',['../class_window_slave.html#a88d790cb07f7127a3e5cd132c573782e',1,'WindowSlave']]]
 ];

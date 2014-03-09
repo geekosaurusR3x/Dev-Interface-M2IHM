@@ -1,15 +1,9 @@
 var searchData=
 [
-  ['parameters',['Parameters',['../class_parameters.html#aeb4c9b1f00af547680c6efd55f25ad63',1,'Parameters::Parameters(QObject *parent=0)'],['../class_parameters.html#ab9589ddd93a9fb1058b0acc8e98fa404',1,'Parameters::Parameters(QSize &amp;, int &amp;, int &amp;, int &amp;, QPixmap &amp;, CollageForm, QStringList, QObject *parent=0)'],['../class_parameters.html#ac9f0de01233484fa2866ec1b698145bb',1,'Parameters::Parameters(const Parameters &amp;)']]],
-  ['pixelstocm',['PixelsToCm',['../class_convertisseur.html#abf3b577034b513e3ecfd54fae8f7267a',1,'Convertisseur']]],
-  ['pixelstopouce',['PixelsToPouce',['../class_convertisseur.html#a38ae74371c2353e893c4bcd876a1cf98',1,'Convertisseur']]],
-  ['placerarriereplancolorie',['PlacerArrierePlanColorie',['../class_wizard_selection_arriere_plan.html#a076ea3ad573dfc5468ffd8bcc29e59b1',1,'WizardSelectionArrierePlan']]],
-  ['placerarriereplanphoto',['PlacerArrierePlanPhoto',['../class_wizard_selection_arriere_plan.html#a0bcc9cebd1fca6b9d1a3908b04b6413b',1,'WizardSelectionArrierePlan']]],
-  ['placerarriereplantransparent',['PlacerArrierePlanTransparent',['../class_wizard_selection_arriere_plan.html#ae92006582e69ff0826e1d61c8ccfe04c',1,'WizardSelectionArrierePlan']]],
-  ['placerdistanceentrephoto',['PlacerDistanceEntrePhoto',['../class_wizard_selection_taille.html#af96de70e3c33818558db8b1c67e8d775',1,'WizardSelectionTaille']]],
-  ['placernombrephoto',['PlacerNombrePhoto',['../class_wizard_selection_taille.html#ae1a1388427768141ff48d309f0b0f9a7',1,'WizardSelectionTaille']]],
-  ['placertaillecollage',['PlacerTailleCollage',['../class_wizard_selection_taille.html#a424d860377c53b4cb89ac2025277fde6',1,'WizardSelectionTaille']]],
-  ['placertaillephoto',['PlacerTaillePhoto',['../class_wizard_selection_taille.html#a27e5242311c8031b51e6cf187ad1b68a',1,'WizardSelectionTaille']]],
-  ['poucetocm',['PouceToCm',['../class_convertisseur.html#a66870d54b9bf7280495556aa7c629ccc',1,'Convertisseur']]],
-  ['poucetopixels',['PouceToPixels',['../class_convertisseur.html#ac44883703fa1d787eff3da39bbcab672',1,'Convertisseur']]]
+  ['main',['main',['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cpp']]],
+  ['mainwindow',['MainWindow',['../class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db',1,'MainWindow']]],
+  ['mathhelper',['MathHelper',['../class_math_helper.html#ad3839d7555a7aff093b14a3c338e416e',1,'MathHelper']]],
+  ['mousemoveevent',['mouseMoveEvent',['../class_label_dessinable.html#a4d9abf42d606d5f6bd4ca006498e7fdd',1,'LabelDessinable']]],
+  ['mousepressevent',['mousePressEvent',['../class_grille_photos.html#a9435748b3ec7eec0a5c2a1d292f8e928',1,'GrillePhotos::mousePressEvent()'],['../class_label_clicable.html#a7d82d9841f3964dbefa37cba2276067d',1,'LabelClicable::mousePressEvent()'],['../class_label_dessinable.html#a948c81829f16e087da365c70ca4e52f2',1,'LabelDessinable::mousePressEvent()']]],
+  ['mousereleaseevent',['mouseReleaseEvent',['../class_label_dessinable.html#a0fd0e1d053080b600e84e6a46ea47d3f',1,'LabelDessinable']]]
 ];

@@ -1,5 +1,22 @@
 var searchData=
 [
-  ['vider_5fgrillephotos',['Vider_GrillePhotos',['../class_main_window.html#a73e9cc14e4fdb7b6a1cd7f56a5876d97',1,'MainWindow']]],
-  ['vidergrillephoto',['ViderGrillePhoto',['../class_window_slave.html#aeb87572d1f93b54c4cc60c2ad372af21',1,'WindowSlave']]]
+  ['save',['Save',['../class_wizard_collage.html#ac9e77828d0e9bdacdf08786b020a3eae',1,'WizardCollage']]],
+  ['setbackground',['setBackground',['../class_parameters.html#aa536727e257321d83c627e92c3ec8906',1,'Parameters']]],
+  ['setcollagesize',['setCollageSize',['../class_parameters.html#a9a6212ea3cbd4d4605a23af2f1314037',1,'Parameters']]],
+  ['setdistancebetweenphotos',['setDistanceBetweenPhotos',['../class_parameters.html#a1d2537066fb8d6bf987f0c11ed1ebb30',1,'Parameters']]],
+  ['setdrawinganimation',['setDrawingAnimation',['../class_parameters.html#ac4f0ea64693bc9c5a4f5e02286342b9e',1,'Parameters']]],
+  ['setform',['setForm',['../class_parameters.html#ad601b287246d3355cdbb4ef348616138',1,'Parameters']]],
+  ['setlistephoto',['setListePhoto',['../class_grille_photos.html#a82844018eeef0943b189b4153ff94f47',1,'GrillePhotos']]],
+  ['setnbphotos',['setNbPhotos',['../class_parameters.html#a4370e0858b5207886541acb3bdf38d4f',1,'Parameters']]],
+  ['setnbvertex',['setNbVertex',['../class_label_dessinable.html#a9f6192beec34931035a9055482409321',1,'LabelDessinable::setNbVertex()'],['../class_parameters.html#a8f2a759c1926fe53062b6fb695c363ff',1,'Parameters::setNbVertex()']]],
+  ['setparam',['SetParam',['../class_wizard_selection_taille.html#afd14c7f5255d4d6018a153dcaae13f0a',1,'WizardSelectionTaille']]],
+  ['setphotolist',['setPhotoList',['../class_parameters.html#a2254cd0e0f4ae68f0ba4875c6a072a44',1,'Parameters']]],
+  ['setphotos',['setPhotos',['../class_wizard_selection_photos.html#ae87f80b1eea5736c153e38e7893c48d4',1,'WizardSelectionPhotos']]],
+  ['setphotosize',['setPhotoSize',['../class_parameters.html#a771441501ed22d78db34fa76f916e988',1,'Parameters']]],
+  ['setpolygon',['setPolygon',['../class_parameters.html#a12a993b1a1fdc12f4b3ca0c31d4ba760',1,'Parameters']]],
+  ['setpreviewlabel',['setPreviewLabel',['../class_label_dessinable.html#a86a820598c09a8bee7932b6a9056d9db',1,'LabelDessinable']]],
+  ['settextbouton',['SetTextBouton',['../class_window_slave.html#a141055b3996b1e6b98149ef246672112',1,'WindowSlave']]],
+  ['showfailuredialog',['showFailureDialog',['../class_window_slave.html#a6942d7e33fd7db5f1a1b2ef4ad85fe32',1,'WindowSlave']]],
+  ['showsuccessdialog',['showSuccessDialog',['../class_window_slave.html#a2e2f6414cc03ced1c31be43540971b77',1,'WindowSlave']]],
+  ['sizeuitoparam',['SizeUiToParam',['../class_window_slave.html#a7a9f68ba516857bcafb3748d8793c13f',1,'WindowSlave']]]
 ];

@@ -1,6 +1,6 @@
 <map id="MathHelper::computePolygon" name="MathHelper::computePolygon">
 <area shape="rect" id="node2" href="$class_da_vinci.html#a794206434200d40baeb95c2d5b02df60" title="Fontion de dessin. " alt="" coords="295,5,399,32"/>
-<area shape="rect" id="node4" href="$class_label_dessinable.html#a4d9abf42d606d5f6bd4ca006498e7fdd" title="LabelDessinable::mouseMove\lEvent" alt="" coords="248,57,445,98"/>
-<area shape="rect" id="node5" href="$class_label_dessinable.html#a9045a5e192f1d8a2cd94ab1a4cf3913b" title="LabelDessinable::update" alt="" coords="264,123,429,149"/>
+<area shape="rect" id="node4" href="$class_label_dessinable.html#a4d9abf42d606d5f6bd4ca006498e7fdd" title="traitement du signal de mouvement de la sourie sur le label " alt="" coords="248,57,445,98"/>
+<area shape="rect" id="node5" href="$class_label_dessinable.html#a9045a5e192f1d8a2cd94ab1a4cf3913b" title="Demande la remise a jour du polygone en memoire et son redessin. " alt="" coords="264,123,429,149"/>
 <area shape="rect" id="node3" href="$class_wizard_collage.html#ae2bdb2fe6e855479fec21c955e63957d" title="WizardCollage::Draw" alt="" coords="493,5,640,32"/>
 </map>

@@ -1,5 +1,5 @@
 <map id="MainWindow::Remettre_Valeurs_Par_Defaut" name="MainWindow::Remettre_Valeurs_Par_Defaut">
-<area shape="rect" id="node2" href="$class_window_slave.html#a686765f23c6c10e5b86ce6282ea79093" title="Remet toutes les valeurs par défaut en vue de créer un nouveau projet radioRectangle bouton radio cor..." alt="" coords="213,35,421,77"/>
+<area shape="rect" id="node2" href="$class_window_slave.html#a15bdbfa4d4764411a110b225000edd69" title="Remet toutes les valeurs par défaut en vue de créer un nouveau projet radioRectangle bouton radio cor..." alt="" coords="213,35,421,77"/>
 <area shape="rect" id="node3" href="$class_label_clicable.html#aacd9f8d3525e7388c6dcf086e8d0a8c3" title="change la couleur de fond du label couleur nouvelle couleur du label " alt="" coords="470,5,669,32"/>
-<area shape="rect" id="node4" href="$class_label_dessinable.html#ae4ff93aaa4e0fd5c7a3904966f4ee084" title="LabelDessinable::clear" alt="" coords="492,80,647,107"/>
+<area shape="rect" id="node4" href="$class_label_dessinable.html#ae4ff93aaa4e0fd5c7a3904966f4ee084" title="Efface le contenu du label, le polygone et le label de preview si celui ci est present. " alt="" coords="492,80,647,107"/>
 </map>

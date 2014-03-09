@@ -1,12 +1,12 @@
-<map id="/home/pschmitt/dev/qt/Dev&#45;Interface&#45;M2IHM/Shape_Collage/wizardcollage.cpp" name="/home/pschmitt/dev/qt/Dev&#45;Interface&#45;M2IHM/Shape_Collage/wizardcollage.cpp">
-<area shape="rect" id="node2" href="$wizardcollage_8h.html" title="wizardcollage.h" alt="" coords="2241,109,2352,136"/>
-<area shape="rect" id="node40" href="$labelclicable_8h.html" title="labelclicable.h" alt="" coords="1873,483,1977,509"/>
-<area shape="rect" id="node5" href="$parameters_8h.html" title="parameters.h" alt="" coords="271,259,369,285"/>
-<area shape="rect" id="node12" href="$davinci_8h.html" title="davinci.h" alt="" coords="813,184,887,211"/>
-<area shape="rect" id="node21" href="$windowslave_8h.html" title="windowslave.h" alt="" coords="1294,259,1401,285"/>
-<area shape="rect" id="node22" href="$convertisseur_8h.html" title="convertisseur.h" alt="" coords="1339,333,1449,360"/>
-<area shape="rect" id="node25" href="$grillephotos_8h.html" title="grillephotos.h" alt="" coords="2124,333,2223,360"/>
-<area shape="rect" id="node35" href="$labeldessinable_8h.html" title="labeldessinable.h" alt="" coords="1045,408,1168,435"/>
-<area shape="rect" id="node44" href="$dialogdessinformeextra_8h.html" title="dialogdessinformeextra.h" alt="" coords="1097,333,1263,360"/>
-<area shape="rect" id="node42" href="$mathhelper_8h.html" title="mathhelper.h" alt="" coords="873,483,969,509"/>
+<map id="/mnt/raid/dev/qt/PROJET/Shape_Collage/wizardcollage.cpp" name="/mnt/raid/dev/qt/PROJET/Shape_Collage/wizardcollage.cpp">
+<area shape="rect" id="node2" href="$wizardcollage_8h.html" title="wizardcollage.h" alt="" coords="475,96,585,123"/>
+<area shape="rect" id="node41" href="$labelclicable_8h.html" title="labelclicable.h" alt="" coords="2368,469,2472,496"/>
+<area shape="rect" id="node5" href="$parameters_8h.html" title="parameters.h" alt="" coords="263,320,361,347"/>
+<area shape="rect" id="node12" href="$davinci_8h.html" title="davinci.h" alt="" coords="663,171,736,197"/>
+<area shape="rect" id="node21" href="$windowslave_8h.html" title="windowslave.h" alt="" coords="1278,245,1385,272"/>
+<area shape="rect" id="node22" href="$convertisseur_8h.html" title="convertisseur.h" alt="" coords="677,320,787,347"/>
+<area shape="rect" id="node25" href="$grillephotos_8h.html" title="grillephotos.h" alt="" coords="1923,320,2021,347"/>
+<area shape="rect" id="node36" href="$labeldessinable_8h.html" title="labeldessinable.h" alt="" coords="1905,395,2028,421"/>
+<area shape="rect" id="node45" href="$dialogdessinformeextra_8h.html" title="dialogdessinformeextra.h" alt="" coords="2198,320,2364,347"/>
+<area shape="rect" id="node43" href="$mathhelper_8h.html" title="mathhelper.h" alt="" coords="767,469,864,496"/>
 </map>

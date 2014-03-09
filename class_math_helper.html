@@ -25,7 +25,7 @@
    <div id="projectname">ShapeCollage
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   <div id="projectbrief">Projet Qt - M2IHM 2014</div>
+   <div id="projectbrief">Projet QT - M2IHM 2014</div>
   </td>
  </tr>
  </tbody>
@@ -93,6 +93,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
+<p>Classe de fonctions mathématiques.  
+ <a href="class_math_helper.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="mathhelper_8h_source.html">mathhelper.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -103,9 +106,12 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a4fc67bb09439d4d8d86c7c832eaaeaad"><td class="memItemLeft" align="right" valign="top">static QVector&lt; QPoint &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_math_helper.html#a4fc67bb09439d4d8d86c7c832eaaeaad">computePolygon</a> (QPoint, QPoint, int)</td></tr>
+<tr class="memdesc:a4fc67bb09439d4d8d86c7c832eaaeaad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcul un polygone entre depart, fin avec nbsommets comme nombre de sommet.  <a href="#a4fc67bb09439d4d8d86c7c832eaaeaad">More...</a><br/></td></tr>
 <tr class="separator:a4fc67bb09439d4d8d86c7c832eaaeaad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Classe de fonctions mathématiques. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ad3839d7555a7aff093b14a3c338e416e"></a>
 <div class="memitem">
 <div class="memproto">
@@ -160,25 +166,36 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Calcul un polygone entre depart, fin avec nbsommets comme nombre de sommet. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">depart</td><td>Qpoint (0,0) du caré englobant le polygone </td></tr>
+    <tr><td class="paramname">fin</td><td>Qpoint (width,height) du caré englobant le polygone </td></tr>
+    <tr><td class="paramname">nbsommets</td><td>int representant le nombre de sommets voulu dans le polygone </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Un vecteur de points contenant tous les sommets du polygone </dd></dl>
+
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_math_helper_a4fc67bb09439d4d8d86c7c832eaaeaad_icgraph.png" border="0" usemap="#class_math_helper_a4fc67bb09439d4d8d86c7c832eaaeaad_icgraph" alt=""/></div>
 <map name="class_math_helper_a4fc67bb09439d4d8d86c7c832eaaeaad_icgraph" id="class_math_helper_a4fc67bb09439d4d8d86c7c832eaaeaad_icgraph">
-<area shape="rect" id="node2" href="class_da_vinci.html#a794206434200d40baeb95c2d5b02df60" title="Fontion de dessin. " alt="" coords="295,5,399,32"/><area shape="rect" id="node4" href="class_label_dessinable.html#a4d9abf42d606d5f6bd4ca006498e7fdd" title="LabelDessinable::mouseMove\lEvent" alt="" coords="248,57,445,98"/><area shape="rect" id="node5" href="class_label_dessinable.html#a9045a5e192f1d8a2cd94ab1a4cf3913b" title="LabelDessinable::update" alt="" coords="264,123,429,149"/><area shape="rect" id="node3" href="class_wizard_collage.html#ae2bdb2fe6e855479fec21c955e63957d" title="WizardCollage::Draw" alt="" coords="493,5,640,32"/></map>
+<area shape="rect" id="node2" href="class_da_vinci.html#a794206434200d40baeb95c2d5b02df60" title="Fontion de dessin. " alt="" coords="295,5,399,32"/><area shape="rect" id="node4" href="class_label_dessinable.html#a4d9abf42d606d5f6bd4ca006498e7fdd" title="traitement du signal de mouvement de la sourie sur le label " alt="" coords="248,57,445,98"/><area shape="rect" id="node5" href="class_label_dessinable.html#a9045a5e192f1d8a2cd94ab1a4cf3913b" title="Demande la remise a jour du polygone en memoire et son redessin. " alt="" coords="264,123,429,149"/><area shape="rect" id="node3" href="class_wizard_collage.html#ae2bdb2fe6e855479fec21c955e63957d" title="WizardCollage::Draw" alt="" coords="493,5,640,32"/></map>
 </div>
 </p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/pschmitt/dev/qt/Dev-Interface-M2IHM/Shape_Collage/<a class="el" href="mathhelper_8h_source.html">mathhelper.h</a></li>
-<li>/home/pschmitt/dev/qt/Dev-Interface-M2IHM/Shape_Collage/<a class="el" href="mathhelper_8cpp.html">mathhelper.cpp</a></li>
+<li>/mnt/raid/dev/qt/PROJET/Shape_Collage/<a class="el" href="mathhelper_8h_source.html">mathhelper.h</a></li>
+<li>/mnt/raid/dev/qt/PROJET/Shape_Collage/<a class="el" href="mathhelper_8cpp.html">mathhelper.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Mar 9 2014 11:26:32 for ShapeCollage by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Mar 9 2014 16:36:48 for ShapeCollage by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

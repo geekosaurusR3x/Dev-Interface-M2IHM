@@ -1,6 +1,6 @@
 <map id="LabelClicable::ChangeCouleur" name="LabelClicable::ChangeCouleur">
 <area shape="rect" id="node2" href="$class_label_clicable.html#a646045880985caca0e7b1832ba2477f3" title="LabelClicable::LabelClicable" alt="" coords="264,5,451,32"/>
 <area shape="rect" id="node3" href="$class_window_slave.html#ad32fe4baf87dc49698484489d58451eb" title="Change la couleur d&#39;un LabelClicable et retourne la couleur courante de ce label label label à modifi..." alt="" coords="255,57,459,98"/>
-<area shape="rect" id="node4" href="$class_window_slave.html#a686765f23c6c10e5b86ce6282ea79093" title="Remet toutes les valeurs par défaut en vue de créer un nouveau projet radioRectangle bouton radio cor..." alt="" coords="253,122,461,163"/>
+<area shape="rect" id="node4" href="$class_window_slave.html#a15bdbfa4d4764411a110b225000edd69" title="Remet toutes les valeurs par défaut en vue de créer un nouveau projet radioRectangle bouton radio cor..." alt="" coords="253,122,461,163"/>
 <area shape="rect" id="node5" href="$class_main_window.html#a56bee941c069c6281232b309f544ce22" title="Procédure permettant de remettre les valeurs par défaut des paramètres pour le collage. " alt="" coords="510,122,669,163"/>
 </map>

@@ -1,12 +1,12 @@
 <map id="Parameters::Parameters" name="Parameters::Parameters">
-<area shape="rect" id="node2" href="$class_parameters.html#a4a594d991be21dc163339b3a455910f2" title="Parameters::getCollageSize" alt="" coords="237,5,422,32"/>
-<area shape="rect" id="node3" href="$class_parameters.html#afa460d1088933deae71a6d4a08ac38a5" title="Parameters::getPhotoSize" alt="" coords="242,56,417,83"/>
-<area shape="rect" id="node4" href="$class_parameters.html#ab1add514950a3dcd62b9e46fff63acbf" title="Parameters::getNbPhotos" alt="" coords="243,107,416,133"/>
-<area shape="rect" id="node5" href="$class_parameters.html#a9909837d960dc13e1c3e0c4f2fbd5367" title="Parameters::getDistanceBetween\lPhotos" alt="" coords="220,158,439,199"/>
-<area shape="rect" id="node6" href="$class_parameters.html#a1290ffe01fb323ac10f2d2213c8360bd" title="Parameters::getBackground" alt="" coords="237,224,421,251"/>
-<area shape="rect" id="node7" href="$class_parameters.html#a370ce104528858e1553367e824121943" title="Parameters::getForm" alt="" coords="257,275,402,301"/>
-<area shape="rect" id="node8" href="$class_parameters.html#a4b0aeb1a1bdce87c651603cff253e393" title="Parameters::getPolygon" alt="" coords="248,325,411,352"/>
-<area shape="rect" id="node9" href="$class_parameters.html#a694488966be76a53bbf9b79e87758a32" title="Parameters::getNbVertex" alt="" coords="244,376,415,403"/>
-<area shape="rect" id="node10" href="$class_parameters.html#ac93dd4de1ffc7a20027d7f1f6cfac3f0" title="Parameters::getPhotoList" alt="" coords="244,427,415,453"/>
-<area shape="rect" id="node11" href="$class_parameters.html#a977082009f94b7be1729571890255c5b" title="Parameters::getDrawingAnimation" alt="" coords="219,477,440,504"/>
+<area shape="rect" id="node2" href="$class_parameters.html#a4a594d991be21dc163339b3a455910f2" title="getCollageSize Retourne la taille du collage désirée " alt="" coords="237,5,422,32"/>
+<area shape="rect" id="node3" href="$class_parameters.html#afa460d1088933deae71a6d4a08ac38a5" title="getPhotoSize Renvoit la taille maximale (hauteur OU largeur) qu&#39;une photo peut avoir dans le collage ..." alt="" coords="242,56,417,83"/>
+<area shape="rect" id="node4" href="$class_parameters.html#ab1add514950a3dcd62b9e46fff63acbf" title="getNbPhotos Combien de photos doivent être utilisées pour le collage " alt="" coords="243,107,416,133"/>
+<area shape="rect" id="node5" href="$class_parameters.html#a9909837d960dc13e1c3e0c4f2fbd5367" title="getDistanceBetweenPhotos Retourne la distance relative désirée entre deux photos " alt="" coords="220,158,439,199"/>
+<area shape="rect" id="node6" href="$class_parameters.html#a1290ffe01fb323ac10f2d2213c8360bd" title="getBackground Retourne une pixmap avec l&#39;arrière&#45;plan du collage " alt="" coords="237,224,421,251"/>
+<area shape="rect" id="node7" href="$class_parameters.html#a370ce104528858e1553367e824121943" title="getForm Retourn la forme de collage désirée (CIRCLE, RECTANGLE ou FREEHAND) " alt="" coords="257,275,402,301"/>
+<area shape="rect" id="node8" href="$class_parameters.html#a4b0aeb1a1bdce87c651603cff253e393" title="getPolygon Retourne polygone dessiné par l&#39;utilisateur (forme FREEHAND seulement) Confer labeldessina..." alt="" coords="248,325,411,352"/>
+<area shape="rect" id="node9" href="$class_parameters.html#a694488966be76a53bbf9b79e87758a32" title="getNbVertex Retourne le nombre de sommets du polygone dessiné par l&#39;utilisateur (forme FREEHAND seule..." alt="" coords="244,376,415,403"/>
+<area shape="rect" id="node10" href="$class_parameters.html#ac93dd4de1ffc7a20027d7f1f6cfac3f0" title="getPhotoList Retourne une liste contenant les chemins vers les photos à utiliser pour le collage ..." alt="" coords="244,427,415,453"/>
+<area shape="rect" id="node11" href="$class_parameters.html#a977082009f94b7be1729571890255c5b" title="getDrawingAnimation Retourne la préférence relative à l&#39;animation du collage " alt="" coords="219,477,440,504"/>
 </map>
