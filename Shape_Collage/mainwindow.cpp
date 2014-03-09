@@ -32,7 +32,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(grillePhotos,SIGNAL(clicked()),this,SLOT(DegriseRetirerImage()));
     connect(grillePhotos,SIGNAL(clacked()),this,SLOT(GriserBoutonRetirerImage()));
     connect(LabelCouleurArrierePlan, SIGNAL( clicked() ), this, SLOT( ChangerCouleurArrierePlan()));
-    connect(LabelPhotoArrierePlan, SIGNAL(clicked()), this, SLOT(ChargePhotoArrierePlan()));
+    connect(LabelPhotoArrierePlan, SIGNAL(clicked()), this, SLOT(ChargerPhotoArrierePlan()));
     connect(LabelFormeExtra, SIGNAL(clicked()), this, SLOT(DessinerPolygone()));
 }
 
@@ -203,20 +203,17 @@ void MainWindow::RestaurerValParDefaut()
 
 void MainWindow::ClicArrierePlanPhoto()
 {
-    if(LienPhotoArrierePlan=="")
-    {
-        ChargerPhotoArrierePlan();
-    }
+    ChargerPhotoArrierePlan();
 }
 
 void MainWindow::ChargerPhotoArrierePlan()
 {
-    WindowSlave::ChargerPhotoArrierePlan(LabelPhotoArrierePlan,LienPhotoArrierePlan);
+    WindowSlave::ChargerPhotoArrierePlan(LabelPhotoArrierePlan, LienPhotoArrierePlan, ui->LineEditLargeur, ui->LineEditHauteur);
 }
 
 void MainWindow::DessinerPolygone()
 {
-    WindowSlave::DessinerForme(LabelFormeExtra);
+    mNbVertex = WindowSlave::DessinerForme(LabelFormeExtra);
 }
 
 void MainWindow::DessinerPolygoneSivide()
@@ -265,7 +262,7 @@ void MainWindow::Remettre_Valeurs_Par_Defaut()
     WindowSlave::RemettreValeursParDefaut(ui->RadioBoutonRectangle,ui->ComboBoxTailleCollage,ui->LineEditLargeur,
                                           ui->LineEditHauteur,ui->ComboBoxTaillePhoto,ui->LineEditTaillePhoto,
                                           ui->RadioBoutonTout,ui->LineEditNombrePhoto,ui->SliderDistancePhotos,
-                                          ui->RadioBoutonArrierePlanColorie,LabelCouleurArrierePlan);
+                                          ui->RadioBoutonArrierePlanColorie,LabelCouleurArrierePlan, LabelFormeExtra);
 }
 
 void MainWindow::OnActionNouveauProjet()
@@ -336,7 +333,7 @@ Parameters MainWindow::getParameters() {
     if (this->ModeTailleCollage) {
             float height = ui->LineEditHauteur->text().toFloat();
             float width = ui->LineEditLargeur->text().toFloat();
-            qDebug() << "orig W: " << ui->LineEditLargeur->text() << " orig H: " << ui->LineEditHauteur;
+            qDebug() << "orig W: " << ui->LineEditLargeur->text() << " orig H: " << ui->LineEditHauteur->text();
             qDebug() << "W: " << width << " H:" << height;
 
             switch (this->UMTailleCollage) {

@@ -101,7 +101,7 @@ public:
      * \a label le label dont l'arriere plan est changé
      * \a lienPhoto lien de l'image à afficher
      */
-    static void ChargerPhotoArrierePlan(LabelClicable* label,QString& lienPhoto);
+    static void ChargerPhotoArrierePlan(LabelClicable* label,QString& lienPhoto, QLineEdit* leWidth = 0, QLineEdit* leHeight = 0);
 
 
     static int DessinerForme(LabelDessinable*&);
@@ -130,7 +130,7 @@ public:
     static void RemettreValeursParDefaut(QRadioButton* radioRectangle,QComboBox *comboTaillecollage,
                                          QLineEdit* largeur,QLineEdit* hauteur,QComboBox* comboTaillePhoto,
                                          QLineEdit* taillePhoto,QRadioButton* tout,QLineEdit* nbPhoto,
-                                         QSlider* distance,QRadioButton* arrierePlan,LabelClicable* couleur);
+                                         QSlider* distance,QRadioButton* arrierePlan,LabelClicable* couleur, LabelDessinable* preview);
 };
 
 #endif // WINDOWSLAVE_H

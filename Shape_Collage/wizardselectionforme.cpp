@@ -45,6 +45,18 @@ WizardSelectionForme::~WizardSelectionForme()
     delete labelExtra;
 }
 
+CollageForm WizardSelectionForme::GetValue()
+{
+    CollageForm form;
+    if (extra->isChecked()) {
+        form = FREEHAND;
+    } else if (cercle->isChecked()) {
+        form = CIRCLE;
+    } else {
+        form = RECTANGLE;
+    }
+}
+
 void WizardSelectionForme::DessinerForme()
 {
     WindowSlave::DessinerForme(labelExtra);

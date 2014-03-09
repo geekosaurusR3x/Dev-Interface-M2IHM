@@ -50,6 +50,7 @@ public:
      * \brief Procédure permettant de remettre les valeurs par défaut des paramètres pour le collage
      */
     void Remettre_Valeurs_Par_Defaut();
+
 private:
     Ui::MainWindow *ui;
     GrillePhotos *grillePhotos;

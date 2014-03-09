@@ -6,6 +6,7 @@
 #include"labelclicable.h"
 #include"windowslave.h"
 #include<QRadioButton>
+#include"parameters.h"
 
 class WizardSelectionArrierePlan: public QWizardPage
 {
@@ -28,6 +29,7 @@ public:
      * \return Initialise et retourne une boite horizontale contenant les élément de sélection d'un arrière-plan transparent
      */
     QHBoxLayout * PlacerArrierePlanTransparent();
+    QPixmap GetBackground();
 private:
     QRadioButton *boutonRadioTransparent;
 
@@ -37,6 +39,7 @@ private:
     QRadioButton *boutonRadioPhoto;
     LabelClicable *labelPhoto;
     QString lienPhoto;
+    QColor mBackgroundColor;
 private slots:
     /**
      * \brief Change la couleur de l'arrière-plan colorié

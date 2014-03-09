@@ -24,6 +24,8 @@ WizardSelectionArrierePlan::WizardSelectionArrierePlan(QWidget *parent):QWizardP
     connect(labelCouleur,SIGNAL(clicked()),this,SLOT(ChangerCouleurArrierePlan()));
     connect(labelPhoto,SIGNAL(clicked()),this,SLOT(ChargerPhotoArrierePlan()));
     connect(boutonRadioPhoto,SIGNAL(clicked()),this,SLOT(PhotoSelected()));
+
+    mBackgroundColor = Qt::white;
 }
 
 WizardSelectionArrierePlan::~WizardSelectionArrierePlan()
@@ -76,21 +78,33 @@ QHBoxLayout * WizardSelectionArrierePlan::PlacerArrierePlanTransparent()
     return boiteHorizontale1;
 }
 
+QPixmap WizardSelectionArrierePlan::GetBackground()
+{
+     QPixmap background;
+     if (boutonRadioCouleur->isChecked()) {
+         background = QPixmap(1, 1);
+         background.fill(mBackgroundColor);
+     } else if (boutonRadioTransparent->isChecked()) {
+         background = QPixmap(1,1);
+         background.fill(Qt::transparent);
+     } else {
+         background = QPixmap::fromImage(QImage(lienPhoto));
+     }
+    return background;
+}
+
 void WizardSelectionArrierePlan::ChangerCouleurArrierePlan()
 {
-    WindowSlave::ChangerCouleurArrierePlan(labelCouleur);
+    mBackgroundColor = WindowSlave::ChangerCouleurArrierePlan(labelCouleur);
 }
 
 void WizardSelectionArrierePlan::ChargerPhotoArrierePlan()
 {
-    WindowSlave::ChargerPhotoArrierePlan(labelPhoto,lienPhoto);
+    WindowSlave::ChargerPhotoArrierePlan(labelPhoto, lienPhoto);
 }
 
 void WizardSelectionArrierePlan::PhotoSelected()
 {
-    if(lienPhoto=="")
-    {
-        ChargerPhotoArrierePlan();
-    }
+    ChargerPhotoArrierePlan();
 }
 

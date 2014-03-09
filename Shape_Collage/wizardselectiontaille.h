@@ -11,6 +11,7 @@
 #include<QSlider>
 #include<QSpinBox>
 #include"windowslave.h"
+#include"parameters.h"
 
 class WizardSelectionTaille: public QWizardPage
 {
@@ -37,6 +38,7 @@ public:
      * \return Initialise et retourne le groupebox et les champs de la section Distance entre les photos
      */
     QGroupBox * PlacerDistanceEntrePhoto();
+    void SetParam(Parameters&param);
 private:
     QPushButton *boutonModeTailleCollage;
     QLineEdit *largeur;
@@ -63,6 +65,9 @@ private:
     QSpinBox *spinboxDistancePhoto;
     QLabel *labelPourcent;
     bool ModeDistanceEntrePhotos;
+
+   int UMTaillePhoto;
+   int UMTailleCollage;
 private slots:
 
     /**
@@ -84,6 +89,11 @@ private slots:
      * \brief Grise les champs de la section Distance entre les photos si ils sontdégrisés et les dégrise sinon
      */
     void GriseOuDegriseDistancePhoto();
+
+
+    void MAJLargeurHauteur(int index);
+
+    void MAJTaillePhoto(int index);
 
     /**
      * \brief grise ou dégrise les champs de la section Taille du collage et met à jour les autres sections

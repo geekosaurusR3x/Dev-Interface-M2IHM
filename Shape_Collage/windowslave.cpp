@@ -146,7 +146,7 @@ QColor WindowSlave::ChangerCouleurArrierePlan(LabelClicable *label)
     return couleur;
 }
 
-void WindowSlave::ChargerPhotoArrierePlan(LabelClicable *label, QString &lienPhoto)
+void WindowSlave::ChargerPhotoArrierePlan(LabelClicable *label, QString &lienPhoto, QLineEdit* lineEditWidth, QLineEdit* lineEditHeight)
 {
 
     QStringList Autorisee;
@@ -154,18 +154,26 @@ void WindowSlave::ChargerPhotoArrierePlan(LabelClicable *label, QString &lienPho
     QString fichier=QFileDialog::getOpenFileName(label,"Choisir la photo de l'arrière-plan","","Image (*.png *.jpg *.bmp *.jpeg)");
     if(!fichier.isEmpty()&& (Autorisee.contains(fichier.mid(fichier.lastIndexOf(".")+1).toLower())))
     {
+
         lienPhoto=fichier;
-        if(QMessageBox::question(label,"Taille du collage",
+        QPixmap pixmap(lienPhoto);
+        if (QMessageBox::question(label,"Taille du collage",
                                  "Désirez-vous adapter la taille du collage à celle de la photo d'arrière-plan ?",
                                  QMessageBox::Yes|QMessageBox::No)==QMessageBox::Yes)
         {
-            qDebug()<<"adapter"<<endl;
+            if (lineEditHeight != NULL) {
+                lineEditHeight->setText(QString::number(pixmap.height()));
+            }
+            if (lineEditWidth != NULL) {
+                lineEditWidth->setText(QString::number(pixmap.width()));
+            }
+            qDebug()<<"adapter to "<< QString::number(pixmap.height()) << " x " << QString::number(pixmap.width()) <<endl;
         }
         else
         {
             qDebug()<<"ne pas adapter"<<endl;
         }
-        label->setPixmap(QPixmap(lienPhoto));
+        label->setPixmap(pixmap);
         label->setScaledContents(true);
         label->adjustSize();
     }
@@ -190,7 +198,7 @@ bool WindowSlave::EstUneImage(QString &fichier)
 void WindowSlave::RemettreValeursParDefaut(QRadioButton* radioRectangle,QComboBox *comboTaillecollage,
                                            QLineEdit* largeur,QLineEdit* hauteur,QComboBox* comboTaillePhoto,
                                            QLineEdit* taillePhoto,QRadioButton* tout,QLineEdit* nbPhoto,
-                                           QSlider* distance,QRadioButton* arrierePlan,LabelClicable* couleur)
+                                           QSlider* distance,QRadioButton* arrierePlan,LabelClicable* couleur, LabelDessinable* preview)
 {
     radioRectangle->setChecked(true);
     comboTaillecollage->setCurrentIndex(0);
@@ -207,6 +215,7 @@ void WindowSlave::RemettreValeursParDefaut(QRadioButton* radioRectangle,QComboBo
 
     arrierePlan->setChecked(true);
     couleur->ChangeCouleur(Qt::white);
+    preview->clear();
 }
 
 

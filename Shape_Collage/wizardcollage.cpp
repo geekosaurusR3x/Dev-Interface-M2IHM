@@ -10,10 +10,16 @@ WizardCollage::WizardCollage(QWidget* parent):QWizardPage(parent)
                                "Cliquez sur \"terminer\" pour l'enregistrer");
     label->setWordWrap(true);
 
-    LabelClicable* collage = new LabelClicable(false,parent);
-
+    mCollage = new LabelClicable(false,parent);
+    mBar = new QProgressBar();
     QVBoxLayout *layout = new QVBoxLayout();
     layout->addWidget(label);
-    layout->addWidget(collage);
+    layout->addWidget(mCollage);
     this->setLayout(layout);
+    mDavinci = new DaVinci(mCollage);
+}
+
+void WizardCollage::Draw(Parameters &param)
+{
+    mDavinci->draw(param,mBar);
 }
