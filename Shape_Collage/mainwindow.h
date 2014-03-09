@@ -25,8 +25,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "wizard.h"
-#include "exceptionattention.h"
-#include "exceptionerreure.h"
 #include "parameters.h"
 #include "davinci.h"
 #include <QBitmap>

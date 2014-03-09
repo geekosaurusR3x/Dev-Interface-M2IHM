@@ -14,21 +14,11 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    forme.cpp \
-    arriereplan.cpp \
-    arriereplancolorie.cpp \
-    arriereplantransparent.cpp \
-    arriereplanphoto.cpp \
-    formerectangle.cpp \
-    formecercle.cpp \
-    formeextra.cpp \
     dialogapropos.cpp \
     grillephotos.cpp \
     convertisseur.cpp \
     windowslave.cpp \
     labelclicable.cpp \
-    taille.cpp \
-    donneesmetier.cpp \
     wizard.cpp \
     wizardinfos.cpp \
     wizardselectionphotos.cpp \
@@ -36,8 +26,6 @@ SOURCES += main.cpp\
     wizardselectionarriereplan.cpp \
     wizardselectiontaille.cpp \
     dialogdessinformeextra.cpp \
-    exceptionattention.cpp \
-    exceptionerreure.cpp \
     wizardcollage.cpp \
     parameters.cpp \
     davinci.cpp \
@@ -45,21 +33,11 @@ SOURCES += main.cpp\
     mathhelper.cpp
 
 HEADERS  += mainwindow.h \
-    forme.h \
-    arriereplan.h \
-    arriereplancolorie.h \
-    arriereplantransparent.h \
-    arriereplanphoto.h \
-    formerectangle.h \
-    formecercle.h \
-    formeextra.h \
     dialogapropos.h \
     grillephotos.h \
     convertisseur.h \
     windowslave.h \
     labelclicable.h \
-    taille.h \
-    donneesmetier.h \
     wizard.h \
     wizardinfos.h \
     wizardselectionphotos.h \
@@ -67,8 +45,6 @@ HEADERS  += mainwindow.h \
     wizardselectionarriereplan.h \
     wizardselectiontaille.h \
     dialogdessinformeextra.h \
-    exceptionattention.h \
-    exceptionerreure.h \
     wizardcollage.h \
     parameters.h \
     davinci.h \
