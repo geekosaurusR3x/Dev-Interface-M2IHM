@@ -8,6 +8,9 @@
 #include<QRadioButton>
 #include"parameters.h"
 
+/**
+ * @brief Page du wizard permettant de choisir l'arrière-plan
+ */
 class WizardSelectionArrierePlan: public QWizardPage
 {
     Q_OBJECT

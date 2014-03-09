@@ -14,6 +14,9 @@
 #include <ctime>
 #include "windowslave.h"
 
+/**
+ * @brief L'original, le peintre par excellence. Cette classe réalise le collage selon les paramètres renseignés dans l'interface
+ */
 class DaVinci : public QObject
 {
     Q_OBJECT

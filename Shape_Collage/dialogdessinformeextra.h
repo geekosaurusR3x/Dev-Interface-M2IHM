@@ -9,6 +9,9 @@ namespace Ui {
 class DialogDessinFormeExtra;
 }
 
+/**
+ * @brief Classe de dialogue de dessin de polygone
+ */
 class DialogDessinFormeExtra : public QDialog
 {
     Q_OBJECT

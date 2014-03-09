@@ -10,6 +10,9 @@
 #include<QGroupBox>
 #include"parameters.h"
 
+/**
+ * @brief Wizard d'aide à la création d'un collage
+ */
 class Wizard : public QWizard
 {
     Q_OBJECT

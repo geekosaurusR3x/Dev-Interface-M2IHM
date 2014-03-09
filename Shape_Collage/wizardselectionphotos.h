@@ -7,6 +7,9 @@
 #include"windowslave.h"
 #include"grillephotos.h"
 
+/**
+ * @brief Page du wizard permettant de sélectionner les images à utiliser pour le collage
+ */
 class WizardSelectionPhotos : public QWizardPage
 {
     Q_OBJECT

@@ -5,6 +5,9 @@
 #include"parameters.h"
 #include"davinci.h"
 
+/**
+ * @brief Dernière page du wizard permettant d'enregistrer le collage généré
+ */
 class WizardCollage : public QWizardPage
 {
     Q_OBJECT

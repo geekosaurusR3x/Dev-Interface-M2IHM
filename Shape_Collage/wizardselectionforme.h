@@ -8,6 +8,9 @@
 #include"windowslave.h"
 #include"parameters.h"
 
+/**
+ * @brief Page du wizard permettant de sélectionner la forme du collage
+ */
 class WizardSelectionForme: public QWizardPage
 {
     Q_OBJECT

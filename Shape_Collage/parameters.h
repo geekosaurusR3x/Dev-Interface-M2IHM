@@ -21,7 +21,7 @@ enum CollageForm {
 };
 
 /**
- * @brief Classe Parameters: Cette classe est construite lors du click sur les boutons Aperçu et Créer
+ * @brief Cette classe est construite lors du click sur les boutons Aperçu et Créer
  * Elle contient tous les paramètres saisis par l'utilisateur et est donc passée à DaVinci, qui lui se
  * charge de créer le collage en adéquation.
  */

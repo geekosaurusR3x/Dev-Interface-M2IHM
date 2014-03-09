@@ -13,6 +13,9 @@
 #include"windowslave.h"
 #include"parameters.h"
 
+/**
+ * @brief Page du wizard permettant de renseigner la taille du collage
+ */
 class WizardSelectionTaille: public QWizardPage
 {
     Q_OBJECT

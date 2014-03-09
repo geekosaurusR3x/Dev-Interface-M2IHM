@@ -9,6 +9,9 @@
 
 #define PI 3.141592653
 
+/**
+ * @brief Classe de fonctions mathématiques
+ */
 class MathHelper
 {
 public:

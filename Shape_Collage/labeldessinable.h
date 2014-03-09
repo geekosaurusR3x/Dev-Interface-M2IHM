@@ -13,6 +13,9 @@
 #include "labelclicable.h"
 #include "mathhelper.h"
 
+/**
+ * @brief Label spécial sur lequel DaVinci et
+ */
 class LabelDessinable : public LabelClicable
 {
     Q_OBJECT
