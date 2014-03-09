@@ -1,0 +1,6 @@
+<map id="WizardSelectionTaille::WizardSelectionTaille" name="WizardSelectionTaille::WizardSelectionTaille">
+<area shape="rect" id="node2" href="$class_wizard_selection_taille.html#a424d860377c53b4cb89ac2025277fde6" title="WizardSelectionTaille\l::PlacerTailleCollage" alt="" coords="229,5,377,46"/>
+<area shape="rect" id="node3" href="$class_wizard_selection_taille.html#a27e5242311c8031b51e6cf187ad1b68a" title="WizardSelectionTaille\l::PlacerTaillePhoto" alt="" coords="229,70,377,111"/>
+<area shape="rect" id="node4" href="$class_wizard_selection_taille.html#ae1a1388427768141ff48d309f0b0f9a7" title="WizardSelectionTaille\l::PlacerNombrePhoto" alt="" coords="229,135,377,177"/>
+<area shape="rect" id="node5" href="$class_wizard_selection_taille.html#af96de70e3c33818558db8b1c67e8d775" title="WizardSelectionTaille\l::PlacerDistanceEntrePhoto" alt="" coords="211,201,395,242"/>
+</map>

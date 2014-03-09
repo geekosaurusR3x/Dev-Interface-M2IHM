@@ -1,0 +1,4 @@
+<map id="WindowSlave::RemettreValeursParDefaut" name="WindowSlave::RemettreValeursParDefaut">
+<area shape="rect" id="node2" href="$class_label_clicable.html#aacd9f8d3525e7388c6dcf086e8d0a8c3" title="change la couleur de fond du label couleur nouvelle couleur du label " alt="" coords="262,5,461,32"/>
+<area shape="rect" id="node3" href="$class_label_dessinable.html#ae4ff93aaa4e0fd5c7a3904966f4ee084" title="LabelDessinable::clear" alt="" coords="284,80,439,107"/>
+</map>

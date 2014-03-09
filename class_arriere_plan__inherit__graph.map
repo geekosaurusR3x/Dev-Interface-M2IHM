@@ -1,0 +1,5 @@
+<map id="ArrierePlan" name="ArrierePlan">
+<area shape="rect" id="node2" href="$class_arriere_plan_colorie.html" title="ArrierePlanColorie" alt="" coords="5,80,131,107"/>
+<area shape="rect" id="node3" href="$class_arriere_plan_photo.html" title="ArrierePlanPhoto" alt="" coords="156,80,276,107"/>
+<area shape="rect" id="node4" href="$class_arriere_plan_transparent.html" title="ArrierePlanTransparent" alt="" coords="300,80,453,107"/>
+</map>

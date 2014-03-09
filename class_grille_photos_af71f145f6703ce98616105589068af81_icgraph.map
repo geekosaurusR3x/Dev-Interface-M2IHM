@@ -1,0 +1,4 @@
+<map id="GrillePhotos::AjoutePhoto" name="GrillePhotos::AjoutePhoto">
+<area shape="rect" id="node2" href="$class_grille_photos.html#a240dd1fa45fc30a5a7d2327a3550af4b" title="détecte le dépot d&#39;éléments via drag and drop sur la grille event " alt="" coords="240,5,400,32"/>
+<area shape="rect" id="node3" href="$class_window_slave.html#a6fa49592c35c2eb4abc396da185cc428" title="Ajoute une image a un champ GrillePhotos et met à jour les champs qui lui sont associés g GrillePhoto..." alt="" coords="227,56,413,83"/>
+</map>

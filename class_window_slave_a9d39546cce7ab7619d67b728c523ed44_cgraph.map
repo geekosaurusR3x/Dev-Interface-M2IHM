@@ -1,0 +1,4 @@
+<map id="WindowSlave::DessinerForme" name="WindowSlave::DessinerForme">
+<area shape="rect" id="node2" href="$class_dialog_dessin_forme_extra.html#a7d8b5d94d0b4f31736db9777eb2a2e53" title="DialogDessinFormeExtra\l::getNbVertex" alt="" coords="253,5,421,46"/>
+<area shape="rect" id="node3" href="$class_label_dessinable.html#af6f4b97bece48405d432d66dc1660c01" title="LabelDessinable::getNbVertex" alt="" coords="470,12,669,39"/>
+</map>

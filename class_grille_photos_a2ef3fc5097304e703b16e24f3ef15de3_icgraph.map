@@ -1,0 +1,5 @@
+<map id="GrillePhotos::clicked" name="GrillePhotos::clicked">
+<area shape="rect" id="node2" href="$class_grille_photos.html#a240dd1fa45fc30a5a7d2327a3550af4b" title="détecte le dépot d&#39;éléments via drag and drop sur la grille event " alt="" coords="215,5,375,32"/>
+<area shape="rect" id="node3" href="$class_grille_photos.html#a9435748b3ec7eec0a5c2a1d292f8e928" title="détecte le click souris event évenement souris " alt="" coords="207,57,382,98"/>
+<area shape="rect" id="node4" href="$class_grille_photos.html#a0099be2751c516b13a3bb57e176c1108" title="détecte le changement de l&#39;élément courant sélectionné current élément actuel sélectionné previous an..." alt="" coords="198,123,391,149"/>
+</map>

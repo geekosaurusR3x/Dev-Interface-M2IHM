@@ -1,0 +1,5 @@
+<map id="Forme" name="Forme">
+<area shape="rect" id="node2" href="$class_forme_cercle.html" title="FormeCercle" alt="" coords="5,80,101,107"/>
+<area shape="rect" id="node3" href="$class_forme_extra.html" title="FormeExtra" alt="" coords="127,80,217,107"/>
+<area shape="rect" id="node4" href="$class_forme_rectangle.html" title="FormeRectangle" alt="" coords="242,80,360,107"/>
+</map>

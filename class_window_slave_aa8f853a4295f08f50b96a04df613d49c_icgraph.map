@@ -1,0 +1,6 @@
+<map id="WindowSlave::EstUneImage" name="WindowSlave::EstUneImage">
+<area shape="rect" id="node2" href="$class_grille_photos.html#af71f145f6703ce98616105589068af81" title="Ajoute une image à la grille photo lien de l&#39;image à ajoutée. " alt="" coords="246,31,418,57"/>
+<area shape="rect" id="node5" href="$class_label_clicable.html#a847f2ed7ada0e6220c4ed4aa06189f74" title="traitement du signal de dépot d&#39;éléments sur le label via drag and drop event évènement de dépot ..." alt="" coords="249,81,415,108"/>
+<area shape="rect" id="node3" href="$class_grille_photos.html#a240dd1fa45fc30a5a7d2327a3550af4b" title="détecte le dépot d&#39;éléments via drag and drop sur la grille event " alt="" coords="480,5,640,32"/>
+<area shape="rect" id="node4" href="$class_window_slave.html#a6fa49592c35c2eb4abc396da185cc428" title="Ajoute une image a un champ GrillePhotos et met à jour les champs qui lui sont associés g GrillePhoto..." alt="" coords="467,56,653,83"/>
+</map>

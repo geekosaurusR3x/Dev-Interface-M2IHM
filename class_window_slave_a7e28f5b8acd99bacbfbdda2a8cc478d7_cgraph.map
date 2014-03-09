@@ -1,0 +1,8 @@
+<map id="WindowSlave::ConvertAndMAJLineEdit" name="WindowSlave::ConvertAndMAJLineEdit">
+<area shape="rect" id="node2" href="$class_convertisseur.html#ac44883703fa1d787eff3da39bbcab672" title="Convertis une valeur (en pouce) en pixel nbr valeur à convertir, cette valeur doit être en pouce..." alt="" coords="307,5,506,32"/>
+<area shape="rect" id="node3" href="$class_convertisseur.html#aa99c1a005170565fabb50fd770dbf9c7" title="Convertis une valeur (en centimètre) en pixel nbr valeur à convetir, cette valeur doit être en centim..." alt="" coords="319,56,495,83"/>
+<area shape="rect" id="node4" href="$class_convertisseur.html#a38ae74371c2353e893c4bcd876a1cf98" title="Convertis une valeur (en pixel) en pouce nbr valeur à convertir, cette valeur doit être en pixel..." alt="" coords="307,107,506,133"/>
+<area shape="rect" id="node5" href="$class_convertisseur.html#a72e43bebecca877e14871a52cb3b0316" title="convertis une valeur (en centimètre)en pouce nbr valeur à convertir, cette valeur doit être en centim..." alt="" coords="315,157,499,184"/>
+<area shape="rect" id="node6" href="$class_convertisseur.html#abf3b577034b513e3ecfd54fae8f7267a" title="Convertis une valeur (en pixel) en centimètre nbr valeur à convertir, cette valeur doit être en pixel..." alt="" coords="315,208,498,235"/>
+<area shape="rect" id="node7" href="$class_convertisseur.html#a66870d54b9bf7280495556aa7c629ccc" title="Convertis une valeur (en pouce) en centimetre nbr valeur à convertir, cette valeur doit être en pouce..." alt="" coords="315,259,499,285"/>
+</map>

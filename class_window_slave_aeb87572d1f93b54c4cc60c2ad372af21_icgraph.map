@@ -1,0 +1,4 @@
+<map id="WindowSlave::ViderGrillePhoto" name="WindowSlave::ViderGrillePhoto">
+<area shape="rect" id="node2" href="$class_main_window.html#a73e9cc14e4fdb7b6a1cd7f56a5876d97" title="Vider_GrillePhotos. " alt="" coords="229,5,401,46"/>
+<area shape="rect" id="node3" href="$class_window_slave.html#a0cc1c722d229203abe63dd3c43984454" title="supprime toutes les images d&#39;une GrillePhotos et met à jour les champs associés après validation d&#39;un..." alt="" coords="225,70,405,111"/>
+</map>

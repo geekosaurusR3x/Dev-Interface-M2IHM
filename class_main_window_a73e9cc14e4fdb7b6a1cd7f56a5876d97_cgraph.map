@@ -1,0 +1,4 @@
+<map id="MainWindow::Vider_GrillePhotos" name="MainWindow::Vider_GrillePhotos">
+<area shape="rect" id="node2" href="$class_window_slave.html#aeb87572d1f93b54c4cc60c2ad372af21" title="supprime toutes les images d&#39;une GrillePhotos et met à jour les champs associés g GrillePhotos dont o..." alt="" coords="227,5,397,46"/>
+<area shape="rect" id="node3" href="$class_grille_photos.html#aa516e182aafb8273423d175c35079ec8" title="Efface toutes les images de la grille. " alt="" coords="445,12,616,39"/>
+</map>

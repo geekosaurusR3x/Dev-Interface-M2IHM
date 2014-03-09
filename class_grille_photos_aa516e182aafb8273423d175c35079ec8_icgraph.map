@@ -1,0 +1,5 @@
+<map id="GrillePhotos::EffacerListe" name="GrillePhotos::EffacerListe">
+<area shape="rect" id="node2" href="$class_window_slave.html#aeb87572d1f93b54c4cc60c2ad372af21" title="supprime toutes les images d&#39;une GrillePhotos et met à jour les champs associés g GrillePhotos dont o..." alt="" coords="224,38,395,79"/>
+<area shape="rect" id="node3" href="$class_main_window.html#a73e9cc14e4fdb7b6a1cd7f56a5876d97" title="Vider_GrillePhotos. " alt="" coords="447,5,619,46"/>
+<area shape="rect" id="node4" href="$class_window_slave.html#a0cc1c722d229203abe63dd3c43984454" title="supprime toutes les images d&#39;une GrillePhotos et met à jour les champs associés après validation d&#39;un..." alt="" coords="443,70,623,111"/>
+</map>

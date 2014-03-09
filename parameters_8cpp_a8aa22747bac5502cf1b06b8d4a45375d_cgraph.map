@@ -1,0 +1,9 @@
+<map id="operator&lt;&lt;" name="operator&lt;&lt;">
+<area shape="rect" id="node2" href="$class_parameters.html#a4a594d991be21dc163339b3a455910f2" title="Parameters::getCollageSize" alt="" coords="155,5,341,32"/>
+<area shape="rect" id="node3" href="$class_parameters.html#afa460d1088933deae71a6d4a08ac38a5" title="Parameters::getPhotoSize" alt="" coords="161,56,335,83"/>
+<area shape="rect" id="node4" href="$class_parameters.html#ab1add514950a3dcd62b9e46fff63acbf" title="Parameters::getNbPhotos" alt="" coords="161,107,335,133"/>
+<area shape="rect" id="node5" href="$class_parameters.html#a9909837d960dc13e1c3e0c4f2fbd5367" title="Parameters::getDistanceBetween\lPhotos" alt="" coords="139,158,357,199"/>
+<area shape="rect" id="node6" href="$class_parameters.html#a1290ffe01fb323ac10f2d2213c8360bd" title="Parameters::getBackground" alt="" coords="156,224,340,251"/>
+<area shape="rect" id="node7" href="$class_parameters.html#a370ce104528858e1553367e824121943" title="Parameters::getForm" alt="" coords="175,275,321,301"/>
+<area shape="rect" id="node8" href="$class_parameters.html#ac93dd4de1ffc7a20027d7f1f6cfac3f0" title="Parameters::getPhotoList" alt="" coords="163,325,333,352"/>
+</map>

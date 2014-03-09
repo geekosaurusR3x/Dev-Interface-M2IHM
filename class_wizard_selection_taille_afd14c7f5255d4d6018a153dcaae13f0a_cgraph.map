@@ -1,0 +1,9 @@
+<map id="WizardSelectionTaille::SetParam" name="WizardSelectionTaille::SetParam">
+<area shape="rect" id="node2" href="$class_convertisseur.html#ac44883703fa1d787eff3da39bbcab672" title="Convertis une valeur (en pouce) en pixel nbr valeur à convertir, cette valeur doit être en pouce..." alt="" coords="213,5,411,32"/>
+<area shape="rect" id="node3" href="$class_convertisseur.html#aa99c1a005170565fabb50fd770dbf9c7" title="Convertis une valeur (en centimètre) en pixel nbr valeur à convetir, cette valeur doit être en centim..." alt="" coords="224,56,400,83"/>
+<area shape="rect" id="node4" href="$class_parameters.html#ab1add514950a3dcd62b9e46fff63acbf" title="Parameters::getNbPhotos" alt="" coords="225,107,399,133"/>
+<area shape="rect" id="node5" href="$class_parameters.html#a9a6212ea3cbd4d4605a23af2f1314037" title="Parameters::setCollageSize" alt="" coords="219,157,405,184"/>
+<area shape="rect" id="node6" href="$class_parameters.html#a771441501ed22d78db34fa76f916e988" title="Parameters::setPhotoSize" alt="" coords="225,208,399,235"/>
+<area shape="rect" id="node7" href="$class_parameters.html#a4370e0858b5207886541acb3bdf38d4f" title="Parameters::setNbPhotos" alt="" coords="225,259,399,285"/>
+<area shape="rect" id="node8" href="$class_parameters.html#a1d2537066fb8d6bf987f0c11ed1ebb30" title="Parameters::setDistanceBetween\lPhotos" alt="" coords="203,310,421,351"/>
+</map>
