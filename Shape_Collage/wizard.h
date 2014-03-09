@@ -26,7 +26,6 @@ private:
     WizardCollage *collage;
     bool validateCurrentPage();
     int mInfoId, mPhotoId, mFormId, mSizeId, mBackgroundId, mCollageId;
-    void showErrorDialog(QString);
 };
 
 #endif // WIZARD_H

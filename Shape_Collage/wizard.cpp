@@ -67,6 +67,10 @@ bool Wizard::validateCurrentPage() {
             if (fichier != NULL) {
                 valid = collage->Save(fichier);
             }
+            if(!valid)
+            {
+                WindowSlave::showFailureDialog("Une erreure est survenue lors de l'enregistrement de l'image");
+            }
             break;
         }
         default: // shouldn't ever be called
@@ -75,13 +79,6 @@ bool Wizard::validateCurrentPage() {
 
     qDebug() << *mParams;
     return valid;
-}
-
-void Wizard::showErrorDialog(QString errMsg)  {
-    QMessageBox msgBox;
-    msgBox.setText("Erreur !");
-    msgBox.setInformativeText(errMsg);
-    msgBox.exec();
 }
 
 Wizard::~Wizard()
