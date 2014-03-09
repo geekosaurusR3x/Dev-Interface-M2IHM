@@ -441,12 +441,7 @@ void MainWindow::on_BoutonCreer_clicked()
         this->on_BoutonApercu_clicked();
     }
     if (mDaVinci->getAlreadyGenerated()) {
-        // FIXME check file existance
-        QString defaultLocation = "";
-#ifdef linux
-        defaultLocation = "/tmp";
-#endif
-        QString fichier = QFileDialog::getSaveFileName(this, "Choisissez où enregistrer votre collage", defaultLocation, ".png");
+        QString fichier = QFileDialog::getSaveFileName(this, "Choisissez où enregistrer votre collage", QDir::homePath(), ".png");
 
         if (fichier != NULL) {
             if (mDaVinci->exportImage(fichier)) {

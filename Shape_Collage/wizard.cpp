@@ -63,16 +63,11 @@ bool Wizard::validateCurrentPage() {
         //case mCollageId:
         case 5:
         {
-            QString defaultLocation = "";
-            #ifdef linux
-                defaultLocation = "/tmp";
-            #endif
-            QString fichier = QFileDialog::getSaveFileName(this, "Choisissez où enregistrer votre collage", defaultLocation, ".png");
+            QString fichier = QFileDialog::getSaveFileName(this, "Choisissez où enregistrer votre collage", QDir::homePath(), ".png");
 
             if (fichier != NULL) {
-                collage->Save(fichier);
+                valid = collage->Save(fichier);
             }
-            valid = true;
             break;
         }
         default: // shouldn't ever be called
