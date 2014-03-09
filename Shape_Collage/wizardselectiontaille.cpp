@@ -296,61 +296,29 @@ void WizardSelectionTaille::MAJTaillePhoto(int index)
 void WizardSelectionTaille::SetParam(Parameters& param )
 {
     QSize collageSize;
-    double imageSize = -1;
+    int imageSize = -1;
     int nbPhotos = -1;
     int distanceBetweenPhotos = -1;
 
     if (this->ModeTailleCollage) {
-            float height = hauteur->text().toFloat();
-            float width = largeur->text().toFloat();
-            qDebug() << "orig W: " << hauteur->text().toFloat() << " orig H: " <<  largeur->text().toFloat();
-            qDebug() << "W: " << width << " H:" << height;
-
-            switch (UMTailleCollage) {
-                case 1: // Current: inch (pouces)
-                    height = Convertisseur::PouceToPixels(height);
-                    width = Convertisseur::PouceToPixels(width);
-                    break;
-                case 2: // Current: cm
-                    height = Convertisseur::CmToPixel(height);
-                    width = Convertisseur::CmToPixel(width);
-                    break;
-            }
-            // TODO Multiply by 100 to get rid float
-            collageSize = QSize(width, height);
+        collageSize = WindowSlave::SizeUiToParam(UMTailleCollage,hauteur,largeur);
     }
 
     if (this->ModeTaillePhoto) {
-        imageSize = taillPhoto->text().toFloat();
-        switch (UMTaillePhoto) {
-        case 1:
-            imageSize = Convertisseur::PouceToPixels(imageSize);
-            break;
-        case 2:
-            imageSize = Convertisseur::CmToPixel(imageSize);
-            break;
-        }
-
-        qDebug() << "UI Image size: " << taillPhoto->text();
+        imageSize = WindowSlave::PhotoSizeUiToParam(UMTaillePhoto,taillPhoto);
     }
 
     if (this->ModeNombrePhoto) {
-        int maxPhotos = param.getNbPhotos();
-        if (nomrePrecisPhotos->isChecked()) {
-            nbPhotos = qMin(maxPhotos,nombrePhotos->text().toInt());
-        } else {
-            nbPhotos = maxPhotos;
-        }
+        nbPhotos = WindowSlave::NbPhotoUiToParam(param.getNbPhotos(),nomrePrecisPhotos,nombrePhotos);
     }
 
     if (this->ModeDistanceEntrePhotos) {
-        distanceBetweenPhotos = sliderDistancePhotos->value();
+        distanceBetweenPhotos = WindowSlave::DistancePhotoUItoParam(spinboxDistancePhoto);
     }
 
-    int intImgSize = static_cast<int>(imageSize);
 
     param.setCollageSize(collageSize);
-    param.setPhotoSize(intImgSize);
+    param.setPhotoSize(imageSize);
     param.setNbPhotos(nbPhotos);
     param.setDistanceBetweenPhotos(distanceBetweenPhotos);
 

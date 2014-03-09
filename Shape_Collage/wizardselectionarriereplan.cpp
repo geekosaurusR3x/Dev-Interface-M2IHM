@@ -80,17 +80,7 @@ QHBoxLayout * WizardSelectionArrierePlan::PlacerArrierePlanTransparent()
 
 QPixmap WizardSelectionArrierePlan::GetBackground()
 {
-     QPixmap background;
-     if (boutonRadioCouleur->isChecked()) {
-         background = QPixmap(1, 1);
-         background.fill(mBackgroundColor);
-     } else if (boutonRadioTransparent->isChecked()) {
-         background = QPixmap(1,1);
-         background.fill(Qt::transparent);
-     } else {
-         background = QPixmap::fromImage(QImage(lienPhoto));
-     }
-    return background;
+    return WindowSlave::BackgroundUiToParam(boutonRadioCouleur,mBackgroundColor,boutonRadioTransparent,lienPhoto);
 }
 
 void WizardSelectionArrierePlan::ChangerCouleurArrierePlan()

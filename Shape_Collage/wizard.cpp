@@ -39,8 +39,7 @@ bool Wizard::validateCurrentPage() {
                 mParams->setNbPhotos(selectionPhoto->getPhotos()->getListePhoto().size());
                 valid = true;
             } else {
-                // TODO show error dialog
-                showErrorDialog("Veuillez ajouter au moins une photo.");
+                WindowSlave::showFailureDialog("Veuillez ajouter au moins une photo.");
             }
             break;
         }

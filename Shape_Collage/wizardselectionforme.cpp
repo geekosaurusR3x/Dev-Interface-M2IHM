@@ -47,16 +47,7 @@ WizardSelectionForme::~WizardSelectionForme()
 
 CollageForm WizardSelectionForme::GetValue()
 {
-    CollageForm form;
-    if (extra->isChecked()) {
-        form = FREEHAND;
-    } else if (cercle->isChecked()) {
-        form = CIRCLE;
-    } else {
-        form = RECTANGLE;
-    }
-
-    return form;
+    return WindowSlave::FormUIToParam(extra,cercle);
 }
 
 void WizardSelectionForme::DessinerForme()
