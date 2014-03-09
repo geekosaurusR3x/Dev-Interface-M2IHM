@@ -12,6 +12,10 @@
 #include <QBitmap>
 #include <QProgressBar>
 #include <ctime>
+#include <QGraphicsItem>
+#include <QGraphicsEllipseItem>
+#include <QGraphicsRectItem>
+#include <QGraphicsPolygonItem>
 #include "windowslave.h"
 
 class DaVinci : public QObject

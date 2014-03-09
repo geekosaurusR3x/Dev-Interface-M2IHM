@@ -128,13 +128,33 @@ bool DaVinci::draw(Parameters params, QProgressBar*& progressBar)
     float centerX = collageSize.width() / 2;
     float centerY = collageSize.height() / 2;
 
+    QGraphicsItem* Form;
+    switch (form) {
+        case CIRCLE:
+        {
+            Form = new QGraphicsEllipseItem(0,0,collageSize.width(),collageSize.height());
+            break;
+        }
+        case FREEHAND:
+        {
+            QPolygon pol(MathHelper::computePolygon(QPoint(0,0), QPoint(collageSize.width(), collageSize.height()), params.getNbVertex()));
+            Form = new QGraphicsPolygonItem(pol);
+            break;
+        }
+        default:
+        {
+            Form = new QGraphicsRectItem(0,0,collageSize.width(),collageSize.height());
+            break;
+        }
+    }
+
     for (int c = 0; c < cols; ++c) {
         for (int l = 0; l < lines; ++l) {
             int currentCellX = l * cellWidth;
             int currentCellY = c * cellHeight;
 
             qDebug() << "current X: " << currentCellX <<  " current Y: " << currentCellY;
-
+            /*
             switch (form) {
             case CIRCLE:
             {
@@ -186,6 +206,17 @@ bool DaVinci::draw(Parameters params, QProgressBar*& progressBar)
                 break;
             }
 
+            }
+            */
+
+            float currentCellCenterX = currentCellX + (cellWidth / 2);
+            float currentCellCenterY = currentCellY + (cellHeight / 2);
+
+            if (Form->contains(QPoint(currentCellCenterX, currentCellCenterY))) {
+                xPos.push_back(currentCellX);
+                yPos.push_back(currentCellY);
+            } else {
+                nbRandomImages++;
             }
         }
     }
@@ -249,7 +280,6 @@ bool DaVinci::draw(Parameters params, QProgressBar*& progressBar)
 
     // We are done
     progressBar->setValue(100);
-
     finalPainter.drawPixmap(horizontalPadding / 2, verticalPadding / 2, pixmap);
 
     // TODO strech / repeat
