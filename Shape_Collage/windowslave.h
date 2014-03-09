@@ -15,9 +15,11 @@
 #include<QLineEdit>
 #include <QPoint>
 #include <QVector>
+#include <QSpinBox>
 #include "labeldessinable.h"
 #include"dialogdessinformeextra.h"
 #include"labelclicable.h"
+#include"parameters.h"
 
 #include <QDesktopServices>
 
@@ -134,6 +136,57 @@ public:
                                          QLineEdit* largeur,QLineEdit* hauteur,QComboBox* comboTaillePhoto,
                                          QLineEdit* taillePhoto,QRadioButton* tout,QLineEdit* nbPhoto,
                                          QSlider* distance,QRadioButton* arrierePlan,LabelClicable* couleur, LabelDessinable* preview, LabelClicable* photoBackground);
+
+    /**
+     * @brief Converti les valeurs fournies en hauteur et largeur en QSize pour la classe parametre
+     * @param modeValeur int represetant le type de valeur (0 pixels / 1 inch / 2 cm
+     * @param largeur QlineEdit contenant la valeur de largeur
+     * @param hauteur QlineEdit contenant la valeur de hauteur
+     * @return QSize taille utilisable dans la classe Davinci
+     */
+    static QSize SizeUiToParam(int modeValeur ,QLineEdit* largeur ,QLineEdit* hauteur);
+
+    /**
+     * @brief Converti la valeur fournie en size en double pour la classe parametre
+     * @param modeValeur int represetant le type de valeur (0 pixels / 1 inch / 2 cm
+     * @param size QlineEdit contenant la valeur de la taille
+     * @return double taille utilisable dans la classe Davinci
+     */
+    static int PhotoSizeUiToParam(int modeValeur ,QLineEdit* size);
+
+    /**
+     * @brief Converti le nombre de photo de l'ui en parametre
+     * @param nbphotolist Nombre de photo dans la GrillePhotos
+     * @param radiobuttonphoto QRadioRutton  indiquant le choix de l'utilisateur
+     * @param lideeditbutton QLineEdit contenant la valeur manuelle demandée par l'utilisateur
+     * @return le nombre de photomax
+     */
+        static int NbPhotoUiToParam(int nbphotolist,QRadioButton* radiobuttonphoto, QLineEdit* lideeditbutton);
+
+    /**
+     * @brief Recupere la valeur dans la SpinBox passée en parametre \a spinsize et la transofrme en int
+     * @param spinsize QSpinBox contenant la valeur
+     * @return valeur
+     */
+     static int DistancePhotoUItoParam(QSpinBox* spinsize);
+
+     /**
+      * @brief Resort la bonne ColageForm pour les parametre en fonction des radiobuttons
+      * @param extra RadioButton pour la forme Extra
+      * @param cercle RadioButton pour la forme Cercle
+      * @return CollageForm
+      */
+     static CollageForm FormUIToParam(QRadioButton* extra, QRadioButton* cercle);
+
+     /**
+      * @brief Resort la bonne pixmap pour le parametre de background
+      * @param radiocolor Radiobouton pour la couleur
+      * @param color Qcolor
+      * @param radiotransparent Radiobouton pour le transparent
+      * @param lienPhoto Url de la photo
+      * @return La QPixmap generée
+      */
+     static QPixmap BackgroundUiToParam(QRadioButton* radiocolor,QColor color,QRadioButton* radiotransparent,QString lienPhoto);
 };
 
 #endif // WINDOWSLAVE_H

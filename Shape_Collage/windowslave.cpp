@@ -221,4 +221,88 @@ void WindowSlave::RemettreValeursParDefaut(QRadioButton* radioRectangle,QComboBo
     preview->clear();
 }
 
+QSize WindowSlave::SizeUiToParam(int modeValeur, QLineEdit *largeur, QLineEdit *hauteur)
+{
+
+    float width = largeur->text().toFloat();
+    float height = hauteur->text().toFloat();
+    qDebug() << "orig W: " << largeur->text() << " orig H: " << hauteur->text();
+    qDebug() << "W: " << width << " H:" << height;
+
+    switch (modeValeur) {
+        case 1: // Current: inch (pouces)
+            height = Convertisseur::PouceToPixels(height);
+            width = Convertisseur::PouceToPixels(width);
+            break;
+        case 2: // Current: cm
+            height = Convertisseur::CmToPixel(height);
+            width = Convertisseur::CmToPixel(width);
+            break;
+    }
+
+    return QSize(width, height);
+}
+
+int WindowSlave::PhotoSizeUiToParam(int modeValeur, QLineEdit *size)
+{
+    double imageSize = size->text().toFloat();
+    switch (modeValeur) {
+    case 1:
+        imageSize = Convertisseur::PouceToPixels(imageSize);
+        break;
+    case 2:
+        imageSize = Convertisseur::CmToPixel(imageSize);
+        break;
+    }
+
+    qDebug() << "UI Image size: " << size->text();
+    return static_cast<int>(imageSize);
+}
+
+int WindowSlave::NbPhotoUiToParam(int nbphotolist, QRadioButton* radiobuttonphoto, QLineEdit* lideeditbutton)
+{
+    int nbPhotos;
+    if (radiobuttonphoto->isChecked()) {
+        nbPhotos = qMin(nbphotolist,lideeditbutton->text().toInt());
+    } else {
+        nbPhotos = nbphotolist;
+    }
+
+    return nbPhotos;
+}
+
+int WindowSlave::DistancePhotoUItoParam(QSpinBox* spinsize)
+{
+    return spinsize->value();
+}
+
+CollageForm WindowSlave::FormUIToParam(QRadioButton *extra, QRadioButton *cercle)
+{
+    CollageForm form;
+    if (extra->isChecked()) {
+        form = FREEHAND;
+    } else if (cercle->isChecked()) {
+        form = CIRCLE;
+    } else {
+        form = RECTANGLE;
+    }
+    return form;
+}
+
+QPixmap WindowSlave::BackgroundUiToParam(QRadioButton* radiocolor, QColor color, QRadioButton* radiotransparent, QString lienPhoto)
+{
+    QPixmap pixmap;
+    if (radiocolor->isChecked()) {
+        pixmap = QPixmap(1, 1);
+        pixmap.fill(color);
+    } else if (radiotransparent->isChecked()) {
+        pixmap = QPixmap(1,1);
+        pixmap.fill(Qt::transparent);
+    } else {
+        pixmap = QPixmap::fromImage(QImage(lienPhoto));
+    }
+
+    return pixmap;
+}
+
 
