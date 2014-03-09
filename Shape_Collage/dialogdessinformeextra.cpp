@@ -26,6 +26,10 @@ DialogDessinFormeExtra::~DialogDessinFormeExtra()
     delete label;
 }
 
+bool DialogDessinFormeExtra::isValid() {
+    return label->getPolygon().toStdVector().size() > 1;
+}
+
 void DialogDessinFormeExtra::on_SliderTaillePainceau_valueChanged(int value)
 {
     label->setNbVertex(value);

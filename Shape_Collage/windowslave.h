@@ -119,6 +119,15 @@ public:
     static bool EstUneImage(QString& fichier);
 
     /**
+     * \brief showSuccessDialog Affiche un dialogue confirmant l'enregistrement du collage
+     */
+    static void showSuccessDialog();
+    /**
+     * \brief showFailureDialog Affiche un message d'erreur
+     * \a Le message d'erreur
+     */
+    static void showFailureDialog(QString);
+    /**
      * \brief Remet toutes les valeurs par défaut en vue de créer un nouveau projet
      * \a radioRectangle bouton radio correspondant à la forme rectangle sur l'UI
      * \a comboTaillecollage combobox d'unité de mesure d'affichage de la taille du collage

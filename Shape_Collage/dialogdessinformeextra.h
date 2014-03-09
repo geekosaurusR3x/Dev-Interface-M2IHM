@@ -17,6 +17,7 @@ public:
     explicit DialogDessinFormeExtra(LabelDessinable*, QWidget *parent = 0);
     ~DialogDessinFormeExtra();
     int getNbVertex();
+    bool isValid();
 private:
     Ui::DialogDessinFormeExtra *ui;
     LabelDessinable  *label;

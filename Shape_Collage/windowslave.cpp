@@ -184,6 +184,11 @@ int WindowSlave::DessinerForme(LabelDessinable*& previewLabel)
 {
     DialogDessinFormeExtra dlg(previewLabel);
     if (dlg.exec() == QDialog::Accepted) {
+        if (dlg.isValid()) {
+            qDebug() << "IS VALID";
+        } else {
+            qDebug() << "NOT VALID";
+        }
         return dlg.getNbVertex();
     }
 }
@@ -195,6 +200,20 @@ bool WindowSlave::EstUneImage(QString &fichier)
     Autorisee <<"jpg"<<"jpeg"<<"bmp"<<"png";
     return Autorisee.contains(extension);
 }
+
+void WindowSlave::showSuccessDialog() {
+    QMessageBox msgBox;
+    msgBox.setText("Votre image a bien été enregistrée!");
+    msgBox.exec();
+}
+
+void WindowSlave::showFailureDialog(QString errMsg)  {
+    QMessageBox msgBox;
+    msgBox.setText("Erreur !");
+    msgBox.setInformativeText(errMsg);
+    msgBox.exec();
+}
+
 
 void WindowSlave::RemettreValeursParDefaut(QRadioButton* radioRectangle,QComboBox *comboTaillecollage,
                                            QLineEdit* largeur,QLineEdit* hauteur,QComboBox* comboTaillePhoto,
